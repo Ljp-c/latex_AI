@@ -1,0 +1,66 @@
+\makeatletter
+\def\muckeywords{} % @符号变量需包裹
+\def\mucenglishkeywords{} % @符号变量需包裹
+\makeatother
+
+\newcommand{\keywords}[1]{%
+  \makeatletter
+  \def\muckeywords{#1}%
+  \makeatother
+}
+
+% 关键词生成
+\newcommand{\makekeywords}{%
+  \makeatletter
+  \par\noindent
+  {\heiti\sihao 关键词：}%
+  \songti\sihao\space
+  \muckeywords
+  \makeatother
+}
+
+\newcommand{\englishkeywords}[1]{%
+  \makeatletter
+  \def\mucenglishkeywords{#1}%
+  \makeatother
+}
+
+% 关键词生成
+\newcommand{\makeenglishkeywords}{%
+  \makeatletter
+  \par\noindent
+  {\textbf{Key Words: }}%
+  \space
+  \mucenglishkeywords
+  \makeatother
+}
+
+\newenvironment{textarea}[1]{
+  \phantomsection  % 创建超链接锚点
+  \addcontentsline{toc}{section}{#1}
+  \begin{center}
+    \textbf{\heiti\sanhao {#1}}
+  \end{center}
+  \par{}
+  \obeylines{}
+  \ignorespaces{}
+  \songti\sihao
+}{
+  \par{}
+} 
+
+% 摘要环境
+\newenvironment{MUCAbstract}{%
+  \begin{textarea}{摘要}
+}{%
+  \makekeywords
+  \end{textarea}
+}
+
+% 摘要环境
+\newenvironment{MUCENAbstract}{%
+  \begin{textarea}{Abstract}
+}{%
+  \makeenglishkeywords{}
+  \end{textarea}
+}

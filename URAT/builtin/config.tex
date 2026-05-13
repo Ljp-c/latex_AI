@@ -1,0 +1,90 @@
+\makeatletter
+\def\mucdoctitle{}
+\makeatother
+
+\newcommand{\doctitle}[1]{%
+  \makeatletter
+  \def\mucdoctitle{#1}%
+  \makeatother
+}
+
+\newcommand{\makedoctitle}{%
+  \makeatletter
+  {\fontsize{18pt}{20pt} \selectfont \heiti{} \mucdoctitle }\\
+  \makeatother
+}
+
+
+\makeatletter
+\def\mucdocsubtitle{}
+\makeatother
+
+\newcommand{\docsubtitle}[1]{%
+  \makeatletter
+  \def\mucdocsubtitle
+{#1}%
+  \makeatother
+}
+
+\newcommand{\makedocsubtitle}{%
+  \makeatletter
+  {\fontsize{16pt}{18pt} \selectfont \heiti{}%
+\ifx\mucdocsubtitle\empty\else ——\mucdocsubtitle\fi}
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectid{}
+\makeatother
+
+\newcommand{\mucprojectid}[1]{%
+  \makeatletter
+  \def\varmucprojectid{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojecttype{}
+\makeatother
+
+\newcommand{\mucprojecttype}[1]{%
+  \makeatletter
+  \def\varmucprojecttype{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectteacher{}
+\makeatother
+
+\newcommand{\mucprojectteacher}[1]{%
+  \makeatletter
+  \def\varmucprojectteacher{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectmembers{}
+\makeatother
+
+\newcommand{\mucprojectmembers}[1]{%
+  \makeatletter
+  \def\varmucprojectmembers{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectunit{}
+\makeatother
+
+\newcommand{\mucprojectunit}[1]{%
+  \makeatletter
+  \def\varmucprojectunit{#1}%
+  \makeatother
+}
+
+\newcommand{\mucprojectdate}[1]{%
+  \makeatletter
+  \def\varmucprojectdate{#1}%
+  \makeatother
+}

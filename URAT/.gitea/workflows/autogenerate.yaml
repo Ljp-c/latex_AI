@@ -1,0 +1,35 @@
+name: Send Email
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  send-mail:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+    steps:
+    - name: Clone repository
+      run: |
+          # 使用 GitHub token 克隆
+          git clone https://git.jamaccao.cn/${{ github.repository }}.git . --depth=1
+
+    - name: 自动编译
+      run: |
+        chmod +x ./complie.sh
+        ./complie.sh
+      
+    - name: Send mail
+      uses: https://git.jamaccao.cn/actions/action-send-mail@main
+      with:
+        server_address: smtp.qiye.aliyun.com
+        server_port: 465
+        username: ${{ vars.MAIL_USERNAME }}
+        password: ${{ vars.MAIL_PASSWORD }}
+        subject: LaTeX Build Result
+        to: ${{vars.RECIVER_EMAIL}}
+        body: Build job of ${{ github.repository }} completed successfully!
+        html_body: file://main.pdf
+        attachments: main.pdf

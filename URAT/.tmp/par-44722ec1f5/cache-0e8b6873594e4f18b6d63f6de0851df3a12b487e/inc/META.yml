@@ -1,0 +1,12 @@
+build_requires: {}
+conflicts: {}
+dist_name: biber-MSWIN64.exe
+distribution_type: par
+dynamic_config: 0
+generated_by: 'PAR::Packer version 1.055'
+license: unknown
+par:
+  clean: 0
+  signature: ''
+  verbatim: 1
+  version: 1.016
