@@ -3,7 +3,6 @@
 
 \newcommand{\setupHeader}{
     % 页面设置
-    \renewcommand{\baselinestretch}{1.25}
     \setlength{\parindent}{2em}
 
     % 各级标题样式
@@ -24,11 +23,13 @@
     \fancyfoot[C]{\thepage}
 }
 
-% 复选框符号（使用 wasysym 宏包，兼容 XeLaTeX）
-\newcommand{\checkedbox}{\mbox{\Large\XBox}}
-\newcommand{\emptybox}{\mbox{\Large\Square}}
+% 复选框定义
+% 原始模板为 "□"（U+25A1），此处使用 amssymb 的 $\square$ 以确保跨字体兼容
+% $\square$ 为空框，$\boxtimes$ 为带×框
+\newcommand{\checkedbox}{\makebox[0pt][l]{\raisebox{0.12em}{\tiny$\boxtimes$}}$\square$}
+\newcommand{\emptybox}{$\square$}
 
-% 生成复选框：参数为 \topicXxx 命令
+% 根据 \topicXxx 是否为空来显示复选框
 \newcommand{\makecheckbox}[1]{%
     \ifx#1\empty
         \emptybox{}%

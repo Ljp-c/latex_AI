@@ -5,9 +5,12 @@
 \newcommand{\competitionYear}{2025}           % 竞赛年份
 \newcommand{\competitionSession}{十八}        % 第几届
 \newcommand{\projectTitle}{项目名称}           % 题目名称
-\newcommand{\projectType}{}                   % 题目类型（题目5、6、9需填写，如：定量类 / 演示类 / 前沿文献类 等）
+\newcommand{\projectSubType}{}               % 题目子类型（仅题目5、6、9需填写）
 
-% ---------- 参赛题目选择（在对应位置写 X 即选中）----------
+% ---------- 参赛题目选择 ----------
+% 已选中的题目用 \checkmark 表示，未选中留空 {}
+% 用法：\newcommand{\topicXxx}{\checkmark} 或 \newcommand{\topicXxx}{}
+
 % 命题类
 \newcommand{\topicOne}{}          % 题目1：微小位移测量
 \newcommand{\topicTwo}{}          % 题目2：探究电磁感应现象中的能量转换
@@ -16,15 +19,18 @@
 
 % 制作类
 \newcommand{\topicFive}{}         % 题目5：实验仪器的制作、改进
-\newcommand{\topicFiveType}{}     % 题目5子类：定量类 / 演示类
+\newcommand{\topicFiveSubA}{}     % 题目5子类A：定量类
+\newcommand{\topicFiveSubB}{}     % 题目5子类B：演示类
 \newcommand{\topicSix}{}          % 题目6：前沿物理
-\newcommand{\topicSixType}{}      % 题目6子类：前沿文献类 / 自研文献类
-\newcommand{\topicSeven}{X}       % 题目7：AI+物理实验
+\newcommand{\topicSixSubA}{}      % 题目6子类A：前沿文献类
+\newcommand{\topicSixSubB}{}      % 题目6子类B：自研文献类
+\newcommand{\topicSeven}{\checkmark}  % 题目7：AI+物理实验
 
 % 信息资源类
 \newcommand{\topicEight}{}        % 题目8：大学物理教学微视频
 \newcommand{\topicNine}{}         % 题目9：物理教学资源开发
-\newcommand{\topicNineType}{}     % 题目9子类：媒体资源类 / 仿真程序类
+\newcommand{\topicNineSubA}{}     % 题目9子类A：媒体资源类
+\newcommand{\topicNineSubB}{}     % 题目9子类B：仿真程序类
 
-% ---------- 制作成本 ----------
-% 在正文 body.tex 中填写具体明细
+% 注：\checkmark 定义为 \ding{51}（✓），需要 pifont 宏包
+%     如需手动在 □ 中画 √，请使用原始 □ 符号（U+25A1）配合手写标记

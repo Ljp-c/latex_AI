@@ -3,23 +3,18 @@
 
 \newcommand{\makecover}{
     \thispagestyle{empty}
-    \newgeometry{top=2.5cm, bottom=2cm, left=2.5cm, right=2.5cm}
 
     \begin{center}
-        % ---------- 标题区 ----------
-        {\fontsize{16pt}{20pt}\selectfont\heiti 附件2}
-
-        \vspace{1.5cm}
-
+        % ---------- 标题区（三行居中） ----------
         {\fontsize{22pt}{28pt}\selectfont\heiti
         第十八届（\competitionYear{}年）}
 
-        \vspace{0.8cm}
+        \vspace{0.6cm}
 
         {\fontsize{26pt}{32pt}\selectfont\heiti
         北京市大学生物理实验竞赛}
 
-        \vspace{0.8cm}
+        \vspace{0.6cm}
 
         {\fontsize{24pt}{30pt}\selectfont\heiti
         参赛项目说明书}
@@ -27,33 +22,33 @@
         \vspace{2cm}
 
         % ---------- 参赛题目与类别选择表 ----------
-        {\fontsize{14pt}{18pt}\selectfont\heiti 参赛题目与类别：（请在□处画×）}
+        {\fontsize{14pt}{18pt}\selectfont\heiti 参赛题目与类别：（请在□处画√）}
 
-        \vspace{0.8cm}
+        \vspace{1cm}
 
-        % 使用 tabular 构建选择表
-        \renewcommand{\arraystretch}{1.8}
-        \begin{tabular}{p{10cm}l}
+        % 使用 tabular 构建选择表（与原始格式一致）
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{@{}p{12cm}@{}}
             % --- 命题类 ---
-            \multicolumn{2}{l}{\fontsize{13pt}{16pt}\selectfont\heiti 命题类} \\
-            \hspace{1cm} \makecheckbox{\topicOne} \; 题目1：微小位移测量 \\
-            \hspace{1cm} \makecheckbox{\topicTwo} \; 题目2：探究电磁感应现象中的能量转换 \\
-            \hspace{1cm} \makecheckbox{\topicThree} \; 题目3：弱压力测量 \\
-            \hspace{1cm} \makecheckbox{\topicFour} \; 题目4：晶体双折射 \\[4pt]
+            {\heiti 命题类} \\
+            \makecheckbox{\topicOne} 题目1：微小位移测量 \\
+            \makecheckbox{\topicTwo} 题目2：探究电磁感应现象中的能量转换 \\
+            \makecheckbox{\topicThree} 题目3：弱压力测量 \\
+            \makecheckbox{\topicFour} 题目4：晶体双折射 \\[6pt]
 
             % --- 制作类 ---
-            \multicolumn{2}{l}{\fontsize{13pt}{16pt}\selectfont\heiti 制作类} \\
-            \hspace{1cm} \makecheckbox{\topicFive} \; 题目5：实验仪器的制作、改进
-                \; （\makecheckbox{\topicFiveType}\;定量类 \;\; \makecheckbox{\topicFiveType}\;演示类） \\
-            \hspace{1cm} \makecheckbox{\topicSix} \; 题目6：前沿物理
-                \; （\makecheckbox{\topicSixType}\;前沿文献类 \;\; \makecheckbox{\topicSixType}\;自研文献类） \\
-            \hspace{1cm} \makecheckbox{\topicSeven} \; 题目7：AI+物理实验 \\[4pt]
+            {\heiti 制作类} \\
+            \makecheckbox{\topicFive} 题目5：实验仪器的制作、改进
+                （\makecheckbox{\topicFiveSubA}定量类 \; \makecheckbox{\topicFiveSubB}演示类） \\
+            \makecheckbox{\topicSix} 题目6：前沿物理
+                （\makecheckbox{\topicSixSubA}前沿文献类 \; \makecheckbox{\topicSixSubB}自研文献类） \\
+            \makecheckbox{\topicSeven} 题目7：AI+物理实验 \\[6pt]
 
             % --- 信息资源类 ---
-            \multicolumn{2}{l}{\fontsize{13pt}{16pt}\selectfont\heiti 信息资源类} \\
-            \hspace{1cm} \makecheckbox{\topicEight} \; 题目8：大学物理教学微视频 \\
-            \hspace{1cm} \makecheckbox{\topicNine} \; 题目9：物理教学资源开发
-                \; （\makecheckbox{\topicNineType}\;媒体资源类 \;\; \makecheckbox{\topicNineType}\;仿真程序类） \\
+            {\heiti 信息资源类} \\
+            \makecheckbox{\topicEight} 题目8：大学物理教学微视频 \\
+            \makecheckbox{\topicNine} 题目9：物理教学资源开发
+                （\makecheckbox{\topicNineSubA}媒体资源类 \; \makecheckbox{\topicNineSubB}仿真程序类） \\
         \end{tabular}
 
         \vspace{2.5cm}
@@ -67,6 +62,5 @@
 
     \end{center}
 
-    \restoregeometry{}
     \clearpage
 }

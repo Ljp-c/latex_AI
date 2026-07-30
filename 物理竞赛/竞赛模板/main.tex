@@ -1,12 +1,13 @@
 %!TeX encoding = UTF-8
 %!TEX program = xelatex
 % 第十八届北京市大学生物理实验竞赛 —— 参赛项目说明书 LaTeX 模板
+% 基于附件2原始格式制作
 % ================================================================
 
 \documentclass[12pt,a4paper,UTF8]{ctexart}
 
 % ---------- 宏包 ----------
-\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[margin=2cm, includehead=true, includefoot=true]{geometry}  % 与原始格式一致：2cm 边距
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{graphicx}
@@ -14,16 +15,17 @@
 \usepackage{indentfirst}
 \usepackage{amsmath,amssymb}
 \usepackage{amsthm}
-\usepackage{wasysym}
-\usepackage{url}
-\usepackage[hidelinks]{hyperref}
+\usepackage{pifont}             % 提供 \ding{51}（✓）打勾符号
+\usepackage{setspace}           % 行距控制
+\usepackage{longtable}          % 跨页表格
 \usepackage{booktabs}
 \usepackage{array}
-\usepackage{caption}
-\usepackage{subcaption}
 \usepackage{multirow}
-\usepackage{makecell}
 \usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\setstretch{1.2}                % 与原始格式一致：1.2 倍行距
 
 % ---------- 内置模块 ----------
 \input{builtin/header.tex}
