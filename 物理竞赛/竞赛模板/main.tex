@@ -1,0 +1,51 @@
+%!TeX encoding = UTF-8
+%!TEX program = xelatex
+% 第十八届北京市大学生物理实验竞赛 —— 参赛项目说明书 LaTeX 模板
+% ================================================================
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+% ---------- 宏包 ----------
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{wasysym}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{xcolor}
+
+% ---------- 内置模块 ----------
+\input{builtin/header.tex}
+\input{builtin/cover.tex}
+
+\setupHeader{}
+
+% ---------- 列表样式 ----------
+\setlist[enumerate,1]{label=(\arabic*), leftmargin=2em}
+\setlist[enumerate,2]{label=\alph*., leftmargin=4em}
+\setlist[itemize,1]{label=\textbullet, leftmargin=2em}
+
+% ---------- 载入配置 ----------
+\input{config/configure.tex}
+
+% ================================================================
+\begin{document}
+
+    % ---- 封面 ----
+    \makecover{}
+
+    % ---- 正文 ----
+    \input{content/body.tex}
+
+\end{document}
