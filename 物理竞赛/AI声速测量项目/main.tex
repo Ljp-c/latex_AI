@@ -1,0 +1,53 @@
+%!TeX encoding = UTF-8
+%!TEX program = xelatex
+% 第十八届北京市大学生物理实验竞赛 —— 参赛项目说明书
+% 项目：AI+声速测量综合实验系统
+% ================================================================
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+% ---------- 宏包 ----------
+\usepackage[margin=2cm, includehead=true, includefoot=true]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{pifont}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\setstretch{1.2}
+
+% ---------- 内置模块 ----------
+\input{builtin/header.tex}
+\input{builtin/cover.tex}
+
+\setupHeader{}
+
+% ---------- 列表样式 ----------
+\setlist[enumerate,1]{label=(\arabic*), leftmargin=2em}
+\setlist[enumerate,2]{label=\alph*., leftmargin=4em}
+\setlist[itemize,1]{label=\textbullet, leftmargin=2em}
+
+% ---------- 载入配置 ----------
+\input{config/configure.tex}
+
+% ================================================================
+\begin{document}
+
+    % ---- 封面 ----
+    \makecover{}
+
+    % ---- 正文 ----
+    \input{content/body.tex}
+
+\end{document}

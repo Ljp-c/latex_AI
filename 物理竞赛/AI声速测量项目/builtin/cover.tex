@@ -1,0 +1,61 @@
+% 封面页：参赛项目说明书封面
+% ============================================
+
+\newcommand{\makecover}{
+    \thispagestyle{empty}
+
+    \begin{center}
+        % ---------- 标题区（三行居中） ----------
+        {\fontsize{22pt}{28pt}\selectfont\heiti
+        第十八届（\competitionYear{}年）}
+
+        \vspace{0.6cm}
+
+        {\fontsize{26pt}{32pt}\selectfont\heiti
+        北京市大学生物理实验竞赛}
+
+        \vspace{0.6cm}
+
+        {\fontsize{24pt}{30pt}\selectfont\heiti
+        参赛项目说明书}
+
+        \vspace{2cm}
+
+        % ---------- 参赛题目与类别选择表 ----------
+        {\fontsize{14pt}{18pt}\selectfont\heiti 参赛题目与类别：（请在□处画√）}
+
+        \vspace{1cm}
+
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{@{}p{12cm}@{}}
+            {\heiti 命题类} \\
+            \makecheckbox{\topicOne} 题目1：微小位移测量 \\
+            \makecheckbox{\topicTwo} 题目2：探究电磁感应现象中的能量转换 \\
+            \makecheckbox{\topicThree} 题目3：弱压力测量 \\
+            \makecheckbox{\topicFour} 题目4：晶体双折射 \\[6pt]
+
+            {\heiti 制作类} \\
+            \makecheckbox{\topicFive} 题目5：实验仪器的制作、改进
+                （\makecheckbox{\topicFiveSubA}定量类 \; \makecheckbox{\topicFiveSubB}演示类） \\
+            \makecheckbox{\topicSix} 题目6：前沿物理
+                （\makecheckbox{\topicSixSubA}前沿文献类 \; \makecheckbox{\topicSixSubB}自研文献类） \\
+            \makecheckbox{\topicSeven} 题目7：AI+物理实验 \\[6pt]
+
+            {\heiti 信息资源类} \\
+            \makecheckbox{\topicEight} 题目8：大学物理教学微视频 \\
+            \makecheckbox{\topicNine} 题目9：物理教学资源开发
+                （\makecheckbox{\topicNineSubA}媒体资源类 \; \makecheckbox{\topicNineSubB}仿真程序类） \\
+        \end{tabular}
+
+        \vspace{2.5cm}
+
+        {\fontsize{13pt}{16pt}\selectfont\songti 北京市大学生物理实验竞赛组委会制}
+
+        \vspace{0.5cm}
+
+        {\fontsize{13pt}{16pt}\selectfont\songti \competitionYear{}年6月}
+
+    \end{center}
+
+    \clearpage
+}

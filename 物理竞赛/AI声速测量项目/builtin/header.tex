@@ -1,0 +1,36 @@
+% 页眉页脚与样式设置
+% ============================================
+
+\newcommand{\setupHeader}{
+    % 页面设置
+    \setlength{\parindent}{2em}
+
+    % 各级标题样式
+    \titleformat{\section}{\bfseries\heiti\zihao{3}}{\thesection}{1em}{}
+    \titlespacing*{\section}{0pt}{12pt}{6pt}
+    \titleformat{\subsection}{\bfseries\songti\zihao{4}}{\thesubsection}{1em}{}
+    \titlespacing*{\subsection}{0pt}{10pt}{4pt}
+    \titleformat{\subsubsection}{\songti\zihao{-4}}{\thesubsubsection}{1em}{}
+    \titlespacing*{\subsubsection}{0pt}{8pt}{3pt}
+
+    % 页眉页脚
+    \pagestyle{fancy}
+    \setlength{\headheight}{14.5pt}
+    \setlength{\headsep}{15pt}
+    \fancyhf{}
+    \fancyhead[C]{\songti\zihao{5}第十八届（\competitionYear{}年）北京市大学生物理实验竞赛参赛项目说明书}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \fancyfoot[C]{\thepage}
+}
+
+% 复选框定义
+\newcommand{\checkedbox}{\makebox[0pt][l]{\raisebox{0.12em}{\tiny$\boxtimes$}}$\square$}
+\newcommand{\emptybox}{$\square$}
+
+\newcommand{\makecheckbox}[1]{%
+    \ifx#1\empty
+        \emptybox{}%
+    \else
+        \checkedbox{}%
+    \fi
+}
