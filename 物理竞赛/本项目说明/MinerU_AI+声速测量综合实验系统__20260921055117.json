@@ -4906,7 +4906,7 @@
                         70,
                         1377,
                         521,
-                        1491
+                        1510
                     ],
                     "type": "text",
                     "angle": 0,
@@ -5021,7 +5021,7 @@
                             "bbox": [
                                 71,
                                 1472,
-                                438,
+                                491,
                                 1484
                             ],
                             "spans": [
@@ -5029,11 +5029,168 @@
                                     "bbox": [
                                         71,
                                         1472,
-                                        438,
+                                        491,
                                         1484
                                     ],
                                     "type": "text",
-                                    "content": "行为边界——模型的实际表现最终取决于训练数据对真实测量条件的覆盖程度。",
+                                    "content": "行为边界——模型的实际表现最终取决于训练数据对真实测量条件的覆盖程度。各模型的完",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                1491,
+                                365,
+                                1503
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1491,
+                                        365,
+                                        1503
+                                    ],
+                                    "type": "text",
+                                    "content": "整统计结果（平均绝对误差、偏差标准差与保留率）见表 2。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        70,
+                        1516,
+                        521,
+                        1535
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                1516,
+                                491,
+                                1528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1516,
+                                        491,
+                                        1528
+                                    ],
+                                    "type": "text",
+                                    "content": "表 2　D 组（理想工作范围）各模型精度与保留率（|δ|≤5 μs，单位：μs）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        70,
+                        1541,
+                        521,
+                        1693
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                1541,
+                                521,
+                                1693
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        1541,
+                                        521,
+                                        1693
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                1541,
+                                                521,
+                                                1693
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>模型</td><td>MAE</td><td>偏差标准差</td><td>保留率</td><td>r</td></tr><tr><td>DelayNet-Hybrid</td><td>1.3674</td><td>1.7753</td><td>39.6%</td><td>0.9978</td></tr><tr><td>DelayNet-Hybrid-PL</td><td>1.5471</td><td>1.3419</td><td>41.7%</td><td>0.9985</td></tr><tr><td>OnsetNet-Analytic（含门控）</td><td>0.4790</td><td>0.6612</td><td>74.9%</td><td>0.9996</td></tr><tr><td>OnsetNet-Template</td><td>0.3646</td><td>0.4949</td><td>85.0%</td><td>0.9999</td></tr><tr><td>OnsetNet-Template-E5</td><td>0.3212</td><td>0.5933</td><td>83.4%</td><td>0.9998</td></tr><tr><td>OnsetNet-Template-PL</td><td>0.3840</td><td>0.6427</td><td>88.8%</td><td>0.9998</td></tr><tr><td>OnsetNet-Hybrid</td><td>0.4516</td><td>0.6735</td><td>72.7%</td><td>0.9996</td></tr></table>"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "bbox": [
+                        70,
+                        1699,
+                        521,
+                        1737
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                1699,
+                                491,
+                                1711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1699,
+                                        491,
+                                        1711
+                                    ],
+                                    "type": "text",
+                                    "content": "注：保留率指各模型预测落入理想工作范围（|δ|≤5 μs）的样本占比，反映其鲁棒",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                1718,
+                                375,
+                                1730
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1718,
+                                        375,
+                                        1730
+                                    ],
+                                    "type": "text",
+                                    "content": "工作范围；表中平均绝对误差与偏差标准差仅基于保留样本统计。",
                                     "score": 1.0
                                 }
                             ]
@@ -5050,7 +5207,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 13,
+                    "index": 16,
                     "lines": [
                         {
                             "bbox": [
@@ -5085,7 +5242,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 14,
+                    "index": 17,
                     "lines": [
                         {
                             "bbox": [
@@ -5183,7 +5340,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 15,
+                    "index": 18,
                     "lines": [
                         {
                             "bbox": [
@@ -5281,7 +5438,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 16,
+                    "index": 19,
                     "lines": [
                         {
                             "bbox": [
@@ -5316,7 +5473,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 17,
+                    "index": 20,
                     "lines": [
                         {
                             "bbox": [
@@ -5351,7 +5508,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 18,
+                    "index": 21,
                     "lines": [
                         {
                             "bbox": [
@@ -5386,7 +5543,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 19,
+                    "index": 22,
                     "lines": [
                         {
                             "bbox": [
@@ -5484,7 +5641,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 20,
+                    "index": 23,
                     "lines": [
                         {
                             "bbox": [
@@ -5582,7 +5739,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 21,
+                    "index": 24,
                     "lines": [
                         {
                             "bbox": [
@@ -7080,7 +7237,7 @@
                         70,
                         1377,
                         521,
-                        1491
+                        1510
                     ],
                     "type": "text",
                     "angle": 0,
@@ -7195,7 +7352,7 @@
                             "bbox": [
                                 71,
                                 1472,
-                                438,
+                                491,
                                 1484
                             ],
                             "spans": [
@@ -7203,11 +7360,168 @@
                                     "bbox": [
                                         71,
                                         1472,
-                                        438,
+                                        491,
                                         1484
                                     ],
                                     "type": "text",
-                                    "content": "行为边界——模型的实际表现最终取决于训练数据对真实测量条件的覆盖程度。",
+                                    "content": "行为边界——模型的实际表现最终取决于训练数据对真实测量条件的覆盖程度。各模型的完",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                1491,
+                                365,
+                                1503
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1491,
+                                        365,
+                                        1503
+                                    ],
+                                    "type": "text",
+                                    "content": "整统计结果（平均绝对误差、偏差标准差与保留率）见表 2。",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        70,
+                        1516,
+                        521,
+                        1535
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 13,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                1516,
+                                491,
+                                1528
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1516,
+                                        491,
+                                        1528
+                                    ],
+                                    "type": "text",
+                                    "content": "表 2　D 组（理想工作范围）各模型精度与保留率（|δ|≤5 μs，单位：μs）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        70,
+                        1541,
+                        521,
+                        1693
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                1541,
+                                521,
+                                1693
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "index": 14,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        1541,
+                                        521,
+                                        1693
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                1541,
+                                                521,
+                                                1693
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>模型</td><td>MAE</td><td>偏差标准差</td><td>保留率</td><td>r</td></tr><tr><td>DelayNet-Hybrid</td><td>1.3674</td><td>1.7753</td><td>39.6%</td><td>0.9978</td></tr><tr><td>DelayNet-Hybrid-PL</td><td>1.5471</td><td>1.3419</td><td>41.7%</td><td>0.9985</td></tr><tr><td>OnsetNet-Analytic（含门控）</td><td>0.4790</td><td>0.6612</td><td>74.9%</td><td>0.9996</td></tr><tr><td>OnsetNet-Template</td><td>0.3646</td><td>0.4949</td><td>85.0%</td><td>0.9999</td></tr><tr><td>OnsetNet-Template-E5</td><td>0.3212</td><td>0.5933</td><td>83.4%</td><td>0.9998</td></tr><tr><td>OnsetNet-Template-PL</td><td>0.3840</td><td>0.6427</td><td>88.8%</td><td>0.9998</td></tr><tr><td>OnsetNet-Hybrid</td><td>0.4516</td><td>0.6735</td><td>72.7%</td><td>0.9996</td></tr></table>"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 14
+                },
+                {
+                    "bbox": [
+                        70,
+                        1699,
+                        521,
+                        1737
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 15,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                1699,
+                                491,
+                                1711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1699,
+                                        491,
+                                        1711
+                                    ],
+                                    "type": "text",
+                                    "content": "注：保留率指各模型预测落入理想工作范围（|δ|≤5 μs）的样本占比，反映其鲁棒",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                1718,
+                                375,
+                                1730
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        1718,
+                                        375,
+                                        1730
+                                    ],
+                                    "type": "text",
+                                    "content": "工作范围；表中平均绝对误差与偏差标准差仅基于保留样本统计。",
                                     "score": 1.0
                                 }
                             ]
@@ -7224,7 +7538,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 13,
+                    "index": 16,
                     "lines": [
                         {
                             "bbox": [
@@ -7259,7 +7573,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 14,
+                    "index": 17,
                     "lines": [
                         {
                             "bbox": [
@@ -7357,7 +7671,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 15,
+                    "index": 18,
                     "lines": [
                         {
                             "bbox": [
@@ -7455,7 +7769,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 16,
+                    "index": 19,
                     "lines": [
                         {
                             "bbox": [
@@ -7490,7 +7804,7 @@
                     ],
                     "type": "title",
                     "angle": 0,
-                    "index": 17,
+                    "index": 20,
                     "lines": [
                         {
                             "bbox": [
@@ -7525,7 +7839,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 18,
+                    "index": 21,
                     "lines": [
                         {
                             "bbox": [
@@ -7560,7 +7874,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 19,
+                    "index": 22,
                     "lines": [
                         {
                             "bbox": [
@@ -7658,7 +7972,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 20,
+                    "index": 23,
                     "lines": [
                         {
                             "bbox": [
@@ -7756,7 +8070,7 @@
                     ],
                     "type": "text",
                     "angle": 0,
-                    "index": 21,
+                    "index": 24,
                     "lines": [
                         {
                             "bbox": [
