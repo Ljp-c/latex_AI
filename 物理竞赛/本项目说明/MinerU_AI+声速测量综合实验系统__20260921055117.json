@@ -11704,7 +11704,7 @@
                         70,
                         604,
                         521,
-                        699
+                        718
                     ],
                     "type": "text",
                     "angle": 0,
@@ -11798,7 +11798,7 @@
                             "bbox": [
                                 71,
                                 680,
-                                386,
+                                491,
                                 692
                             ],
                             "spans": [
@@ -11806,17 +11806,139 @@
                                     "bbox": [
                                         71,
                                         680,
-                                        386,
+                                        491,
                                         692
                                     ],
                                     "type": "text",
-                                    "content": "路径的有效性；后续将进一步采集多分辨率数据集对模型进行微调。",
+                                    "content": "路径的有效性；后续将进一步采集多分辨率数据集对模型进行微调。各模式在 B 组 2",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                699,
+                                260,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        699,
+                                        260,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "5 条样本上的命中情况汇总见表 3。",
                                     "score": 1.0
                                 }
                             ]
                         }
                     ],
                     "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        70,
+                        724,
+                        521,
+                        762
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                724,
+                                491,
+                                736
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        724,
+                                        491,
+                                        736
+                                    ],
+                                    "type": "text",
+                                    "content": "表 3　B 组（与训练分辨率不同，共 25 条）各模式命中情况（命中标准：单条误",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                743,
+                                176,
+                                755
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        743,
+                                        176,
+                                        755
+                                    ],
+                                    "type": "text",
+                                    "content": "差不超过 5 μs）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        70,
+                        768,
+                        521,
+                        844
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                768,
+                                521,
+                                844
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        768,
+                                        521,
+                                        844
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                768,
+                                                521,
+                                                844
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>模式</td><td>命中数（共 25 条）</td><td>命中率</td></tr><tr><td>DelayNet 系列</td><td>0</td><td>0%</td></tr><tr><td>OnsetNet-Template</td><td>16</td><td>64%</td></tr><tr><td>OnsetNet-Template-PL</td><td>25</td><td>100%</td></tr></table>"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
                 }
             ],
             "discarded_blocks": [],
@@ -12045,7 +12167,7 @@
                         70,
                         604,
                         521,
-                        699
+                        718
                     ],
                     "type": "text",
                     "angle": 0,
@@ -12139,7 +12261,7 @@
                             "bbox": [
                                 71,
                                 680,
-                                386,
+                                491,
                                 692
                             ],
                             "spans": [
@@ -12147,17 +12269,139 @@
                                     "bbox": [
                                         71,
                                         680,
-                                        386,
+                                        491,
                                         692
                                     ],
                                     "type": "text",
-                                    "content": "路径的有效性；后续将进一步采集多分辨率数据集对模型进行微调。",
+                                    "content": "路径的有效性；后续将进一步采集多分辨率数据集对模型进行微调。各模式在 B 组 2",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                699,
+                                260,
+                                711
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        699,
+                                        260,
+                                        711
+                                    ],
+                                    "type": "text",
+                                    "content": "5 条样本上的命中情况汇总见表 3。",
                                     "score": 1.0
                                 }
                             ]
                         }
                     ],
                     "merge_prev": false
+                },
+                {
+                    "bbox": [
+                        70,
+                        724,
+                        521,
+                        762
+                    ],
+                    "type": "text",
+                    "angle": 0,
+                    "index": 5,
+                    "lines": [
+                        {
+                            "bbox": [
+                                71,
+                                724,
+                                491,
+                                736
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        724,
+                                        491,
+                                        736
+                                    ],
+                                    "type": "text",
+                                    "content": "表 3　B 组（与训练分辨率不同，共 25 条）各模式命中情况（命中标准：单条误",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                71,
+                                743,
+                                176,
+                                755
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        71,
+                                        743,
+                                        176,
+                                        755
+                                    ],
+                                    "type": "text",
+                                    "content": "差不超过 5 μs）",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "merge_prev": false
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        70,
+                        768,
+                        521,
+                        844
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                70,
+                                768,
+                                521,
+                                844
+                            ],
+                            "type": "table_body",
+                            "angle": 0,
+                            "index": 6,
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        70,
+                                        768,
+                                        521,
+                                        844
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                70,
+                                                768,
+                                                521,
+                                                844
+                                            ],
+                                            "type": "table",
+                                            "html": "<table><tr><td>模式</td><td>命中数（共 25 条）</td><td>命中率</td></tr><tr><td>DelayNet 系列</td><td>0</td><td>0%</td></tr><tr><td>OnsetNet-Template</td><td>16</td><td>64%</td></tr><tr><td>OnsetNet-Template-PL</td><td>25</td><td>100%</td></tr></table>"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "index": 6
                 }
             ]
         }
