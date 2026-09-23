@@ -1,0 +1,37 @@
+\makeatletter
+\def\muckeywords{} % @符号变量需包裹
+\def\mucenglishkeywords{} % @符号变量需包裹
+\makeatother
+
+\newcommand{\keywords}[1]{%
+  \makeatletter
+  \def\muckeywords{#1}%
+  \makeatother
+}
+
+% 关键字生成
+\newcommand{\makekeywords}{%
+  \makeatletter
+  \par\noindent
+  {\songti\xiaosi\textbf{关键字：}}%
+  {\songti\xiaosi\space \muckeywords}%
+  \makeatother
+  \vspace{0.5cm}
+}
+
+\newsavebox{\abstractbox}
+\newenvironment{MUCAbstract}{%
+  \begin{lrbox}{\abstractbox}
+    \minipage{\linewidth}  % 保证盒子宽度正常
+    \songti\xiaosi
+}{%
+    \endminipage
+  \end{lrbox}
+  \phantomsection
+  \addcontentsline{toc}{section}{摘要}%
+  \par\noindent
+  \songti\xiaosi
+  \textbf{摘要：}\usebox{\abstractbox}%
+  \par
+  \vspace{0.5cm}
+}

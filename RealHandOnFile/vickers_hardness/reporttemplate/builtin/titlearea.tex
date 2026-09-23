@@ -1,0 +1,42 @@
+% ==============================
+% 标题区渲染：右上校徽 + 居中标题 + 单行学生信息
+% ==============================
+
+\newcommand{\maketitlearea}{
+    \thispagestyle{fancy}
+    \vspace*{-1em}
+
+    % 右上角校徽
+    \begin{flushright}
+        \includegraphics[width=2.5cm]{assets/MUC.jpg}
+    \end{flushright}
+
+    \vspace{-2em}
+
+    % 主标题
+    \begin{center}
+        {\zihao{3}\heiti\bfseries \varreporttitle \par}
+        \vspace{1.5ex}
+
+        % 学生信息行
+        {\zihao{5}\songti
+        姓名：\varstudentname \hspace{2em}
+        学号：\varstudentid \hspace{2em}
+        班级：\varstudentclass \par}
+    \end{center}
+
+    \vspace{1ex}
+}
+
+% ==============================
+% 摘要环境
+% ==============================
+\newenvironment{reportabstract}{
+    \section*{\heiti 摘要}
+    \addcontentsline{toc}{section}{摘要}
+    \songti\zihao{5}
+}{
+    \par\vspace{0.5ex}
+    \noindent{\heiti\zihao{5} 关键词：}{\songti\zihao{5} \varkeywords}
+    \vspace{1ex}
+}

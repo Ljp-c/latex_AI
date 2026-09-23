@@ -1,0 +1,80 @@
+%!TeX encoding = UTF-8
+%!BIB program = biber
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm,bindingoffset=0.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{environ}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber, style=gb7714-2015]{biblatex}
+
+\addbibresource{ref.bib}
+
+
+% 内建的功能 %
+\input{builtin/cover.tex}
+\input{builtin/header.tex}
+\input{builtin/config.tex}
+\input{builtin/abstract.tex}
+
+\setupHeader{}
+
+\newcommand{\sanhao}{\fontsize{15.6pt}{\baselineskip}\selectfont} % 三号
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}    % 四号
+
+\titleformat{\subsection}{\bfseries\songti\xiaosi}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\songti\xiaosi}{\thesubsubsection}{1em}{}
+\setlist[enumerate,1]{label=(\arabic*),leftmargin=2em}
+\setlist[enumerate,2]{label=\alph*.,leftmargin=4em}
+
+\input{config/configure.tex}
+
+\definecolor{titleGary}{rgb}{0.61, 0.72, 0.78}
+
+\begin{document}
+    % % 封面和目录%
+    % \makecover{}
+    % \tableofcontents{}
+
+    % \newpage{}
+    % 摘要%
+    % \input{content/abstract.tex}
+    % #9CB8C7
+    % 文章主题%
+    \begin{figure}
+        \flushright
+        \includegraphics[width=3cm]{assets/MUC.jpg}
+    \end{figure}
+
+    % \par{} \indent{}
+    \obeylines{}
+    \ignorespaces{}
+    \begin{tcolorbox}[colback=titleGary, colframe=titleGary, sharp corners]
+        \centering
+        \color{white}\songti\zihao{3}
+        \mucdoctitle{}
+    \end{tcolorbox}
+
+    \makeauthorinfo{}
+
+    \makekeywords{}
+
+    \input{content/abstract.tex}
+
+    \begin{multicols}{2}
+        \input{content/body.tex}
+
+        \phantomsection  % 创建超链接锚点
+        \addcontentsline{toc}{section}{参考文献}
+        \printbibliography{}
+    \end{multicols}
+\end{document}

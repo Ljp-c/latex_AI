@@ -51,7 +51,7 @@ $\to$椭圆"的周期性变化，相邻两次相同图形状态对应位移差�
 
 \subsubsection{机器视觉自动读数}
 
-部署1080P工业摄像头采集游标卡尺图像，设计双分支并行识别算法：\textbf{整数部分}经灰度化、自适应高斯阈值二值化、
+部署1080P工业摄像头采集游标卡尺图像，设计双分支并行识别算法（见图\ref{fig:caliper_flow}）：\textbf{整数部分}经灰度化、自适应高斯阈值二值化、
 形态学闭运算、霍夫概率直线检测提取垂直刻度线，EasyOCR识别主尺数字，以游标
 零线为基准匹配最近整数刻度合成毫米读数，准确率超99.9\%；\textbf{小数部分}
 加载预设游标刻度坐标序列，计算与主尺刻度的像素欧氏距离，选取偏差最小的
@@ -59,11 +59,36 @@ $\to$椭圆"的周期性变化，相邻两次相同图形状态对应位移差�
 畸变系数，通过最小二乘法与LM迭代最小化重投影误差（$<0.02$\,mm），单张处理
 耗时$<100$\,ms。
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.92\textwidth]{caliper_flow.jpg}
+    \caption{游标卡尺机器视觉自动读数流程图}
+    \label{fig:caliper_flow}
+\end{figure}
 
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/是整数部分零刻度线识别.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/游标卡尺与主刻度线线对齐部分识别.png}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.30\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{assets/处理后的边缘线图.jpg}
+    \end{minipage}
+    \caption{游标卡尺自动读数关键步骤效果图}
+    \label{fig:caliper_results}
+\end{figure}
 
 \subsubsection{SCPI协议远程采集}
 
-通过IP/USB接口与数字示波器建立SCPI标准指令会话：
+通过IP/USB接口与数字示波器建立SCPI标准指令会话（见图\ref{fig:scpi_flow}）：
 (1)发起VISA连接，\texttt{*IDN?}确认设备状态；(2)自动初始化通道、采样率、
 时基、电压档位与触发；(3)驻波法发送\texttt{:MEASure:VPP?}追踪振幅极大值，
 相位法采集双通道波形计算相位差，时差法发送\texttt{:MEASure:TDELta?}获取
@@ -71,6 +96,12 @@ $\to$椭圆"的周期性变化，相邻两次相同图形状态对应位移差�
 有效性后写入MySQL并通过WebSocket推送前端。SCPI自动采集消除了人眼判读主观
 误差，支持三种方法自动切换。
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.90\textwidth]{scpi_flow.jpg}
+    \caption{SCPI协议远程通信流程图}
+    \label{fig:scpi_flow}
+\end{figure}
 
 \subsubsection{多线程协同架构}
 
@@ -108,6 +139,13 @@ $\to$椭圆"的周期性变化，相邻两次相同图形状态对应位移差�
     \end{tabular}
 \end{table}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{system_arch.jpg}
+    \caption{系统整体架构图}
+    \label{fig:system_arch}
+\end{figure}
+
 
 \subsection{软件架构}
 
@@ -125,6 +163,18 @@ $\to$椭圆"的周期性变化，相邻两次相同图形状态对应位移差�
 
 实验条件：室温 $t=25.0\;{}^\circ\mathrm{C}$，谐振频率 $f=37.125$\,kHz。
 理论声速 $v_{\text{理论}}=331.5+0.6\times 25.0=346.5$\,m/s。
+
+\begin{figure}[h]
+    \centering
+    \IfFileExists{figures/oscilloscope_wave.png}
+        {\includegraphics[width=0.88\textwidth]{figures/oscilloscope_wave.png}}
+        {\fbox{\parbox{0.85\textwidth}{\centering\vspace{2cm}【待补充：三种方法的示波器波形截图】\par
+        上行——驻波法YT模式（CH1发射/CH2接收，振幅周期性变化）；\par
+        中行——相位法XY模式（李萨如图：椭圆→直线→椭圆）；\par
+        下行——时差法YT模式（发射/接收脉冲，标注$\Delta t$）\vspace{2cm}}}}
+    \caption{三种方法的示波器波形（上：驻波法；中：相位法；下：时差法）}
+    \label{fig:oscilloscope}
+\end{figure}
 
 \subsection{驻波法测量数据}
 

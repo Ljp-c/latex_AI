@@ -1,0 +1,71 @@
+% ==============================
+% 标题命令
+% ==============================
+\newcommand{\makereporttitle}{%
+  \begin{center}
+    \vspace{0.5cm}
+    {\heiti\erhao \mucdoctitle\par}
+    \vspace{0.8cm}
+  \end{center}
+}
+
+% ==============================
+% 学生信息命令（水平排列）
+% ==============================
+\newcommand{\makestudentinfo}{%
+  \begin{center}
+    {\songti\xiaosi
+    姓名：\underline{\makebox[3cm][c]{\varmucauthor}}%
+    \hspace{2em}%
+    学号：\underline{\makebox[3cm][c]{\varmucstudentid}}%
+    \hspace{2em}%
+    班级：\underline{\makebox[3cm][c]{\varmucclass}}%
+    \par}
+  \end{center}
+  \vspace{0.3cm}
+}
+
+% ==============================
+% 以下为兼容旧版封面命令（URTP 论文封面）
+% ==============================
+\newcommand{\fontstxs}{\fontsize{15pt}{17pt} \selectfont \songti{}}
+\newcommand{\fontstsh}{\fontsize{14pt}{16pt} \selectfont \songti{}}
+\newcommand{\fonthtxe}{\fontsize{18pt}{20pt} \selectfont \heiti{}}
+
+\newcommand{\makecover}{%
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{1cm}
+    \noindent
+
+    \begin{minipage}[c]{2.17cm}
+      \includegraphics[width=\linewidth]{assets/MUC.jpg}
+    \end{minipage}
+    \hspace{0.5cm}
+    \begin{minipage}[c]{0.8\textwidth}
+      {\fontsize{18pt}{20pt}\selectfont \heiti{}
+      中央民族大学大学生创新训练计划结题论文\\[0.3cm]}
+      {\fontsize{12pt}{14pt}\fontfamily{phv} \selectfont \bfseries
+      URTP Final Thesis of Minzu University of China}
+    \end{minipage}
+
+    \vspace{4cm}
+    \makedoctitle{}
+    \vspace{0.5cm}
+    \makedocsubtitle{}
+    \vspace{6cm}
+
+    \begin{tabular}{ll}
+      {\fontstxs{} 计划编号：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectid}}\\
+      {\fontstxs{} 项目类型：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojecttype}}\\
+      {\fontstxs{} 指导教师：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectteacher}}\\
+      {\fontstxs{} 项目成员：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectmembers}}\\
+      {\fontstxs{} 依托单位：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectunit}}\\
+    \end{tabular}
+
+    \vspace{3cm}
+
+    {\fontstsh{} \varmucprojectdate{}}
+  \end{center}
+  \clearpage
+}

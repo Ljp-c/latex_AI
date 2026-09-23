@@ -1,0 +1,41 @@
+% ============================== 行间距与页边距 ==============================
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+
+% ============================== 头文件与页眉页脚 ==============================
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\setlength{\headheight}{14.5pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\songti\zihao{5} 实 验 一 金 相 显 微 镜 实 验}
+\fancyfoot[C]{\songti\zihao{5} 第 \thepage\ 页 共 \pageref{LastPage} 页}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================== 章节标题格式 ==============================
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\titleformat{\section}{\large\heiti\bfseries}{\chinese{section}、}{0em}{}
+\titlespacing{\section}{0pt}{1.5ex plus .1ex minus .2ex}{1ex plus .1ex}
+
+\titleformat{\subsection}{\normalsize\heiti}{\thesubsection}{0em}{}
+\renewcommand{\thesubsection}{（\chinese{subsection}）}
+\titlespacing{\subsection}{2em}{1ex plus .1ex minus .2ex}{0.5ex plus .1ex}
+
+% ============================== 插图与表格 ==============================
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\captionsetup[figure]{labelsep=space, font=small}
+\captionsetup[table]{labelsep=space, font=small}
+
+% ============================== 其他 ==============================
+\usepackage{indentfirst}
+\usepackage{float}

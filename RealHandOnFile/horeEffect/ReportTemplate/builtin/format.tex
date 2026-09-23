@@ -1,0 +1,34 @@
+% ============================== 行间距与页边距 ==============================
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage{amsmath}
+\setstretch{1.25} % 设置1.25倍行距，贴合正常实验报告的间距
+
+% ============================== 头文件与页眉脚 ==============================
+\usepackage{fancyhdr}
+\usepackage{lastpage} % 用于获取总页数
+\pagestyle{fancy}
+\fancyhf{} % 清空页眉页脚
+% 页眉：靠左显示实验编号与名称
+\fancyhead[L]{\songti\zihao{5} 实 验 5 霍 尔 效 应} 
+% 页脚：居中显示 “第 X 页 共 Y 页”
+\fancyfoot[C]{\songti\zihao{5} 第 \thepage\ 页 共 \pageref{LastPage} 页}
+% 页眉分割线粗细
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ============================== 章节标题格式重构 ==============================
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% 一级标题：如 “一、实验目的：”
+\titleformat{\section}{\large\heiti\bfseries}{\chinese{section}、}{0em}{}
+\titlespacing{\section}{0pt}{1.5ex plus .1ex minus .2ex}{1ex plus .1ex}
+
+% 二级标题：如 “（一）分子能级与光谱”
+\titleformat{\subsection}{\normalsize\heiti}{\thesubsection}{0em}{}
+\renewcommand{\thesubsection}{（\chinese{subsection}）} % 重新定义计数器外观
+\titlespacing{\subsection}{2em}{1ex plus .1ex minus .2ex}{0.5ex plus .1ex} % 固定缩进2em
+
+% 插图标题格式
+\usepackage{caption}
+\captionsetup[figure]{labelsep=space, font=small}

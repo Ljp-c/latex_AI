@@ -1,0 +1,150 @@
+% This LaTeX document needs to be compiled with XeLaTeX.
+\documentclass[
+  10
+]{article}
+\usepackage[margin=2cm,includehead=true,includefoot=true,centering,]{geometry}
+\usepackage{xcolor}
+\usepackage{ucharclasses}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{ctex}
+\usepackage[export]{adjustbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{setspace}
+\setstretch{1.2}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\usepackage{colortbl}
+\definecolor{table-row-color}{HTML}{999999}
+\definecolor{table-rule-color}{HTML}{999999}
+%\arrayrulecolor{black!40}
+\arrayrulecolor{table-rule-color}     % color of \toprule, \midrule, \bottomrule
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+
+
+\setotherlanguages{english}
+\IfFontExistsTF{Source Han Serif CN}
+{\newfontfamily\chinesefont{Source Han Serif CN}}
+{\IfFontExistsTF{Noto Serif CJK SC}
+  {\newfontfamily\chinesefont{Noto Serif CJK SC}}
+  {\IfFontExistsTF{SimSun}
+    {\newfontfamily\chinesefont{SimSun}}
+    {\IfFontExistsTF{FangSong}
+      {\newfontfamily\chinesefont{FangSong}}
+      {\newfontfamily\chinesefont{Arial Unicode MS}}
+}}}
+\IfFontExistsTF{Times New Roman}
+{\newfontfamily\englishfont{Times New Roman}}
+{\IfFontExistsTF{Liberation Serif}
+  {\newfontfamily\englishfont{Liberation Serif}}
+  {\IfFontExistsTF{DejaVu Serif}
+    {\newfontfamily\englishfont{DejaVu Serif}}
+    {\newfontfamily\englishfont{Arial}}
+}}
+
+
+\author{}
+\date{}
+
+\begin{document}
+
+
+\section{第十八届 (2025 年)}\label{ux7b2cux5341ux516bux5c4a-2025-ux5e74}
+
+\section{北京市大学生物理实验竞赛}\label{ux5317ux4eacux5e02ux5927ux5b66ux751fux7269ux7406ux5b9eux9a8cux7adeux8d5b}
+
+\section{参赛项目说明书}\label{ux53c2ux8d5bux9879ux76eeux8bf4ux660eux4e66}
+
+参赛题目与类别：（请在□处画√）
+
+\subsection{命题类}\label{ux547dux9898ux7c7b}
+
+□题目1：微小位移测量
+
+□题目2：探究电磁感应现象中的能量转换
+
+□题目3：弱压力测量
+
+□题目4：晶体双折射
+
+\subsection{制作类}\label{ux5236ux4f5cux7c7b}
+
+□题目5：实验仪器的制作、改进（□定量类 □演示类）
+
+□题目6：前沿物理（□前沿文献类 □自研文献类）
+
+□题目7：AI+物理实验
+
+\subsection{信息资源类}\label{ux4fe1ux606fux8d44ux6e90ux7c7b}
+
+□题目8：大学物理教学微视频
+
+□题目9：物理教学资源开发（□媒体资源类 □仿真程序类）
+
+北京市大学生物理实验竞赛组委会制
+
+2025年6月
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}|l|l|@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\hline
+参赛题目类型(题目5、6、9填写) & \\
+\hline
+题目名称 & \\
+\hline
+\multicolumn{2}{@{}l@{}}{%
+(以下内容可加页,篇幅3-5页)设计原理与方法:实验仪器与装置:数据测量与分析:结论:项目创新与特色:制作成本(明细)} \\
+\hline
+\end{longtable}
+}
+
+注意:
+
+竞赛采用匿名评审，说明书里不允许出现任何参赛队和参赛学校信息。
+
+邮箱: wlsyzx@bjtu.edu.cn 联系电话: 51683629, 13811861683 贺敬文
+
+通信地址：北京交通大学物理国家级实验教学示范中心 邮编:100044
+
+\end{document}

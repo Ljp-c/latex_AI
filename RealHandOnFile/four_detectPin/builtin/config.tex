@@ -1,0 +1,100 @@
+\makeatletter
+\def\mucdoctitle{}
+\makeatother
+
+\newcommand{\doctitle}[1]{%
+  \def\mucdoctitle{#1}%  不需要 \makeatletter，因为没用到 @
+}
+
+\newcommand{\makedoctitle}{%
+  \color{white}\songti\zihao{3}%
+  \mucdoctitle
+}
+
+\makeatletter
+\def\mucdocsubtitle{}
+\makeatother
+
+\newcommand{\docsubtitle}[1]{%
+  \makeatletter
+  \def\mucdocsubtitle
+{#1}%
+  \makeatother
+}
+
+\newcommand{\makedocsubtitle}{%
+  \makeatletter
+  {\fontsize{16pt}{18pt} \selectfont \heiti{}%
+\ifx\mucdocsubtitle\empty\else ——\mucdocsubtitle\fi}
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectid{}
+\makeatother
+
+\newcommand{\mucprojectid}[1]{%
+  \makeatletter
+  \def\varmucprojectid{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojecttype{}
+\makeatother
+
+\newcommand{\mucprojecttype}[1]{%
+  \makeatletter
+  \def\varmucprojecttype{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucprojectteacher{}
+\makeatother
+
+\newcommand{\mucprojectteacher}[1]{%
+  \makeatletter
+  \def\varmucprojectteacher{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucauthor{}
+\makeatother
+
+\newcommand{\mucauthor}[1]{%
+  \makeatletter
+  \def\varmucauthor{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucstudentid{}
+\makeatother
+
+\newcommand{\mucstudentid}[1]{%
+  \makeatletter
+  \def\varmucstudentid{#1}%
+  \makeatother
+}
+
+\makeatletter
+\def\varmucclass{}
+\makeatother
+
+\newcommand{\mucclass}[1]{%
+  \makeatletter
+  \def\varmucclass{#1}%
+  \makeatother
+}
+
+\newcommand{\makeauthorinfo}{%
+  {%
+    \begin{center}
+      \par\noindent
+      \songti\fontsize{16pt}{20pt}\selectfont
+      \varmucauthor{}，\varmucclass{}，\varmucstudentid{}%
+    \end{center}
+  }%
+}

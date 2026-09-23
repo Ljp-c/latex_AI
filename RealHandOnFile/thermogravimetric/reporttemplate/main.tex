@@ -1,0 +1,96 @@
+%!TeX encoding = UTF-8
+%!BIB program = biber
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+% ==============================
+% 基础宏包
+% ==============================
+\usepackage[top=2.5cm,bottom=2.5cm,left=2cm,right=2cm,bindingoffset=0.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber, style=gb7714-2015]{biblatex}
+
+\addbibresource{ref.bib}
+
+% ==============================
+% 加载排版组件
+% ==============================
+\input{builtin/cover.tex}
+\input{builtin/header.tex}
+\input{builtin/config.tex}
+\input{builtin/abstract.tex}
+
+\setupHeader{}
+
+% ==============================
+% 字号定义
+% ==============================
+\newcommand{\erhao}{\fontsize{22pt}{\baselineskip}\selectfont}  % 二号 22pt
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}  % 三号 16pt
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}   % 四号 14pt
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}  % 小四 12pt
+
+% ==============================
+% 节标题格式
+% ==============================
+% section: 黑体加粗三号, "1." 编号
+\titleformat{\section}{\bfseries\heiti\sanhao}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{18pt}{12pt}
+% subsection: 宋体加粗四号, "(1)" 编号
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\subsection}{\bfseries\songti\sihao}{(\thesubsection)}{1em}{}
+\titlespacing*{\subsection}{0pt}{12pt}{6pt}
+% subsubsection: 宋体小四, "▸" 前缀
+\titleformat{\subsubsection}{\songti\xiaosi}{$\triangleright$\enspace}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
+
+% ==============================
+% 列表格式
+% ==============================
+\setlist[enumerate,1]{label=(\arabic*),leftmargin=2em}
+\setlist[enumerate,2]{label=\alph*.,leftmargin=4em}
+
+% ==============================
+% 加载用户数据
+% ==============================
+\input{config/configure.tex}
+
+\begin{document}
+
+% ---------- 校徽（右上角） ----------
+{
+  \raggedleft
+  \includegraphics[width=2.5cm]{assets/MUC.jpg}
+  \par
+}
+
+% ---------- 标题 ----------
+\makereporttitle{}
+
+% ---------- 学生信息 ----------
+\makestudentinfo{}
+
+% ---------- 关键字 ----------
+\makekeywords{}
+
+% ---------- 摘要 ----------
+\input{content/abstract.tex}
+
+% ---------- 正文（单栏） ----------
+\input{content/body.tex}
+
+% ---------- 参考文献 ----------
+\phantomsection
+\addcontentsline{toc}{section}{参考文献}
+\printbibliography{}
+
+\end{document}

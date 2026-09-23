@@ -1,0 +1,14 @@
+\newcommand{\setupHeader}{
+    \renewcommand{\baselinestretch}{1.25}
+    \setlength{\parindent}{2em}
+    \titleformat{\section}{\bfseries\heiti}{\thesection}{1em}{}
+    \titlespacing*{\section}{0pt}{12pt}{6pt}
+    
+    \pagestyle{fancy}
+    \setlength{\headheight}{14.5pt} % 建议值=基础值+2pt缓冲
+    \setlength{\headsep}{15pt}      % 页眉与正文间距
+    \fancyhf{}
+    \fancyhead[C]{\songti\zihao{5}中央民族大学课程实验报告}
+    \renewcommand{\headrulewidth}{1pt} % 页眉线粗细
+    \fancyfoot[C]{\thepage}
+}

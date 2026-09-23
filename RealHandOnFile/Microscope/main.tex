@@ -1,0 +1,31 @@
+%!TeX encoding = UTF-8
+% 金相显微镜实验报告
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+% ==============================
+% 加载排版格式组件
+% ==============================
+\input{builtin/format.tex}
+
+% ==============================
+% 加载元数据与页面渲染组件
+% ==============================
+\input{builtin/metadata.tex}
+\input{builtin/titlepage.tex}
+
+% ==============================
+% 读取用户配置信息
+% ==============================
+\input{config/info.tex}
+
+\begin{document}
+
+% 渲染实验抬头区
+\makereporttitle
+
+% 导入实验正文区
+\input{content/body.tex}
+
+\end{document}
+

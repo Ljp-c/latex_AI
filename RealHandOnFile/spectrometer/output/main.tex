@@ -1,0 +1,30 @@
+%!TeX encoding = UTF-8
+% 主入口文件：流水线式拼装
+
+\documentclass[12pt,a4paper,UTF8]{ctexart}
+
+% ==============================
+% 加载排版格式组件
+% ==============================
+\input{builtin/format.tex}
+
+% ==============================
+% 加载元数据与页面渲染组件
+% ==============================
+\input{builtin/metadata.tex}
+\input{builtin/titlepage.tex} % 提供了 \makereporttitle 命令
+
+% ==============================
+% 读取用户填写的变量配置（姓名、学号等）
+% ==============================
+\input{config/info.tex}
+
+\begin{document}
+
+% 渲染实验抬头区
+\makereporttitle
+
+% 导入实验正文区
+\input{content/body.tex}
+
+\end{document}

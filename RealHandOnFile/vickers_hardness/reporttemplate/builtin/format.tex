@@ -1,0 +1,52 @@
+% ==============================
+% 页面布局与排版格式
+% ==============================
+
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+
+% ==============================
+% 页眉页脚
+% ==============================
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0.4pt}   % 顶部装饰横线
+\fancyfoot[C]{\songti\zihao{5} 第 \thepage\ 页 共 \pageref{LastPage} 页}
+
+% ==============================
+% 章节标题格式 —— 数字编号 "1 引言"
+% ==============================
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+% 一级标题
+\titleformat{\section}{\large\heiti\bfseries}{\thesection}{1em}{}
+\titlespacing{\section}{0pt}{1.5ex plus .1ex minus .2ex}{1ex plus .1ex}
+
+% 二级标题
+\titleformat{\subsection}{\normalsize\heiti}{\thesubsection}{1em}{}
+\titlespacing{\subsection}{0pt}{1ex plus .1ex minus .2ex}{0.5ex plus .1ex}
+
+% ==============================
+% 图表标题
+% ==============================
+\usepackage{caption}
+\captionsetup[figure]{labelsep=space, font=small}
+\captionsetup[table]{labelsep=space, font=small}
+
+% ==============================
+% 表格增强
+% ==============================
+\usepackage{booktabs}
+\usepackage{array}
+
+% ==============================
+% 首行缩进
+% ==============================
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}

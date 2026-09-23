@@ -1,0 +1,242 @@
+% --- 分光光度计实验报告正文 ---
+
+\section{实验目的}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item 学习可见分光光度计的基本原理；
+    \item 掌握液体吸光度测量方法，利用吸光度与液体浓度的关系测量液体浓度；
+    \item 掌握测量不同颜色物体的反射和透射光谱，并辨别颜色。
+\end{enumerate}
+
+\section{实验原理}
+
+\subsection{分子能级与光谱}
+
+分子一般包含若干个原子核和电子，其能量可以表示为：$E = E_e + E_v + E_r + E_n + E_t + E_i$。其中，$E_e$、$E_v$、$E_r$ 分别表示电子、原子间振动、分子转动能量，$E_n$、$E_t$、$E_i$ 分别表示分子中原子核能、分子平移能、集团间内旋能。一般情况下，$E_n$ 不变，$E_t$、$E_i$ 较小，分子能量最终表示为：$E \approx E_e + E_v + E_r$。
+
+分子产生跃迁所吸收能量的辐射频率：$\nu = \Delta E_e/h + \Delta E_v/h + \Delta E_r/h$。分子的紫外-可见吸收光谱是由电子跃迁引起的，红外吸收光谱是由于分子中基团的振动和转动能级跃迁引起的，荧光光谱是在紫外或可见光照射下，电子跃迁至单重激发态，并以无辐射方式回到第一单重激发态的最低振动能级，再跃回基态或基态中的其他振动能级。
+
+% 图2.1 分子典型能级图
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.6\textwidth]{assets/fig2-1.png}
+%   \caption{图2.1 分子典型能级图}
+% \end{figure}
+
+\subsection{光谱学概念}
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item \textbf{反射率}：指的是反射波与入射波的功率比值，即 $R(\lambda) = I_r / I_o$；
+    \item \textbf{透过率}：指的是透射波与入射波的光强比值，即 $T(\lambda) = I_t / I_o$；
+    \item \textbf{吸光度}：衡量物质对光的吸收程度，即 $A_\lambda = -\lg\left(\frac{S_\lambda - D_\lambda}{R_\lambda - D_\lambda}\right)$。式中 $A_\lambda$ 为样品在波长 $\lambda$ 的吸光度，$S_\lambda$ 为样品在波长 $\lambda$ 处的光谱强度，$D_\lambda$ 为波长 $\lambda$ 处背景光谱的强度，$R_\lambda$ 为波长 $\lambda$ 处参考光谱的强度；
+    \item \textbf{色品图}：表示颜色系统的工具，可直观了解和比较不同颜色之间的关系和特性，其三维坐标依次表示色调、饱和度、亮度，分别代表基本色、颜色纯度、颜色明暗程度。
+\end{enumerate}
+
+% 图2.2 色品图
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{assets/fig2-2.png}
+%   \caption{图2.2 色品图}
+% \end{figure}
+
+\subsection{朗伯比尔定律}
+指当一束平行单色光通过均匀、非散射的稀溶液时，溶液对光的吸收程度与溶液的浓度及液层厚度的乘积成正比。
+
+% 图2.3 光路图
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.5\textwidth]{assets/fig2-3.png}
+%   \caption{图2.3 光路图}
+% \end{figure}
+
+朗伯比尔定律描述了浓度与吸光度的关系：
+\begin{equation}
+    A = K C L
+\end{equation}
+其中 $K$ 为波长 $\lambda$ 处样品的消光系数，$C$ 为样品的浓度，$L$ 为吸收光程。当光程一定时，吸光度 $A$ 与浓度 $C$ 呈线性关系。
+
+同时，与入射光 $I_o$ 和出射光 $I_t$ 强度有关：
+\begin{equation}
+    A = -\ln(T) = -\ln\left(\frac{I_t}{I_o}\right)
+\end{equation}
+
+\section{实验仪器}
+
+\subsection{试剂与材料}
+酒精、丙酮、不同浓度日落黄染料、不同浓度苋菜红染料、不同颜色色卡等。
+
+\subsection{仪器}
+光源、光谱仪、光纤、积分球、标准白板、比色皿、计算机等。
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item \textbf{光源}：光源的作用是提供激发能，发出足够强的连续光谱；
+    \item \textbf{光谱仪}：把光源发出的光分离出所需要的单色光。通常由入射狭缝、准直镜、色散元件（光栅）、物镜和出口狭缝构成；
+    \item \textbf{比色皿}：用于盛放试液。石英比色皿用于可见光区的测量，玻璃池只用于可见光区。
+\end{enumerate}
+
+\section{实验内容}
+
+\subsection{液体吸光度}
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item 将纯水倒入比色皿中作为对照液体，将比色皿放入比色皿支架；
+    \item 使用一根光纤连接比色皿支架与光谱仪，另一根光纤连接比色皿支架与光源；
+    \item 通过 USB 数据线连接光谱仪至电脑，用电源线连接光源和插座；
+    \item 双击电脑桌面上 ``Oceanview'' 软件，选择选项 ``Spectroscopy Application Wizard''，再选择 ``Absorbance''，点击``仅吸光度''，并点击``下一步''；
+    \item 顺时针旋转激光器强度，光强峰值达到蓝线附近，调整``积分时间'' 10ms，``多次扫描平均''调至 20$\sim$30，``滑动平均宽度''调至 2，勾选``暗噪声校准''和``非线性校准''，点击``下一步''按钮；
+    \item 出现``保存参考光谱''窗口，打开激光器，将旋钮顺时针旋转到激光强度合适，点击图标保存参考光谱，再点击``下一步''；
+    \item 出现``保存背景光谱''窗口，将激光器旋钮逆时针旋至尽头，关闭激光器，点击图标保存背景光谱，再点击``完成''；
+    \item 打开激光器并恢复到关闭前的强度，更换样品试剂进行测量。
+\end{enumerate}
+
+\subsection{测量物体颜色}
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item 拧开激光器上的螺帽，将光纤一端插入激光器并拧紧紧固螺丝；
+    \item 将积分球上端螺帽拧开，将光纤另一端与积分球上端连接并拧紧紧固螺丝，用另一根光纤将积分球与光谱仪连接；
+    \item 用 USB 线连接拉曼光谱仪与电脑，用电源线连接激光器与电源；
+    \item 打开 ``OceanView'' 软件，点击新建光谱，点击 ``Color'' 选项，选择``新建反射''，点击``下一步''；
+    \item 撕开积分球下端黄色薄膜，将积分球底部出光口对准参考白板，打开激光器，将旋钮顺时针旋转到激光强度最大；
+    \item 调整``积分时间''为 500$\sim$800ms，``滑动平均宽度''为 1，勾选``非线性矫正''，点击``下一步''，之后点击保存参考光谱，点击下一步；
+    \item 将激光器旋钮逆时针旋至最低，关闭激光器，点击保存背景光谱，点击``下一步''，勾选``显示参数 CIE XYZ''和``色品图''；
+    \item 打开激光器，顺时针旋转旋钮至最大，可得到白板的反射光谱与色品图，调整图像大小并保存图表；
+    \item 将积分球移动至卡纸上，再次点击保存图表到文件，移动积分球到其他颜色卡纸上，重复该操作。
+\end{enumerate}
+
+\section{注意事项}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item 在吸光度实验中，调整软件积分时间前应先将激光器强度调至最大，再调整积分时间，使激光强度处于合适范围。
+    \item 在吸光度实验中，积分时间与多次扫描平均值的乘积应处在合适的范围内。过小会导致测量不准确，过大会导致测量过慢，影响实验。
+    \item 积分球下端黄色薄膜需保存好，做完实验需重新贴上，以免积分球损坏。
+    \item 操作激光时应注意安全，请勿将光纤口对准眼睛。
+\end{enumerate}
+
+\section{实验数据}
+
+\subsection{色卡反射光谱与色品坐标}
+
+% 图7.1 色卡
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{assets/fig7-1.png}
+%   \caption{图7.1 色卡}
+% \end{figure}
+
+不同颜色色卡在日光下观察，通过积分球测量反射光谱，得到各色卡的 CIE 色品坐标如表~\ref{tab:colorcoord} 所示。
+
+\begin{table}[htbp]
+    \centering
+    \caption{色品坐标测量值}
+    \label{tab:colorcoord}
+    \begin{tabular}{lccc}
+        \toprule
+        色标卡颜色（日光下观察） & $x$ & $y$ & $z$ \\
+        \midrule
+        紫色 & 0.3260 & 0.1540 & 0.5200 \\
+        红色 & 0.6430 & 0.3340 & 0.0230 \\
+        绿色 & 0.2100 & 0.7100 & 0.0800 \\
+        蓝色 & 0.1500 & 0.0600 & 0.7900 \\
+        黄色 & 0.4210 & 0.5070 & 0.0720 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{液体吸光度测量}
+
+% 图7.2 同浓度的日落黄和苋菜红吸收曲线
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{assets/fig7-2.png}
+%   \caption{图7.2 同浓度的日落黄和苋菜红}
+% \end{figure}
+
+\subsubsection{不同物质特征吸收峰}
+
+不同物质（溶液）具有不同的吸光度和特征峰，可以通过测定某种物质的吸收谱，根据峰值和峰位来判断物质种类。实验中用到的 $10^{-5}$mol/L 苋菜红溶液的特征吸收峰位为 465nm，对该波长的光的吸收度为 0.23；$10^{-5}$mol/L 日落黄溶液的特征吸收峰位为 490nm，对该波长的光的吸收度为 0.26。
+
+\subsubsection{R6G 吸光度与浓度关系}
+
+配制不同浓度的罗丹明 6G（R6G）溶液，测定其在特征吸收峰 525.569nm 处的吸光度，数据如表~\ref{tab:r6g} 所示。
+
+\begin{table}[htbp]
+    \centering
+    \caption{R6G 吸光度--浓度关系（测定波长 $\lambda = 525.569$nm）}
+    \label{tab:r6g}
+    \begin{tabular}{lc}
+        \toprule
+        浓度（mol/L） & 吸光度 $A$ \\
+        \midrule
+        $5.5 \times 10^{-6}$ & 1.70 \\
+        $1.0 \times 10^{-6}$ & 1.25 \\
+        $5.5 \times 10^{-7}$ & 0.52 \\
+        $1.0 \times 10^{-7}$ & 0.12 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{数据分析}
+
+\subsection{色卡反射光谱分析}
+
+从图 7.1 可知，在可见光范围内，白光的反射率为 100\%，不同颜色需要在指定波长范围内才可 100\% 反射，因此能够分析出不同色卡其本身的颜色反射出的波长，并以此计算其在色品图中的具体位置：红色：655nm；黄色：550nm；绿色：515nm；浅蓝色：480nm；深蓝色：413nm；紫色：425nm。
+
+由表~\ref{tab:colorcoord} 的色品坐标数据可看出：红色的 $x$ 值最大（0.6430），说明红色在长波区域反射最强；蓝色的 $z$ 值最大（0.7900），对应短波区域的强反射；绿色的 $y$ 值最大（0.7100），对应中波区域的强反射。这与色品图的基本原理一致——$x$、$y$、$z$ 分别大致对应红、绿、蓝三基色的刺激值。各颜色相对应的色品图坐标见实验数据报告单。
+
+\subsection{特征吸收峰分析}
+
+从图 7.2 可知，不同物质（的溶液）具有不同的吸光度和特征峰。苋菜红溶液的特征吸收峰位为 465nm（吸收度 0.23），日落黄溶液的特征吸收峰位为 490nm（吸收度 0.26）。虽然两者浓度相同（均为 $10^{-5}$mol/L），但因分子结构不同，其特征吸收峰位和吸收强度均不同，这体现了分光光度法定性分析物质的基本依据。
+
+\subsection{R6G 吸光度--浓度关系分析}
+
+根据表~\ref{tab:r6g} 数据，以浓度 $C$ 为横坐标、吸光度 $A$ 为纵坐标作图（见图 7.3 和图 7.4 类似分析）。
+
+% 图7.3 日落黄不同浓度
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{assets/fig7-3.png}
+%   \caption{图7.3 R6G 不同浓度吸收光谱}
+% \end{figure}
+
+从数据可以看出，随着 R6G 溶液浓度的升高，相应溶液的吸光度增加。这是因为溶液中溶质的增加导致光的透过率下降，即吸光度增加。具体而言：
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+    \item 浓度从 $1.0 \times 10^{-7}$mol/L 增大到 $5.5 \times 10^{-6}$mol/L（增大 55 倍），吸光度从 0.12 增大到 1.70（增大约 14 倍）；
+    \item 在低浓度区间（$1.0 \times 10^{-7} \sim 1.0 \times 10^{-6}$mol/L），吸光度与浓度近似呈线性关系，符合朗伯比尔定律 $A = KCL$；
+    \item 在高浓度区间（$1.0 \times 10^{-6} \sim 5.5 \times 10^{-6}$mol/L），吸光度增长趋缓，出现偏离线性的现象。
+\end{enumerate}
+
+% 图7.4 日落黄不同浓度拟合
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{assets/fig7-4.png}
+%   \caption{图7.4 R6G 浓度--吸光度拟合曲线}
+% \end{figure}
+
+将吸光度与浓度进行线性拟合，可知在较低浓度时，样品的吸光度随着浓度的升高而升高，符合朗伯比尔定律。但在较高浓度时，由于接近吸收饱和，导致曲线偏离线性。原则上同一物质的特征吸收峰的峰位不会随浓度变化而变化，但浓度过高会产生吸收饱和现象，表现为峰位向长波方向偏移、峰下面积增大。因此测试样品的浓度不宜过大，否则偏移现象会干扰定性分析的准确性。
+
+同时，由朗伯比尔定律 $A = KCL$，当光程 $L$ 一定（1cm 比色皿）时，可根据低浓度区间的数据估算 R6G 在 525.569nm 处的消光系数 $K$：
+\begin{equation}
+    K = \frac{A}{CL} \approx \frac{1.25}{1.0 \times 10^{-6} \times 1} = 1.25 \times 10^{6}\;\text{L}\cdot\text{mol}^{-1}\cdot\text{cm}^{-1}
+\end{equation}
+
+\section{思考题}
+
+\begin{enumerate}[label=\arabic*、, leftmargin=4em, labelsep=0pt]
+
+    \item \textbf{紫外-可见光谱的范围一般分为三个区域：远紫外区、近紫外区和可见光区，那么这三个区域对应的波长范围分别是多少？}
+
+    \textbf{答：} 远紫外波长：10--200nm、近紫外波长：200--400nm、可见光：400--780nm。
+
+    \item \textbf{在可见光区，颜色与波长有一定的对应关系。如果某溶液能够强烈地吸收 480$\sim$510nm 波长的光，那么该溶液会呈现什么颜色？如果某溶液呈橙红色，那么该溶液的可见光光谱在哪个波段会缺失？}
+
+    \textbf{答：}
+    \begin{enumerate}[label=(\arabic*), leftmargin=3em]
+        \item 溶液呈现出其互补色，为红色或紫色；
+        \item 说明吸收红色和橙色光谱，相对应的缺失其互补色为蓝色、绿色及两者混合色，对应光谱上 425nm--570nm。
+    \end{enumerate}
+
+    \item \textbf{如果入射光为非单色光或不平行入射，吸收定律（朗伯比尔定律）会发生怎样的偏离？}
+
+    \textbf{答：}
+    \begin{enumerate}[label=(\arabic*), leftmargin=3em]
+        \item \textbf{非单色光}：非单色光包含多种波长的光，不同波长的光能被不同程度地吸收。如果溶液对不同波长的光吸收不同，非单色光源中的某些波长可能会被强烈吸收而其他波长则不会，导致测量结果偏离。
+        \item \textbf{不平行入射}：光在通过溶液时的路径长度可能会变化，导致不同部分的光受到不同程度的吸收。不平行的光束可能导致溶液中某些区域接受到的光强比其他区域更强，影响吸光度的测量。
+    \end{enumerate}
+
+\end{enumerate}

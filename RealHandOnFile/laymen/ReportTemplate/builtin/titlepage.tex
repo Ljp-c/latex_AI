@@ -1,0 +1,24 @@
+% 用于生成实验抬头信息的渲染组件
+
+\newcommand{\makereporttitle}{
+    % ---------- 校徽（右上角） ----------
+    {
+        \raggedleft
+        \includegraphics[width=2.5cm]{assets/MUC.jpg}
+        \par
+    }
+    
+    \begin{center}
+        \vspace*{1ex}
+        {\zihao{3}\heiti\bfseries \varreporttitle \par} % 主标题
+        \vspace{2ex}
+        {\zihao{4}\fangsong 姓 名：\varstudentname \quad 学 号：\varstudentid \quad 班 级：\varstudentclass \par}
+        \vspace{1ex}
+        {\zihao{4}\fangsong 实验日期：\varexpdate \par}
+        \vspace{2ex}
+    \end{center}
+    
+    % 分隔线
+    \noindent\rule{\textwidth}{0.5pt}
+    \vspace{1ex}
+}
