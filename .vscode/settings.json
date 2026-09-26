@@ -3,5 +3,6 @@
     "workbench.editorAssociations": {
         "*.md": "default"
     },
-    "git.autoRepositoryDetection": "subFolders"
+    "git.autoRepositoryDetection": "subFolders",
+    "markdown-preview-enhanced.mathRenderingOption": "KaTeX"
 }
