@@ -1,0 +1,106 @@
+%!TeX encoding = UTF-8
+%!TEX program = xelatex
+\documentclass[12pt,a4paper]{ctexart}
+
+% ===== 页面与字体 =====
+\usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\setCJKmainfont{SimSun}[AutoFakeBold=2.0]
+\setCJKsansfont{SimHei}[AutoFakeBold=2.0]
+\setmainfont{Times New Roman}
+\linespread{1.25}
+
+% ===== 图表与数学 =====
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage[labelfont=bf]{subcaption}
+\usepackage{ulem}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{tikz}
+
+% ===== 参考文献 =====
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource{ref.bib}
+
+\usepackage[hidelinks]{hyperref}
+
+% ===== 编号与格式 =====
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+\setcounter{tocdepth}{4}
+
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+
+\ctexset{
+  section/format      = {\raggedright\heiti\zihao{-3}},
+  subsection/format   = {\raggedright\heiti\zihao{4}},
+  subsubsection/format= {\raggedright\heiti\zihao{-4}},
+  paragraph/format = {\raggedright\heiti\zihao{-4}},
+  paragraph/runin = false,
+  paragraph/beforeskip = 1.2em plus 0.3em minus 0.3em,
+  paragraph/afterskip = 0.8em plus 0.2em,
+}
+
+% 结构小节标题：手动四级编号（2.3.2.x），块式排版并写入目录
+\newcommand{\jiegou}[2]{%
+  \phantomsection
+  \paragraph*{#1\quad #2}%
+  \addcontentsline{toc}{subsubsection}{\numberline{#1}#2}%
+}
+
+\begin{document}
+
+% ==================== 封面 ====================
+\begin{titlepage}
+  \centering
+  \vspace*{2.2cm}
+  {\zihao{2}\heiti 利用 Diamond 软件对常见晶体结构的建模\\[0.6em]与结构特征分析\par}
+  \vspace{1.6cm}
+  {\zihao{3}\songti ——X 射线晶体学课程论文\par}
+  \vspace{3.8cm}
+  {\zihao{4}\songti
+  \begin{tabular}{ll}
+    姓\quad 名： & \uline{\hspace{8em}} \\[1.4em]
+    学\quad 号： & \uline{\hspace{8em}} \\[1.4em]
+    班\quad 级： & \uline{\hspace{8em}} \\
+  \end{tabular}\par}
+  \vfill
+  {\zihao{4}\songti 二〇二六年九月\par}
+  \vspace{1.5cm}
+\end{titlepage}
+
+% ==================== 目录 ====================
+\tableofcontents
+\clearpage
+
+% ==================== 正文 ====================
+\input{content/abstract.tex}
+\clearpage
+\input{content/ch1-intro.tex}
+\input{content/ch2-basics.tex}
+\input{content/ch2-visual.tex}
+\input{content/structures/fcc.tex}
+\input{content/structures/bcc.tex}
+\input{content/structures/hcp.tex}
+\input{content/structures/nacl.tex}
+\input{content/structures/rutile.tex}
+\input{content/structures/anatase.tex}
+\input{content/structures/fluorite.tex}
+\input{content/structures/diamond.tex}
+\input{content/structures/summary.tex}
+\input{content/ch7-conclusion.tex}
+\input{content/thanks.tex}
+
+% ==================== 参考文献 ====================
+\printbibliography[title=参考文献]
+
+\end{document}

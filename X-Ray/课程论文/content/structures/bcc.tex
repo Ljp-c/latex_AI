@@ -1,0 +1,82 @@
+% ==================== 2.3.2.2 BCC ====================
+\jiegou{2.3.2.2}{体心立方结构（BCC）}
+
+以 $\alpha$-Fe 为例建立体心立方结构模型，建模参数见表~\ref{tab:bcc}。
+
+\begin{table}[H]
+  \centering
+  \caption{体心立方（BCC）结构的建模参数}
+  \label{tab:bcc}
+  \begin{tabular}{ll}
+    \toprule
+    项目 & 参数 \\
+    \midrule
+    空间群 & $I\,m\,\bar3\,m$（No.~229） \\
+    晶格常数 & $a=b=c=2.819$\,\AA，$\alpha=\beta=\gamma=90^\circ$ \\
+    原子坐标 & Fe：$(0,0,0)$（$2a$ 位） \\
+    化学式单元数 & $Z=2$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) 空间群与晶格常数设置}{%
+    \includegraphics[width=0.44\textwidth]{assets/bcc/a.png}}
+  \hfill
+  \subcaptionbox{(b) 非对称单元原子（Fe）添加}{%
+    \includegraphics[width=0.44\textwidth]{assets/bcc/b.png}}
+  \caption{体心立方（BCC）结构的参数设置}
+  \label{fig:bcc-param}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/bcc/c.png}
+  \caption{体心立方（BCC）结构的晶体结构模型}
+  \label{fig:bcc-model}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/bcc/d.png}
+  \caption{Diamond 模拟的体心立方（BCC）结构粉末衍射图}
+  \label{fig:bcc-xrd}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) (111) 晶面视图}{%
+    \includegraphics[width=0.44\textwidth]{assets/bcc/e.png}}
+  \hfill
+  \subcaptionbox{(b) 最近邻配位多面体（配位数 8）}{%
+    \includegraphics[width=0.46\textwidth]{assets/bcc/f.png}}
+  \caption{体心立方（BCC）结构的晶面与配位多面体}
+  \label{fig:bcc-plane}
+\end{figure}
+
+\textbf{结构特征。}体心立方晶胞的原子位于 8 个顶点与体心，晶胞内原子数为
+$8\times1/8+1=2$。从图~\ref{fig:bcc-model} 可见，体心原子与 8 个顶点原子距离相等。
+
+\begin{enumerate}[label=（\arabic*）]
+  \item \textbf{密排方向与原子半径}：BCC 的密排方向为体对角线方向 $\langle111\rangle$。
+    沿体对角线有两个原子相切（体心原子与两端顶点原子），故 $4r=\sqrt{3}a$，得原子半径
+    $r=\sqrt{3}a/4$。代入 $a=2.819$\,\AA 得 $r\approx1.22$\,\AA。
+  \item \textbf{配位数}：每个原子有 8 个最近邻原子（体心原子与 8 个顶点原子相切，
+    配位多面体为立方体，图~\ref{fig:bcc-plane}(b)），另有 6 个次近邻原子
+    （沿 $\langle100\rangle$ 方向的相邻体心原子）。
+  \item \textbf{原子堆积因子}：
+    \begin{equation}
+      \eta=\frac{2\times\frac{4}{3}\pi r^3}{a^3}
+        =\frac{2\times\frac{4}{3}\pi\left(\frac{\sqrt{3}}{4}a\right)^3}{a^3}
+        =\frac{\sqrt{3}\pi}{8}\approx0.6802
+    \end{equation}
+    BCC 的堆积密度低于 FCC 与 HCP，因而 $\alpha$-Fe 在相变（如马氏体相变）中伴随体积
+    变化。
+  \item \textbf{密排面}：BCC 没有真正意义上的密排面，最密的面为 $\{110\}$ 面；
+    图~\ref{fig:bcc-plane}(a) 演示了在模型中添加 (111) 晶面（$d_{111}=1.6276$\,\AA）
+    进行观察的过程。
+\end{enumerate}
+
+空间群符号 $I\,m\,\bar3\,m$ 表明：$I$ 为体心点阵，其余符号与 FCC 相同。具有 BCC
+结构的典型金属有 $\alpha$-Fe、Cr、Mo、W、V 及碱金属 Na、K 等。
