@@ -2,7 +2,8 @@
 \section{晶体学基础}
 
 本章简要归纳晶体学的基础知识，说明如何描述晶体，为后续利用 Diamond 软件建立晶体结构
-模型作准备。
+模型作准备。本章的主要内容与部分图例引自中央民族大学施洪龙老师的《X 射线晶体学》课程
+课件\cite{shi2026xray}。
 
 \subsection{晶体的基本性质}
 
@@ -23,6 +24,13 @@
     因此具有确定的熔点。
 \end{itemize}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.42\textwidth]{assets/course/crystal-form.jpg}
+  \caption{自发形成规则多面体外形的矿物晶体（引自施洪龙课件）}
+  \label{fig:crystal-form}
+\end{figure}
+
 \subsection{晶体的描述}
 
 描述晶体结构的基本要素包括：空间群（对称性）、晶格常数（晶胞形状）、原子类型、原子
@@ -42,15 +50,37 @@
 式中 $\bm{a}$、$\bm{b}$、$\bm{c}$ 为基矢。晶体学中常用六种格子：初基 P、体心 I、面心 F、
 底心 C、侧心 A、侧心 B（另有三方晶系的 R）。
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{assets/course/lattice-basis.jpg}
+  \caption{点阵示意图：阵点与其平移矢量（引自施洪龙课件）}
+  \label{fig:lattice-basis}
+\end{figure}
+
 \textbf{初基原胞（primitive cell）}：由三个不共面的基矢所围成的最小平行六面体重复单元。
 初基原胞具有体积最小、只含一个格点的特点；但原胞取法不唯一，且往往不能反映晶体的对称性。
 在密度泛函（如 VASP）等第一性原理计算中，使用原胞可减小计算量。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/course/primitive-cell.jpg}
+  \caption{由三个基矢构成的初基原胞（引自施洪龙课件）}
+  \label{fig:primitive-cell}
+\end{figure}
 
 \textbf{晶胞（unit cell，结晶学原胞）}：能够完整反映晶体内部原子（离子）在三维空间分布
 的化学--结构特征、并保持晶体对称性且体积尽量小的平行六面体。晶胞的形状由六个晶格参数
 （晶格常数）$a$、$b$、$c$、$\alpha$、$\beta$、$\gamma$ 描述，其中 $\alpha=\angle(\bm{b},\bm{c})$、
 $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取遵循三条原则：
 平行六面体中等棱等角的数目最多、直角最多、体积最小。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\textwidth]{assets/course/unit-cell.jpg}
+  \caption{晶胞及其六个晶格常数 $a$、$b$、$c$、$\alpha$、$\beta$、$\gamma$
+    （引自施洪龙课件）}
+  \label{fig:unit-cell}
+\end{figure}
 
 晶胞与原胞之间可通过格点数建立联系。例如体心立方晶胞含 2 个格点，其初基原胞体积为晶胞
 体积的 $1/2$，原胞基矢为
@@ -65,6 +95,14 @@ $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取
   \bm{a}_2=\tfrac{1}{2}(\bm{a}+\bm{c}),\quad
   \bm{a}_3=\tfrac{1}{2}(\bm{b}+\bm{c})
 \end{equation}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{assets/course/fcc-primitive.jpg}
+  \caption{面心立方晶胞与初基原胞的结构模型（引自施洪龙课件）}
+  \label{fig:fcc-primitive}
+\end{figure}
+
 图~\ref{fig:bcc-cell} 给出了体心立方晶胞与其初基原胞的关系：晶胞顶点与体心处各有一个
 原子，虚线所示的初基原胞以晶胞顶点为顶点、以三个相邻晶胞的体心为其余顶点，只含一个格点。
 
@@ -136,11 +174,54 @@ $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取
     $\bar{3}=3+\bar{1}$，$\bar{6}=3/m$（三重旋转加镜面）。
 \end{itemize}
 
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) 旋转、反演与镜面操作示意}{%
+    \includegraphics[width=0.62\textwidth]{assets/course/macro-sym.jpg}}
+
+  \subcaptionbox{(b) 旋转轴次数的周期性证明示意}{%
+    \includegraphics[width=0.55\textwidth]{assets/course/fivefold-proof.jpg}}
+  \caption{宏观对称元素与晶体中旋转轴次数的限制（引自施洪龙课件）}
+  \label{fig:macro-sym}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) P1 与 P$\bar1$ 中反演中心的作用}{%
+    \includegraphics[width=0.52\textwidth]{assets/course/inversion.jpg}}
+
+  \subcaptionbox{(b) P3、P$\bar3$、P6、P$\bar6$ 中的旋转轴与旋转反演轴}{%
+    \includegraphics[width=0.5\textwidth]{assets/course/rotation-axis.jpg}}
+  \hfill
+  \subcaptionbox{(c) P$m$ 中的镜面操作}{%
+    \includegraphics[width=0.24\textwidth]{assets/course/mirror.jpg}}
+  \caption{利用 Diamond 观察宏观对称元素（引自施洪龙课件）}
+  \label{fig:sym-diamond}
+\end{figure}
+
 宏观对称元素的组合共形成 \textbf{32 种点群}；按点群对称特征，晶体划分为 7 大晶系，
-对应 14 种 Bravais 格子（表~\ref{tab:crystalsystems}）。在无限晶体中还允许包含平移的
-\textbf{微观对称元素}——螺旋轴 $n_m$（旋转 $2\pi/n$ 加沿轴平移 $m/n$）与滑移面
-$a,b,c,n,d$（镜面加平移 $1/2$ 或 $1/4$），宏观与微观对称元素组合共形成 \textbf{230 种
-空间群}\cite{hahn2005itt}。
+对应 14 种 Bravais 格子（表~\ref{tab:crystalsystems}）。在无限晶体中，平移本身也是
+对称操作，并且还允许包含平移的\textbf{微观对称元素}——\textbf{螺旋轴}与\textbf{滑移
+面}。螺旋轴 $n_m$ 是旋转 $2\pi/n$ 与沿轴方向平移 $m/n$ 个晶格周期单位的联合操作：经
+$n$ 次操作后原子到达等效位置，而中间位置均不在同一平面上，沿轴呈螺旋状排列
+（图~\ref{fig:micro-sym}(a)(b)）；滑移面是镜面反映与沿面内特定方向平移的联合操作，
+包括沿 $a$、$b$、$c$ 方向平移 $1/2$ 的轴滑移面、沿面对角线方向平移 $1/2$ 的对角滑移面
+$n$，以及平移 $1/4$ 的金刚石滑移面 $d$（图~\ref{fig:micro-sym}(c)）。宏观与微观对称
+元素相互组合，共形成 \textbf{230 种空间群}\cite{hahn2005itt}。
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) $6_1$ 螺旋轴的操作路径（旋转 $60^\circ$ 加平移 $1/6$）}{%
+    \includegraphics[width=0.82\textwidth]{assets/course/screw61.jpg}}
+
+  \subcaptionbox{(b) $6_5$ 螺旋轴的操作路径（旋转 $300^\circ$ 加平移 $1/6$）}{%
+    \includegraphics[width=0.82\textwidth]{assets/course/screw65.jpg}}
+
+  \subcaptionbox{(c) $c$ 滑移面的操作（镜面加平移 $1/2$）}{%
+    \includegraphics[width=0.3\textwidth]{assets/course/glide.jpg}}
+  \caption{微观对称元素——螺旋轴与滑移面（引自施洪龙课件）}
+  \label{fig:micro-sym}
+\end{figure}
 
 \begin{table}[H]
   \centering
@@ -162,6 +243,13 @@ $a,b,c,n,d$（镜面加平移 $1/2$ 或 $1/4$），宏观与微观对称元素�
   \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{assets/course/bravais-types.jpg}
+  \caption{14 种 Bravais 格子（引自施洪龙课件）}
+  \label{fig:bravais14}
+\end{figure}
+
 空间群的\textbf{国际符号}由点阵类型字母（P、F、I、A、B、C、R）与三个特征方向（由晶系
 决定，见表~\ref{tab:crystalsystems}）上的对称元素符号组成。例如立方晶系的三个特征方向
 依次为 [100]、[111]、[110]。据此：
@@ -171,6 +259,17 @@ $\bar3$（立方晶系的特征），[110] 方向为镜面 $m$；$P\,6_3/m\,m\,c
 $P\,4_2/m\,n\,m$ 表示四方初基点阵，[001] 方向为 $4_2$ 螺旋轴加镜面；$I\,4_1/a\,m\,d$
 表示体心四方点阵，[001] 方向为 $4_1$ 螺旋轴加 $a$ 滑移面，[100] 方向为镜面，[110]
 方向为 $d$ 金刚石滑移面。
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{(a) 三斜至四方晶系}{%
+    \includegraphics[width=0.42\textwidth]{assets/course/spacegroup-symbol.jpg}}
+  \hfill
+  \subcaptionbox{(b) 三方（六方）与立方晶系}{%
+    \includegraphics[width=0.42\textwidth]{assets/course/spacegroup-projection.jpg}}
+  \caption{七大晶系中空间群与点群的对应关系（引自施洪龙课件）}
+  \label{fig:spacegroup-table}
+\end{figure}
 
 \subsubsection{晶胞内的原子}
 
@@ -182,6 +281,13 @@ $P\,4_2/m\,n\,m$ 表示四方初基点阵，[001] 方向为 $4_2$ 螺旋轴加�
 symmetry）表示该位所保持的对称性；多重度等于一般位置的多重度的位置称一般位，否则为
 特殊位。
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth]{assets/course/wyckoff-example.jpg}
+  \caption{空间群表中的 Wyckoff 位表示例（引自施洪龙课件）}
+  \label{fig:wyckoff}
+\end{figure}
+
 晶胞中的化学式单元数 $Z$ 可由实测密度与晶胞体积确定：
 \begin{equation}
   Z=\frac{\rho V N_A}{M}
@@ -190,3 +296,11 @@ symmetry）表示该位所保持的对称性；多重度等于一般位置的多
 $M$ 为摩尔质量。$Z$ 是检验指标化与结构解析结果是否合理的重要判据。将上述结构信息
 （空间群、晶格参数与原子参数）按统一格式存储，即得到晶体学信息文件（CIF 文件），
 它可被 Diamond 等软件直接读取用于建模。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.28\textwidth]{assets/course/structure-elements.jpg}
+  \caption{晶体结构模型示例：描述晶体结构所需的全部要素（空间群、晶格常数与原子参数）
+    （引自施洪龙课件）}
+  \label{fig:structure-elements}
+\end{figure}
