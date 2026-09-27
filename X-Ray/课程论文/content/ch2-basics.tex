@@ -72,15 +72,23 @@
 的化学--结构特征、并保持晶体对称性且体积尽量小的平行六面体。晶胞的形状由六个晶格参数
 （晶格常数）$a$、$b$、$c$、$\alpha$、$\beta$、$\gamma$ 描述，其中 $\alpha=\angle(\bm{b},\bm{c})$、
 $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取遵循三条原则：
-平行六面体中等棱等角的数目最多、直角最多、体积最小。
+平行六面体中等棱等角的数目最多、直角最多、体积最小。六个晶格常数的定义见表~\ref{tab:lattice-params}。
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
-  \includegraphics[width=0.45\textwidth]{assets/course/unit-cell.jpg}
-  \caption{晶胞及其六个晶格常数 $a$、$b$、$c$、$\alpha$、$\beta$、$\gamma$
-    （引自施洪龙课件）}
-  \label{fig:unit-cell}
-\end{figure}
+  \caption{晶格常数（晶格参数）的定义}
+  \label{tab:lattice-params}
+  \begin{tabular}{@{}cll@{}}
+    \toprule
+    符号 & 名称 & 定义 \\
+    \midrule
+    $a$、$b$、$c$ & 晶轴长度（基矢长度） & 沿三个晶轴方向相邻阵点间的距离 \\
+    $\alpha$ & $\bm{b}$ 与 $\bm{c}$ 的夹角 & $\alpha=\angle(\bm{b},\bm{c})$ \\
+    $\beta$ & $\bm{a}$ 与 $\bm{c}$ 的夹角 & $\beta=\angle(\bm{a},\bm{c})$ \\
+    $\gamma$ & $\bm{a}$ 与 $\bm{b}$ 的夹角 & $\gamma=\angle(\bm{a},\bm{b})$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 晶胞与原胞之间可通过格点数建立联系。例如体心立方晶胞含 2 个格点，其初基原胞体积为晶胞
 体积的 $1/2$，原胞基矢为
@@ -279,14 +287,31 @@ $P\,4_2/m\,n\,m$ 表示四方初基点阵，[001] 方向为 $4_2$ 螺旋轴加�
 即可生成晶胞内全部等价原子。空间群表中以 \textbf{Wyckoff 位}给出各类可能占位：多重度
 （multiplicity）表示在该位放一个原子时晶胞内出现几个等效原子，位点对称性（site
 symmetry）表示该位所保持的对称性；多重度等于一般位置的多重度的位置称一般位，否则为
-特殊位。
+特殊位。表~\ref{tab:wyckoff} 以 $F\,m\,\bar3\,m$ 空间群为例列出了全部 Wyckoff 位。
 
-\begin{figure}[H]
+\begin{table}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{assets/course/wyckoff-example.jpg}
-  \caption{空间群表中的 Wyckoff 位表示例（引自施洪龙课件）}
-  \label{fig:wyckoff}
-\end{figure}
+  \caption{$F\,m\,\bar3\,m$ 空间群的 Wyckoff 位（多重度、位点对称性与坐标）}
+  \label{tab:wyckoff}
+  \begin{tabular}{@{}cclc@{}}
+    \toprule
+    序号 & 坐标 & 多重度 & 位点对称性 \\
+    \midrule
+    1  & $(x,y,z)$           & 192 & $1$ \\
+    2  & $(x,x,z)$           & 96  & $..m$ \\
+    3  & $(x,y,0)$           & 96  & $m..$ \\
+    4  & $(x,x,1/2)$         & 48  & $m.m2$ \\
+    5  & $(x,x,0)$           & 48  & $m.m2$ \\
+    6  & $(x,x+1/4,1/4)$     & 48  & $2.mm$ \\
+    7  & $(x,x,x)$           & 32  & $.3m$ \\
+    8  & $(x,0,0)$           & 24  & $4m.m$ \\
+    9  & $(0,1/4,1/4)$       & 24  & $.m.mm$ \\
+    10 & $(1/4,1/4,1/4)$     & 8   & $\bar43m$ \\
+    11 & $(0,0,1/2)$         & 4   & $m\bar3m$ \\
+    12 & $(0,0,0)$           & 4   & $m\bar3m$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 晶胞中的化学式单元数 $Z$ 可由实测密度与晶胞体积确定：
 \begin{equation}
