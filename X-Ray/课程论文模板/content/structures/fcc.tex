@@ -1,9 +1,9 @@
 % ==================== 2.3.2.1 FCC ====================
 \jiegou{2.3.2.1}{面心立方结构（FCC）}
 
-以铁为例建立面心立方结构模型，建模参数见表~\ref{tab:fcc}。空间群 $F\,m\,\bar3\,m$
-为立方晶系，非对称单元中只需输入一个 Fe 原子，软件按空间群对称操作自动生成晶胞内
-全部 4 个原子。
+面心立方（FCC）是最常见的金属结构之一，本次以铁为对象建模。空间群取 $F\,m\,\bar3\,m$
+（立方晶系，No.~225），晶格常数、原子坐标与化学式单元数一并列于表~\ref{tab:fcc}。
+非对称单元里只需填 1 个 Fe 原子，晶胞内的其余原子由软件的对称操作自动补出。
 
 \begin{table}[H]
   \centering
@@ -57,29 +57,24 @@
   \label{fig:fcc-plane}
 \end{figure}
 
-\textbf{结构特征。}面心立方晶胞的原子位于 8 个顶点与 6 个面心，晶胞内原子数为
-$8\times1/8+6\times1/2=4$。从图~\ref{fig:fcc-model} 可见，原子在空间中等效且高度对称。
+\textbf{结构特征。}面心立方晶胞的原子位于 8 个顶点与 6 个面心：顶点各计 $1/8$、面心各计
+$1/2$，折合晶胞内共 $8\times1/8+6\times1/2=4$ 个原子（图~\ref{fig:fcc-model}）。
 
-\begin{enumerate}[label=（\arabic*）]
-  \item \textbf{密排方向与原子半径}：FCC 的密排方向为面对角线方向 $\langle110\rangle$。
-    沿面对角线有两个原子相切（两端的面心原子与中间顶点原子），故 $4r=\sqrt{2}a$，
-    得原子半径 $r=\sqrt{2}a/4$。代入 $a=3.43$\,\AA 得 $r\approx1.21$\,\AA。
-  \item \textbf{配位数}：每个原子的最近邻原子数为 12（同层 6 个、上下层各 3 个），
-    次近邻为 6 个（沿 $\langle100\rangle$ 方向），最近邻配位多面体为立方八面体
-    （图~\ref{fig:fcc-plane}(b)）。
-  \item \textbf{原子堆积因子}：晶胞内 4 个原子的体积之和与晶胞体积之比为
-    \begin{equation}
-      \eta=\frac{4\times\frac{4}{3}\pi r^3}{a^3}
-        =\frac{4\times\frac{4}{3}\pi\left(\frac{\sqrt{2}}{4}a\right)^3}{a^3}
-        =\frac{\sqrt{2}\pi}{6}\approx0.7405
-    \end{equation}
-    FCC 与 HCP 同为原子最紧密堆积方式。
-  \item \textbf{密排面与堆积方式}：密排面为 $\{111\}$ 面（图~\ref{fig:fcc-plane}(a)），
-    密排层沿 $\langle111\rangle$ 方向按 ABCABC 方式交替堆积。
-  \item \textbf{间隙}：晶胞中含 4 个八面体间隙（位于体心 $(1/2,1/2,1/2)$ 及各棱中点）
-    和 8 个四面体间隙（如 $(1/4,1/4,1/4)$）。
-\end{enumerate}
+FCC 的密排方向为面对角线方向 $\langle110\rangle$。沿面对角线，两端的面心原子与中间的
+顶点原子相切，故 $4r=\sqrt{2}a$，即原子半径 $r=\sqrt{2}a/4$；代入本次建模所用的
+$a=3.43$\,\AA 得 $r\approx1.21$\,\AA。每个原子的最近邻有 12 个（同层 6 个、上下层各
+3 个），次近邻 6 个（沿 $\langle100\rangle$ 方向），最近邻配位多面体是立方八面体
+（图~\ref{fig:fcc-plane}(b)）。把 4 个原子的体积与晶胞体积相比，得原子堆积因子
+\begin{equation}
+  \eta=\frac{4\times\frac{4}{3}\pi r^3}{a^3}
+    =\frac{4\times\frac{4}{3}\pi\left(\frac{\sqrt{2}}{4}a\right)^3}{a^3}
+    =\frac{\sqrt{2}\pi}{6}\approx0.7405
+\end{equation}
+与 HCP 并列为最紧密的堆积方式。密排面为 $\{111\}$ 面（图~\ref{fig:fcc-plane}(a)），
+密排层沿 $\langle111\rangle$ 方向按 ABCABC 顺序交替堆积。晶胞内的间隙同样可以清点：
+八面体间隙 4 个，位于体心 $(1/2,1/2,1/2)$ 及各棱中点；四面体间隙 8 个，如
+$(1/4,1/4,1/4)$。
 
-空间群符号 $F\,m\,\bar3\,m$ 表明：$F$ 为面心点阵，[100] 方向为镜面 $m$，[111] 方向
-为旋转反演轴 $\bar3$（立方晶系特征），[110] 方向为镜面 $m$。具有 FCC 结构的典型金属
-有 Cu、Ag、Au、Al、Ni 与 $\gamma$-Fe 等；NaCl、金刚石等结构也以 FCC 点阵为基础。
+在 $F\,m\,\bar3\,m$ 这一符号里，$F$ 表示面心点阵，后面三个特征方向依次对应 [100] 的
+镜面 $m$、[111] 的旋转反演轴 $\bar3$（立方晶系的标志）和 [110] 的镜面 $m$。Cu、Ag、Au、
+Al、Ni 与 $\gamma$-Fe 都具有 FCC 结构，NaCl、金刚石等结构也以 FCC 点阵为基础。

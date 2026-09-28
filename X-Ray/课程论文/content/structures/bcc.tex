@@ -1,7 +1,7 @@
 % ==================== 2.3.2.2 BCC ====================
 \jiegou{2.3.2.2}{体心立方结构（BCC）}
 
-以 $\alpha$-Fe 为例建立体心立方结构模型，建模参数见表~\ref{tab:bcc}。
+体心立方（BCC）的演示对象是 $\alpha$-Fe，空间群与晶格常数等输入值见表~\ref{tab:bcc}。
 
 \begin{table}[H]
   \centering
@@ -55,28 +55,22 @@
   \label{fig:bcc-plane}
 \end{figure}
 
-\textbf{结构特征。}体心立方晶胞的原子位于 8 个顶点与体心，晶胞内原子数为
-$8\times1/8+1=2$。从图~\ref{fig:bcc-model} 可见，体心原子与 8 个顶点原子距离相等。
+\textbf{结构特征。}顶点 8 个原子各计 $1/8$，再加上体心的 1 个，晶胞内共 2 个原子；
+体心原子与 8 个顶点原子等距（图~\ref{fig:bcc-model}）。
 
-\begin{enumerate}[label=（\arabic*）]
-  \item \textbf{密排方向与原子半径}：BCC 的密排方向为体对角线方向 $\langle111\rangle$。
-    沿体对角线有两个原子相切（体心原子与两端顶点原子），故 $4r=\sqrt{3}a$，得原子半径
-    $r=\sqrt{3}a/4$。代入 $a=2.819$\,\AA 得 $r\approx1.22$\,\AA。
-  \item \textbf{配位数}：每个原子有 8 个最近邻原子（体心原子与 8 个顶点原子相切，
-    配位多面体为立方体，图~\ref{fig:bcc-plane}(b)），另有 6 个次近邻原子
-    （沿 $\langle100\rangle$ 方向的相邻体心原子）。
-  \item \textbf{原子堆积因子}：
-    \begin{equation}
-      \eta=\frac{2\times\frac{4}{3}\pi r^3}{a^3}
-        =\frac{2\times\frac{4}{3}\pi\left(\frac{\sqrt{3}}{4}a\right)^3}{a^3}
-        =\frac{\sqrt{3}\pi}{8}\approx0.6802
-    \end{equation}
-    BCC 的堆积密度低于 FCC 与 HCP，因而 $\alpha$-Fe 在相变（如马氏体相变）中伴随体积
-    变化。
-  \item \textbf{密排面}：BCC 没有真正意义上的密排面，最密的面为 $\{110\}$ 面；
-    图~\ref{fig:bcc-plane}(a) 演示了在模型中添加 (111) 晶面（$d_{111}=1.6276$\,\AA）
-    进行观察的过程。
-\end{enumerate}
+沿体对角线方向，体心原子与两端的顶点原子相切，故 $4r=\sqrt{3}a$，$r=\sqrt{3}a/4$；
+代入 $a=2.819$\,\AA 得 $r\approx1.22$\,\AA。最近邻 8 个，配位多面体为立方体
+（图~\ref{fig:bcc-plane}(b)）；次近邻 6 个，位于 $\langle100\rangle$ 方向的相邻晶胞
+体心。堆积因子为
+\begin{equation}
+  \eta=\frac{2\times\frac{4}{3}\pi r^3}{a^3}
+    =\frac{2\times\frac{4}{3}\pi\left(\frac{\sqrt{3}}{4}a\right)^3}{a^3}
+    =\frac{\sqrt{3}\pi}{8}\approx0.6802
+\end{equation}
+明显低于 FCC 与 HCP，$\alpha$-Fe 在相变（如马氏体相变）中伴随的体积变化正与此有关。
+BCC 没有严格意义上的密排面，面间距最大的 $\{110\}$ 面可视为``最密''面；
+图~\ref{fig:bcc-plane}(a) 演示的是在模型中添加 (111) 晶面（$d_{111}=1.6276$\,\AA）
+后的观察效果。
 
-空间群符号 $I\,m\,\bar3\,m$ 表明：$I$ 为体心点阵，其余符号与 FCC 相同。具有 BCC
-结构的典型金属有 $\alpha$-Fe、Cr、Mo、W、V 及碱金属 Na、K 等。
+$I\,m\,\bar3\,m$ 中的 $I$ 代表体心点阵，其余符号的含义与 FCC 相同。Cr、Mo、W、V 以及
+碱金属 Na、K 等都是 BCC 结构，$\alpha$-Fe 是其中最熟悉的例子。

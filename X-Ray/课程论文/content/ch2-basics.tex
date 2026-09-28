@@ -3,7 +3,7 @@
 
 本章简要归纳晶体学的基础知识，说明如何描述晶体，为后续利用 Diamond 软件建立晶体结构
 模型作准备。本章的主要内容与部分图例引自中央民族大学施洪龙老师的《X 射线晶体学》课程
-课件\cite{shi2026xray}。
+课件\cite{shi2024xray}。
 
 \subsection{晶体的基本性质}
 
@@ -12,7 +12,7 @@
 
 \begin{itemize}
   \item \textbf{长程有序性}：晶体内部的原子在很大范围内（纳米量级以上）保持周期性排列。
-    长程有序是晶体区别于非晶体的本质特征，也是 X 射线衍射能够产生锐利衍射峰的根本原因。
+    长程有序把晶体与非晶体区分开来，也是 X 射线衍射能得到锐利衍射峰的前提。
   \item \textbf{均匀性}：晶体内部各部分的宏观性质（如化学组成、密度等）相同。
   \item \textbf{各向异性}：晶体在不同方向上的物理性质不同。例如电导率、热膨胀系数、
     折射率与机械强度随方向而异，这是不同方向上原子排列周期不同所决定的。
@@ -27,7 +27,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{assets/course/mineral.png}
-  \caption{自发形成规则多面体外形的矿物晶体\cite{shi2026xray}}
+  \caption{自发形成规则多面体外形的矿物晶体\cite{shi2024xray}}
   \label{fig:crystal-form}
 \end{figure}
 
@@ -53,7 +53,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{assets/course/lattice-basis.jpg}
-  \caption{点阵示意图：阵点与其平移矢量\cite{shi2026xray}}
+  \caption{点阵示意图：阵点与其平移矢量\cite{shi2024xray}}
   \label{fig:lattice-basis}
 \end{figure}
 
@@ -64,7 +64,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{assets/course/primitive-cell.jpg}
-  \caption{由三个基矢构成的初基原胞\cite{shi2026xray}}
+  \caption{由三个基矢构成的初基原胞\cite{shi2024xray}}
   \label{fig:primitive-cell}
 \end{figure}
 
@@ -107,7 +107,7 @@ $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\textwidth]{assets/course/fcc-primitive.jpg}
-  \caption{面心立方晶胞与初基原胞的结构模型\cite{shi2026xray}}
+  \caption{面心立方晶胞与初基原胞的结构模型\cite{shi2024xray}}
   \label{fig:fcc-primitive}
 \end{figure}
 
@@ -189,7 +189,7 @@ $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取
 
   \subcaptionbox{旋转轴次数的周期性证明示意}{%
     \includegraphics[width=0.55\textwidth]{assets/course/fivefold-proof.jpg}}
-  \caption{宏观对称元素与晶体中旋转轴次数的限制\cite{shi2026xray}}
+  \caption{宏观对称元素与晶体中旋转轴次数的限制\cite{shi2024xray}}
   \label{fig:macro-sym}
 \end{figure}
 
@@ -203,19 +203,19 @@ $\beta=\angle(\bm{a},\bm{c})$、$\gamma=\angle(\bm{a},\bm{b})$。晶胞的选取
   \hfill
   \subcaptionbox{P$m$ 中的镜面操作}{%
     \includegraphics[width=0.24\textwidth]{assets/course/mirror.jpg}}
-  \caption{利用 Diamond 观察宏观对称元素\cite{shi2026xray}}
+  \caption{利用 Diamond 观察宏观对称元素\cite{shi2024xray}}
   \label{fig:sym-diamond}
 \end{figure}
 
 宏观对称元素的组合共形成 \textbf{32 种点群}；按点群对称特征，晶体划分为 7 大晶系，
 对应 14 种 Bravais 格子（表~\ref{tab:crystalsystems}）。在无限晶体中，平移本身也是
-对称操作，并且还允许包含平移的\textbf{微观对称元素}——\textbf{螺旋轴}与\textbf{滑移
-面}。螺旋轴 $n_m$ 是旋转 $2\pi/n$ 与沿轴方向平移 $m/n$ 个晶格周期单位的联合操作：经
+对称操作，并且还允许包含平移的\textbf{微观对称元素}，即\textbf{螺旋轴}与
+\textbf{滑移面}。螺旋轴 $n_m$ 是旋转 $2\pi/n$ 与沿轴方向平移 $m/n$ 个晶格周期单位的联合操作：经
 $n$ 次操作后原子到达等效位置，而中间位置均不在同一平面上，沿轴呈螺旋状排列
 （图~\ref{fig:micro-sym}(a)(b)）；滑移面是镜面反映与沿面内特定方向平移的联合操作，
 包括沿 $a$、$b$、$c$ 方向平移 $1/2$ 的轴滑移面、沿面对角线方向平移 $1/2$ 的对角滑移面
 $n$，以及平移 $1/4$ 的金刚石滑移面 $d$（图~\ref{fig:micro-sym}(c)）。宏观与微观对称
-元素相互组合，共形成 \textbf{230 种空间群}\cite{hahn2005itt}。
+元素相互组合，共形成 \textbf{230 种空间群}\cite{hahn2002itt}。
 
 \begin{figure}[H]
   \centering
@@ -227,7 +227,7 @@ $n$，以及平移 $1/4$ 的金刚石滑移面 $d$（图~\ref{fig:micro-sym}(c)�
 
   \subcaptionbox{$c$ 滑移面的操作（镜面加平移 $1/2$）}{%
     \includegraphics[width=0.3\textwidth]{assets/course/glide.jpg}}
-  \caption{微观对称元素——螺旋轴与滑移面\cite{shi2026xray}}
+  \caption{微观对称元素：螺旋轴与滑移面\cite{shi2024xray}}
   \label{fig:micro-sym}
 \end{figure}
 
@@ -254,7 +254,7 @@ $n$，以及平移 $1/4$ 的金刚石滑移面 $d$（图~\ref{fig:micro-sym}(c)�
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{assets/course/bravais-types.jpg}
-  \caption{14 种 Bravais 格子\cite{shi2026xray}}
+  \caption{14 种 Bravais 格子\cite{shi2024xray}}
   \label{fig:bravais14}
 \end{figure}
 
@@ -275,7 +275,7 @@ $P\,4_2/m\,n\,m$ 表示四方初基点阵，[001] 方向为 $4_2$ 螺旋轴加�
   \hfill
   \subcaptionbox{三方（六方）与立方晶系}{%
     \includegraphics[width=0.42\textwidth]{assets/course/spacegroup-projection.jpg}}
-  \caption{七大晶系中空间群与点群的对应关系\cite{shi2026xray}}
+  \caption{七大晶系中空间群与点群的对应关系\cite{shi2024xray}}
   \label{fig:spacegroup-table}
 \end{figure}
 
@@ -326,6 +326,6 @@ $M$ 为摩尔质量。$Z$ 是检验指标化与结构解析结果是否合理的
   \centering
   \includegraphics[width=0.28\textwidth]{assets/course/structure-elements.jpg}
   \caption{晶体结构模型示例：描述晶体结构所需的全部要素（空间群、晶格常数与原子参数）
-    \cite{shi2026xray}}
+    \cite{shi2024xray}}
   \label{fig:structure-elements}
 \end{figure}
