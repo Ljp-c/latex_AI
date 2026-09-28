@@ -8,7 +8,7 @@ REM 默认主文件
 set "TEX_FILE=%~1"
 if "%TEX_FILE%"=="" set TEX_FILE=main.tex
 if not exist "%TEX_FILE%" (
-  echo ⚠️  找不到源文件: %TEX_FILE%
+  echo 找不到源文件: %TEX_FILE%
   exit /b 1
 )
 for %%F in ("%TEX_FILE%") do set "BASE_NAME=%%~nF"
@@ -19,7 +19,7 @@ findstr /i /c:"documentclass" /c:"usepackage" "%TEX_FILE%" | findstr /i /c:"ctex
 findstr /i /c:"usepackage" "%TEX_FILE%" | findstr /i /c:"luatex" >nul && set "COMPILER=lualatex"
 where %COMPILER% >nul 2>nul
 if errorlevel 1 (
-  echo ⚠️  未找到 %COMPILER% ，请确认已安装并加入 PATH
+  echo 未找到 %COMPILER% ，请确认已安装并加入 PATH
   exit /b 1
 )
 echo 检测到使用 %COMPILER% 编译器
@@ -42,7 +42,7 @@ exit /b 1
 
 :main
 REM 主流程
-echo 📄 编译文档: %TEX_FILE%
+echo 编译文档: %TEX_FILE%
 set "EXIT_CODE=0"
 
 REM 第一次编译
@@ -72,10 +72,10 @@ set "TEMP=%BIB_TMP%"
 set "TMP=%BIB_TMP%"
 
 if %BCF_EXIST%==1 (
-  where biber >nul 2>nul && (echo 📚 处理参考文献 ^(Biber^)... & biber "%BASE_NAME%" && set "BIB_OK=1")
+  where biber >nul 2>nul && (echo 处理参考文献 ^(Biber^)... & biber "%BASE_NAME%" && set "BIB_OK=1")
 )
 if not defined BIB_OK (
-  where bibtex >nul 2>nul && (echo 📚 处理参考文献 ^(BibTeX^)... & bibtex "%BASE_NAME%" && set "BIB_OK=1")
+  where bibtex >nul 2>nul && (echo 处理参考文献 ^(BibTeX^)... & bibtex "%BASE_NAME%" && set "BIB_OK=1")
 )
 if defined ORIG_TEMP set "TEMP=%ORIG_TEMP%"
 if defined ORIG_TMP set "TMP=%ORIG_TMP%"
@@ -94,13 +94,13 @@ if errorlevel 1 exit /b 1
 :skip_bib
 
 REM 清理文件
-echo 🧹 清理中间文件...
+echo 清理中间文件...
 call :cleanup
 
 if defined BIB_FAILED (
-  echo ⚠️  编译完成，但参考文献处理失败: %BASE_NAME%.pdf
+  echo 编译完成，但参考文献处理失败: %BASE_NAME%.pdf
 ) else (
-  echo ✅ 编译成功: %BASE_NAME%.pdf
+  echo 编译成功: %BASE_NAME%.pdf
 )
 
 REM 自动打开PDF
@@ -120,6 +120,6 @@ goto :eof
 if exist "%BASE_NAME%.pdf" (
   start "" "%BASE_NAME%.pdf"
 ) else (
-  echo ⚠️  无法自动打开PDF，请手动查看
+  echo 无法自动打开PDF，请手动查看
 )
 exit /b %EXIT_CODE%
