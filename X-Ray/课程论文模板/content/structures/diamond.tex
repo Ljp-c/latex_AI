@@ -1,0 +1,83 @@
+% ==================== 2.3.2.8 金刚石 ====================
+\jiegou{2.3.2.8}{金刚石结构}
+
+金刚石结构可视为两套面心立方点阵沿体对角线方向相互平移 $(1/4,1/4,1/4)$ 嵌套而成，
+建模参数见表~\ref{tab:diamond}。本例以硅（晶格常数 $a=5.42$\,\AA 为 Si 的特征值）进行
+建模，硅与金刚石碳同属金刚石型结构。
+
+\begin{table}[H]
+  \centering
+  \caption{金刚石结构的建模参数（以 Si 为例）}
+  \label{tab:diamond}
+  \begin{tabular}{ll}
+    \toprule
+    项目 & 参数 \\
+    \midrule
+    空间群 & $F\,d\,\bar3\,m$（No.~227） \\
+    晶格常数 & $a=b=c=5.42$\,\AA，$\alpha=\beta=\gamma=90^\circ$ \\
+    原子坐标 & Si：$(0,0,0)$（$8a$ 位，另含 $(1/4,1/4,1/4)$ 平移的等效位） \\
+    化学式单元数 & $Z=8$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{空间群与晶格常数设置}{%
+    \includegraphics[width=0.44\textwidth]{assets/diamond/a.png}}
+  \hfill
+  \subcaptionbox{非对称单元原子（Si）添加}{%
+    \includegraphics[width=0.44\textwidth]{assets/diamond/b.png}}
+  \caption{金刚石结构的参数设置（以 Si 为例）}
+  \label{fig:diamond-param}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{assets/diamond/c.png}
+  \caption{金刚石结构的晶体结构模型（以 Si 为例）}
+  \label{fig:diamond-model}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{assets/diamond/d.png}
+  \caption{Diamond 模拟的金刚石结构粉末衍射图}
+  \label{fig:diamond-xrd}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \subcaptionbox{晶面视图}{%
+    \includegraphics[width=0.44\textwidth]{assets/diamond/e.png}}
+  \hfill
+  \subcaptionbox{四面体配位（配位数 4）}{%
+    \includegraphics[width=0.44\textwidth]{assets/diamond/f.png}}
+  \caption{金刚石结构的晶面与四面体配位}
+  \label{fig:diamond-plane}
+\end{figure}
+
+\textbf{结构特征。}金刚石结构晶胞含 8 个原子：其中 4 个位于一套 FCC 点阵（顶点与
+面心），另 4 个位于沿体对角线平移 $(1/4,1/4,1/4)$ 的第二套 FCC 点阵上。
+
+\begin{enumerate}[label=（\arabic*）]
+  \item \textbf{四面体配位}：每个原子与周围 4 个最近邻原子以 $sp^3$ 杂化轨道成键，
+    形成正四面体配位（图~\ref{fig:diamond-plane}(b)），键角均为
+    $109.47^\circ$。最近邻距离（键长）为体对角线的 $1/4$：
+    \begin{equation}
+      d=\frac{\sqrt{3}}{4}a=\frac{\sqrt{3}}{4}\times5.42\approx2.35\ \text{\AA}
+    \end{equation}
+  \item \textbf{原子堆积因子}：刚球模型中 $2r=\sqrt{3}a/4$，故
+    \begin{equation}
+      \eta=\frac{8\times\frac{4}{3}\pi\left(\frac{\sqrt{3}}{8}a\right)^3}{a^3}
+        =\frac{\pi\sqrt{3}}{16}\approx0.3401
+    \end{equation}
+    远低于 FCC 的 $0.7405$。这是因为金刚石结构中每个原子仅有 4 个最近邻，且
+    $sp^3$ 四面体取向的成键使结构十分``开放''，大量间隙未被占据，这也解释了金刚石
+    密度较低（$\sim3.5$ g/cm$^3$）而硬度极高的特点。
+  \item \textbf{空间群}：$F\,d\,\bar3\,m$ 中 $d$ 表示金刚石滑移面（镜面反映加
+    $1/4$ 平移），正是该滑移面将两套 FCC 亚格子联系起来。
+\end{enumerate}
+
+金刚石型结构是共价晶体的典型代表：金刚石（C）是自然界最硬的物质，同型的 Si、Ge 是
+最重要的半导体材料，$\alpha$-Sn（灰锡）也属此结构。
