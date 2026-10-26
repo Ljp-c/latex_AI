@@ -2,6 +2,9 @@ TexLive/
 texlive2026/
 *.iso
 
+# 临时/缓存目录
+.tmp/
+
 # LaTeX 编译产物
 *.aux
 *.bcf
