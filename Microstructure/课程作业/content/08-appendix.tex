@@ -1,0 +1,172 @@
+% ==================== 附录 A ====================
+\section{Origin 计算模板公式清单}
+
+\subsection{列布局}
+
+表 \ref{tab:calc-columns} 给出“晶体学计算器”工作表的推荐列布局。列名直接作为公式中的变量名，因此应避免使用中文、空格和重复名称。表 \ref{tab:diff-columns} 给出衍射图工作表的推荐列布局；如果实际表格的列顺序不同，只需把公式中的列字母换成对应的列即可。
+
+\begin{table}[H]
+  \centering
+  \caption{晶体学计算器工作表的列布局}
+  \label{tab:calc-columns}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{cccccccc}
+    \toprule
+    列 & 名称 & 含义 & 列 & 名称 & 含义 & 列 & 名称/含义 \\
+    \midrule
+    A & a & 晶格常数 $a$ & H & a* & $a^*$ & O & k1 \\
+    B & b & 晶格常数 $b$ & I & b* & $b^*$ & P & l1 \\
+    C & c & 晶格常数 $c$ & J & c* & $c^*$ & Q & h2 \\
+    D & alpha & $\alpha$ & K & alpha* & $\alpha^*$ & R & k2 \\
+    E & beta & $\beta$ & L & beta* & $\beta^*$ & S & l2 \\
+    F & gamma & $\gamma$ & M & gamma* & $\gamma^*$ & T & r1 \\
+    G & V & 晶胞体积 & N & h1 & $h_1$ & U & r2 \\
+    -- & -- & -- & -- & -- & -- & V & theta \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{衍射图工作表的推荐列布局}
+  \label{tab:diff-columns}
+  \small
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular}{cccccccc}
+    \toprule
+    列 & 名称 & 含义 & 列 & 名称 & 含义 & 列 & 名称/含义 \\
+    \midrule
+    A & r1 & $r_1$ & G & y & 纵坐标 & M & k1 \\
+    B & r2 & $r_2$ & H & I & 强度 & N & l1 \\
+    C & theta & $\theta$ & I & h & $h$ & O & h2 \\
+    D & m & $m$ & J & k & $k$ & P & k2 \\
+    E & n & $n$ & K & l & $l$ & Q & l2 \\
+    F & x & 横坐标 & L & h1 & $h_1$ & -- & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{晶胞体积与倒易参数}
+
+选中 G 列，按 \texttt{Ctrl+Q} 输入：
+\begin{lstlisting}
+A*B*C*sqrt(1-cos(D)^2-cos(E)^2-cos(F)^2+2*cos(D)*cos(E)*cos(F))
+\end{lstlisting}
+选中 H--M 列，分别输入：
+\begin{lstlisting}
+B*C*sin(D)/G
+A*C*sin(E)/G
+A*B*sin(F)/G
+acos((cos(E)*cos(F)-cos(D))/(sin(E)*sin(F)))
+acos((cos(D)*cos(F)-cos(E))/(sin(D)*sin(F)))
+acos((cos(E)*cos(D)-cos(F))/(sin(E)*sin(D)))
+\end{lstlisting}
+注意：D、E、F 为角度，K、L、M 的输出也是角度；务必把 Origin 的 Angular Unit 设为 Degree。
+
+\subsection{倒易矢量长度与夹角}
+
+选中 T、U、V 列，分别输入：
+\begin{lstlisting}
+SQRT((N*H)^2+(O*I)^2+(P*J)^2+2*N*O*H*I*cos(M)+2*N*P*H*J*cos(L)+2*O*P*I*J*cos(K))
+SQRT((Q*H)^2+(R*I)^2+(S*J)^2+2*Q*R*H*I*cos(M)+2*Q*S*H*J*cos(L)+2*R*S*I*J*cos(K))
+ACOS((N*Q*H^2+O*R*I^2+P*S*J^2+(N*R+O*Q)*H*I*cos(M)+(N*S+P*Q)*H*J*cos(L)+(O*S+P*R)*I*J*cos(K))/(T*U))
+\end{lstlisting}
+式中的 N--S 为两组晶面指数，H--M 为倒易参数，T、U 为 $r_1,r_2$。如果列布局与表 \ref{tab:calc-columns} 不同，应逐项替换列字母，不要直接复制。
+
+\subsection{衍射点坐标与指数}
+
+在衍射图工作表中，按表 \ref{tab:diff-columns} 的布局输入：
+\begin{lstlisting}
+x = D*A + E*B*COS(C)
+y = E*B*SIN(C)
+h = D*L + E*O
+k = D*M + E*P
+l = D*N + E*Q
+\end{lstlisting}
+其中 A、B、C 为 $r_1,r_2,\theta$，D、E 为 $m,n$，L--Q 为两组基矢指数。$x,y$ 的单位是 \AA$^{-1}$；若要与实验花样的 $R$ 值比较，还需乘以相机长度 $L$ 或相机常数。
+
+\subsection{结构因子}
+
+在结构因子工作表中，按 A=$f$、B=$x$、C=$y$、D=$z$、E=$h$、F=$k$、G=$l$、H=phase、I=real、J=imag、K=intensity 的布局输入：
+\begin{lstlisting}
+phase = 360*(E*B + F*C + G*D)
+real  = A*COS(H)
+imag  = A*SIN(H)
+I     = (TOTAL(I))^2 + (TOTAL(J))^2
+\end{lstlisting}
+每个衍射点占 8 行（对应表 \ref{tab:si-atoms} 的 8 个原子）。\texttt{TOTAL} 对这 8 行求和；若一次计算多个点，应把每个点的 8 行作为一个块，用 \texttt{SUM} 指定范围，或增加斑点编号列后用 \texttt{TOTALIF} 分组。强度为 0 或接近 $10^{-29}$ 的点即为消光点。
+
+\subsection{自检值}
+
+表 \ref{tab:self-check} 给出了用单晶硅（$a=5.43$~\AA）检查模板的期望值。若计算结果与表中数值不符，应先检查角度单位、列引用和公式中的交叉项。
+
+\begin{table}[H]
+  \centering
+  \caption{单晶硅计算模板的自检值（$a=5.43$~\AA，Cu K$\alpha_1$）}
+  \label{tab:self-check}
+  \small
+  \begin{tabular}{cccc}
+    \toprule
+    量 & 期望值 & 量 & 期望值 \\
+    \midrule
+    $V$ & 160.103~\AA$^3$ & $a^*$ & 0.18416~\AA$^{-1}$ \\
+    $d_{111}$ & 3.1350~\AA & $r_{111}$ & 0.3189~\AA$^{-1}$ \\
+    $d_{220}$ & 1.9198~\AA & $r_{220}$ & 0.5209~\AA$^{-1}$ \\
+    $d_{400}$ & 1.3575~\AA & $r_{400}$ & 0.7366~\AA$^{-1}$ \\
+    $2\theta_{111}$ & 28.45$^\circ$ & $2\theta_{220}$ & 47.31$^\circ$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{输入检查清单}
+
+\begin{enumerate}[label=（\arabic*）,leftmargin=2.2em,itemsep=1pt]
+  \item 角度单位是 Degree，不是 Radian；
+  \item A--F 列的 $a,b,c,\alpha,\beta,\gamma$ 与目标物相一致；
+  \item H--M 列的公式引用了正确的列，且分母为 $V=G$；
+  \item T--V 列的分母为 $r_1r_2$，交叉项没有漏项；
+  \item 衍射图表格中 $m,n$ 的范围足够大，能铺满绘图区；
+  \item 每个衍射点的结构因子使用完整的 8 行原子坐标；
+  \item \texttt{TOTAL} 或 \texttt{SUM} 的范围没有跨到相邻衍射点；
+  \item $2\theta$ 是由 $d$ 通过 Bragg 方程得到的，不是把 $\theta$ 直接当成 $2\theta$；
+  \item 用表 \ref{tab:self-check} 的 $V$、$a^*$、$d_{111}$、$2\theta_{111}$ 做一次自检。
+\end{enumerate}
+
+\section{图片素材索引}
+
+本文正文使用的 56 张操作截图均来自 \texttt{Microstructure/新建文件夹}，按图号索引于表 \ref{tab:image-index}。每张截图在正文中只出现一次，未作裁剪或内容修改；为使文件路径兼容 XeLaTeX，复制到 \texttt{assets/} 时改用了 ASCII 文件名。
+
+\begin{table}[H]
+  \centering
+  \caption{正文图号与截图素材的对应关系}
+  \label{tab:image-index}
+  \small
+  \setlength{\tabcolsep}{6pt}
+  \renewcommand{\arraystretch}{1.02}
+  \begin{tabular}{ccl}
+    \toprule
+    图号 & 张数 & 素材编号/内容 \\
+    \midrule
+    图 2-1 & 3 & c01--c03：新建工作簿、增加列、建立列名 \\
+    图 2-2 & 2 & c04--c05：修正列名、输入公式 \\
+    图 2-3 & 3 & c06--c08：角度单位、晶格参数、体积公式 \\
+    图 2-4 & 2 & c09--c10：体积结果、倒易参数 \\
+    图 2-5 & 2 & c11--c12：输入晶面、$r_1/r_2/\theta$ 结果 \\
+    图 3-1 & 5 & p01--p05：VESTA 导入、分数坐标、导出 P1、记事本坐标 \\
+    图 3-2 & 4 & p16--p19：结构因子、原子坐标、相位、强度 \\
+    图 3-3 & 2 & p20--p21：110 输入、强度消光 \\
+    图 4-1 & 3 & p06--p08：基矢计算、$r_1/r_2/\theta$、二维点阵 \\
+    图 4-2 & 4 & p09--p12：新建表、列名、$m$ 和 $n$ 的范围 \\
+    图 4-3 & 3 & p13--p15：$x/y$ 公式、$I=100$、当前 $hkl$ \\
+    图 4-4 & 3 & p22--p24：Waterfall 设置、三维示例、二维示例 \\
+    图 4-5 & 4 & zone001 的 (a)--(d) \\
+    图 4-6 & 4 & zone111 的 (a)--(d) \\
+    图 4-7 & 4 & zone332 的 (a)--(d) \\
+    图 4-8 & 4 & zone334 的 (a)--(d) \\
+    图 4-9 & 4 & zone345 的 (a)--(d) \\
+    \midrule
+    合计 & 56 & -- \\
+    \bottomrule
+  \end{tabular}
+\end{table}

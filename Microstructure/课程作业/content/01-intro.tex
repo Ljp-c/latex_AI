@@ -1,0 +1,171 @@
+% ==================== 1 晶体学与电子衍射基础 ====================
+\section{晶体学与电子衍射基础}
+
+\subsection{晶胞参数、晶胞体积与倒易点阵}
+
+描述一个晶胞需要六个参数：三条棱长 $a,b,c$ 和三个夹角 $\alpha,\beta,\gamma$。晶胞体积为
+\begin{equation}
+V=abc\sqrt{1-\cos^2\alpha-\cos^2\beta-\cos^2\gamma+2\cos\alpha\cos\beta\cos\gamma}.
+\label{eq:volume}
+\end{equation}
+倒易点阵基矢 $\bm{a}^*,\bm{b}^*,\bm{c}^*$ 由实空间基矢 $\bm{a},\bm{b},\bm{c}$ 定义：
+\begin{equation}
+\bm{a}^*=\frac{\bm{b}\times\bm{c}}{\bm{a}\cdot(\bm{b}\times\bm{c})},\qquad
+\bm{b}^*=\frac{\bm{c}\times\bm{a}}{\bm{a}\cdot(\bm{b}\times\bm{c})},\qquad
+\bm{c}^*=\frac{\bm{a}\times\bm{b}}{\bm{a}\cdot(\bm{b}\times\bm{c})}.
+\label{eq:reciprocal-vectors}
+\end{equation}
+在晶体学中通常不写固体物理中的 $2\pi$ 因子，因此 $|\bm{a}^*|=1/d_{100}$，即倒易基矢的长度等于同名晶面间距的倒数。倒易点阵的六个参数可用实空间参数表示为
+\begin{equation}
+a^*=\frac{bc\sin\alpha}{V},\qquad
+b^*=\frac{ac\sin\beta}{V},\qquad
+c^*=\frac{ab\sin\gamma}{V},
+\label{eq:reciprocal-lengths}
+\end{equation}
+\begin{equation}
+\cos\alpha^*=\frac{\cos\beta\cos\gamma-\cos\alpha}{\sin\beta\sin\gamma},\quad
+\cos\beta^*=\frac{\cos\alpha\cos\gamma-\cos\beta}{\sin\alpha\sin\gamma},\quad
+\cos\gamma^*=\frac{\cos\alpha\cos\beta-\cos\gamma}{\sin\alpha\sin\beta}.
+\label{eq:reciprocal-angles}
+\end{equation}
+对立方晶系，$a=b=c$、$\alpha=\beta=\gamma=90^\circ$，于是
+\begin{equation}
+V=a^3,\qquad a^*=b^*=c^*=\frac{1}{a},\qquad \alpha^*=\beta^*=\gamma^*=90^\circ.
+\label{eq:cubic-reciprocal}
+\end{equation}
+
+\subsection{晶面间距、倒易矢量长度与晶面夹角}
+
+晶面 $(hkl)$ 的法向平行于同名倒易矢量 $\bm{G}_{hkl}=h\bm{a}^*+k\bm{b}^*+l\bm{c}^*$，晶面间距等于该倒易矢量长度的倒数：
+\begin{equation}
+\frac{1}{d_{hkl}^2}=h^2a^{*2}+k^2b^{*2}+l^2c^{*2}
++2hka^*b^*\cos\gamma^*+2hla^*c^*\cos\beta^*+2klb^*c^*\cos\alpha^*.
+\label{eq:dspacing}
+\end{equation}
+对立方晶系，式 \eqref{eq:dspacing} 简化为
+\begin{equation}
+d_{hkl}=\frac{a}{\sqrt{h^2+k^2+l^2}}.
+\label{eq:dspacing-cubic}
+\end{equation}
+两个倒易矢量 $\bm{G}_1=(h_1k_1l_1)^*$、$\bm{G}_2=(h_2k_2l_2)^*$ 的长度为
+\begin{equation}
+r_i=\left|\bm{G}_i\right|=\sqrt{h_i^2a^{*2}+k_i^2b^{*2}+l_i^2c^{*2}
++2h_ik_ia^*b^*\cos\gamma^*+2h_il_ia^*c^*\cos\beta^*+2k_il_ib^*c^*\cos\alpha^*},
+\quad i=1,2.
+\label{eq:rlength}
+\end{equation}
+二者之间的夹角 $\theta$ 满足
+\begin{equation}
+\cos\theta=\frac{\bm{G}_1\cdot\bm{G}_2}{r_1r_2}
+=\frac{1}{r_1r_2}\left[
+\begin{aligned}
+&h_1h_2a^{*2}+k_1k_2b^{*2}+l_1l_2c^{*2}\\
+&+(k_1l_2+k_2l_1)b^*c^*\cos\alpha^*
+ +(l_1h_2+l_2h_1)c^*a^*\cos\beta^*\\
+&+(h_1k_2+h_2k_1)a^*b^*\cos\gamma^*
+\end{aligned}
+\right].
+\label{eq:angle}
+\end{equation}
+式 \eqref{eq:rlength} 和式 \eqref{eq:angle} 就是 Origin 计算模板中 $r_1$、$r_2$ 和 $\theta$ 三列的计算依据。
+
+\subsection{晶带方程与带轴电子衍射}
+
+相交于同一晶向的各晶面族构成一个晶带，该晶向称为晶带轴（zone axis），简称带轴，记为 $[uvw]$。晶面 $(hkl)$ 属于该晶带的条件是
+\begin{equation}
+hu+kv+lw=0.
+\label{eq:zone-law}
+\end{equation}
+在倒易空间中，属于同一带轴的所有倒易点构成一个过原点的二维倒易面 $(uvw)^*$，带轴 $[uvw]$ 垂直于该面。带轴电子衍射花样就是三维倒易点阵沿该带轴方向的二维截面。由于电子波长很短（200~kV 时约 0.0251~\AA），Ewald 球半径很大，在零阶劳厄区（ZOLZ）内可以近似把倒易面看成与 Ewald 球相切的平面，因此能够同时观察到属于该带轴的大量衍射点。
+
+若在二维倒易面内选取两条不共线的基矢 $\bm{g}_1=(h_1k_1l_1)^*$、$\bm{g}_2=(h_2k_2l_2)^*$，它们的长度分别为 $r_1$、$r_2$，夹角为 $\theta$，则任意格点可用整数 $m,n$ 表示为
+\begin{equation}
+\bm{g}=m\bm{g}_1+n\bm{g}_2.
+\label{eq:2d-lattice}
+\end{equation}
+以 $\bm{g}_1$ 为 $x$ 轴，则该格点的二维坐标为
+\begin{equation}
+x=mr_1+nr_2\cos\theta,\qquad y=nr_2\sin\theta,
+\label{eq:xy}
+\end{equation}
+对应的晶面指数为
+\begin{equation}
+h=mh_1+nh_2,\qquad k=mk_1+nk_2,\qquad l=ml_1+nl_2.
+\label{eq:hkl-mn}
+\end{equation}
+式 \eqref{eq:xy} 和式 \eqref{eq:hkl-mn} 是第 4 章建立衍射图表格的核心。图 \ref{fig:reciprocal-plane} 给出了二维倒易面、基矢和带轴之间的几何关系。
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[scale=1.15,>=stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (G1) at (4.2,0);
+    \coordinate (G2) at (1.6,2.45);
+    \coordinate (G12) at (5.8,2.45);
+    \draw[->,very thick,secblue] (O)--(G1) node[midway,below=3pt] {$\bm{g}_1$};
+    \draw[->,very thick,secblue] (O)--(G2) node[midway,left=3pt] {$\bm{g}_2$};
+    \draw[dashed,gray] (G1)--(G12)--(G2);
+    \draw[->,very thick,red!70!black] (2.9,1.22)--(2.9,4.15)
+      node[above] {$[uvw]\parallel(uvw)^*$};
+    \fill (O) circle (1.7pt) node[below left] {000};
+    \fill (G1) circle (1.7pt);
+    \fill (G2) circle (1.7pt);
+    \fill (G12) circle (1.7pt);
+    \draw (0.8,0) arc (0:56.9:0.8) node[midway,right] {$\theta$};
+    \node[gray] at (2.9,-0.8) {二维倒易面 $(uvw)^*$};
+  \end{tikzpicture}
+  \caption{带轴电子衍射的二维倒易面、基矢与带轴关系示意。$\bm{g}_1$、$\bm{g}_2$ 为面内基矢，$[uvw]$ 垂直于该倒易面；整数 $m,n$ 将基矢扩展到整个倒易面。}
+  \label{fig:reciprocal-plane}
+\end{figure}
+
+\subsection{结构因子、消光规律与单晶硅结构}
+
+衍射点的位置由倒易点阵决定，衍射点的强弱则由结构因子决定。晶胞内第 $j$ 个原子对 $(hkl)$ 反射的结构因子贡献为
+\begin{equation}
+F(hkl)=\sum_{j=1}^{N}g_jt_j(s)f_j(s)\exp\left[2\pi i(hx_j+ky_j+lz_j)\right],
+\label{eq:structure-factor}
+\end{equation}
+其中 $g_j$ 为占有率，$t_j(s)$ 为温度因子，$f_j(s)$ 为原子散射因子，$(x_j,y_j,z_j)$ 为原子分数坐标。若近似取 $g_j=1$、$t_j=1$、$f_j=f$（常数），则
+\begin{equation}
+F(hkl)=f\sum_{j=1}^{N}\exp\left[2\pi i(hx_j+ky_j+lz_j)\right],\qquad I\propto|F|^2.
+\label{eq:structure-factor-simple}
+\end{equation}
+本作业的 Origin 模板正是采用这一简化形式，并取 Si 的 $f=14$。
+
+单晶硅为金刚石型立方结构，空间群 $Fd\bar{3}m$（No.~227），点阵常数 $a=5.43$~\AA，每个惯用晶胞含 8 个 Si 原子，其分数坐标列于表 \ref{tab:si-atoms}。该结构可看作两套面心立方点阵沿体对角线相对位移 $(1/4,1/4,1/4)$ 套构而成，每个 Si 原子与 4 个近邻形成正四面体配位，Si--Si 键长为 $\sqrt{3}a/4\approx2.35$~\AA。
+
+\begin{table}[H]
+  \centering
+  \caption{单晶硅（$Fd\bar{3}m$，$a=5.43$~\AA）晶胞内 8 个 Si 原子的分数坐标}
+  \label{tab:si-atoms}
+  \small
+  \begin{tabular}{cccc}
+    \toprule
+    序号 & $x$ & $y$ & $z$ \\
+    \midrule
+    1 & 0     & 0     & 0     \\
+    2 & 0     & 1/2   & 1/2   \\
+    3 & 1/2   & 0     & 1/2   \\
+    4 & 1/2   & 1/2   & 0     \\
+    5 & 1/4   & 1/4   & 1/4   \\
+    6 & 1/4   & 3/4   & 3/4   \\
+    7 & 3/4   & 1/4   & 3/4   \\
+    8 & 3/4   & 3/4   & 1/4   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+把表 \ref{tab:si-atoms} 的坐标代入式 \eqref{eq:structure-factor-simple}，可得金刚石结构的结构因子
+\begin{equation}
+F=f\left[1+e^{\pi i(h+k)}+e^{\pi i(h+l)}+e^{\pi i(k+l)}\right]
+\left[1+e^{\frac{\pi i}{2}(h+k+l)}\right].
+\label{eq:diamond-F}
+\end{equation}
+由此得到金刚石结构的消光规律：
+\begin{itemize}[leftmargin=2em,itemsep=1pt]
+  \item $h,k,l$ 奇偶混合时，第一个方括号为 0，$F=0$；
+  \item $h,k,l$ 全为偶数且 $h+k+l=4n+2$ 时，第二个方括号为 0，$F=0$；
+  \item $h,k,l$ 全为奇数时，$|F|^2=32f^2$；
+  \item $h,k,l$ 全为偶数且 $h+k+l=4n$ 时，$|F|^2=64f^2$。
+\end{itemize}
+因此，Si 的允许反射为 111、220、311、400、331、422、511/333、440 等，而 100、110、200、222、420、600 等消光。第 3 章将以 110 反射为例，用模板计算验证这一规律。
