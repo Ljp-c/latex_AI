@@ -1,3 +1,24 @@
 TexLive/
 texlive2026/
 *.iso
+
+# LaTeX 编译产物
+*.aux
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.lof
+*.lot
+*.idx
+*.ind
+*.ilg
