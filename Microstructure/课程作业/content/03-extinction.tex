@@ -73,6 +73,7 @@
 \end{figure}
 
 \subsection{结构因子与消光系数}
+\label{sec:f14}
 
 运动学近似下，晶面 $(hkl)$ 的衍射强度正比于结构因子模的平方：
 \begin{equation}
@@ -106,7 +107,7 @@ I     = (TOTAL(I))^2 + (TOTAL(J))^2
   \begin{subfigure}[t]{0.62\linewidth}
     \centering
     \includegraphics[width=\linewidth]{proc/p17.png}
-    \caption{$f=14$ 与 8 个原子坐标}
+    \caption{$f=14$（Si 的原子序数）与 8 个原子坐标}
     \label{fig:structure-factor-b}
   \end{subfigure}\hfill
   \begin{subfigure}[t]{0.32\linewidth}
@@ -126,6 +127,10 @@ I     = (TOTAL(I))^2 + (TOTAL(J))^2
   \caption{消光系数（结构因子）的计算：(a) $F(h)=\sum g^jt^j(s)f^j(s)\exp(2\pi i\bm{h}\cdot\bm{x}^j)$；(b) $f=14$ 和 8 个原子的分数坐标，表头为 $f,x,y,z,h,k,l,\text{phase},\cos,\sin,I$；(c) 相位差 $360^\circ(hx+ky+lz)$ 及实部、虚部；(d) 强度 $(\sum\mathrm{real})^2+(\sum\mathrm{imag})^2$。}
   \label{fig:structure-factor}
 \end{figure}
+
+图 \ref{fig:structure-factor}(b) 中的 $f=14$ 不是一个随意设定的常数，而是 Si 原子散射因子的前向散射值。原子散射因子 $f$（严格写作 $f(s)$，$s=\sin\theta/\lambda$）表示一个原子在给定方向上的散射振幅与一个自由电子散射振幅之比，量纲为 1；当散射角趋于零时，各电子的散射波完全同相叠加，$f(0)$ 近似等于原子的核外电子数，即原子序数 $Z$。Si 的 $Z=14$，所以模板取 $f=14$，相当于采用 $f(0)$ 这一上限值。真实晶体的 $f(s)$ 随 $\sin\theta/\lambda$ 增大而单调下降，还要乘上温度因子 $t(s)=\exp(-Bs^2)$（第 \ref{sec:cromer-mann} 节 PDF 卡片用的 Cromer--Mann $f(s)$ 就是这种角度依赖的定量表述），因此固定 $f=14$ 属于运动学近似下的最简处理。
+
+这一简化对“是否消光”的判断是充分的：$F(hkl)=0$ 来自晶胞内各原子相位项的完全抵消，与 $f$ 取何值无关，所以用 $f=14$ 算出的零强度点，在真实晶体中同样消光。但它对未消光反射的相对强度只是近似：高角反射的真实 $f(s)$ 已明显小于 14，其强度会被本模板高估，这与表 \ref{tab:pdf-card} 中 $f=14$ 与 $f(s)$ 两列强度的差异是同一原因。
 
 \subsection{110 反射的消光验证}
 

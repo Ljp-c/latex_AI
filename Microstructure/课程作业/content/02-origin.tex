@@ -3,7 +3,7 @@
 
 \subsection{工作簿、列结构与角度单位}
 
-打开 Origin，新建一个工作簿，将其重命名为 \texttt{SIcalculator}，并新增 20 列，使工作表达到 A--V 共 22 列，如图 \ref{fig:calc-setup}(a)(b) 所示。列数应与模板的列布局一致；后续如需增加计算项目，可在工作表中继续插入行或列。随后按“晶格参数—晶胞体积—倒易参数—晶面指数—结果”的顺序命名各列，如图 \ref{fig:calc-setup}(c) 和图 \ref{fig:calc-formula}(a) 所示。建议的列布局为：
+打开 Origin，新建一个工作簿，将其重命名为 \texttt{SIcalculator}，并新增 20 列，使工作表增加到 A--V 共 22 列，如图 \ref{fig:calc-setup}(a)(b) 所示。列数应与模板的列布局一致；后续如需增加计算项目，可在工作表中继续插入行或列。随后按“晶格参数—晶胞体积—倒易参数—晶面指数—结果”的顺序命名各列，如图 \ref{fig:calc-setup}(c) 和图 \ref{fig:calc-formula}(a) 所示。建议的列布局为：
 
 \begin{itemize}[leftmargin=2em,itemsep=1pt]
   \item A--F：$a,b,c,\alpha,\beta,\gamma$；
@@ -24,7 +24,7 @@
   \begin{subfigure}[t]{0.30\linewidth}
     \centering
     \includegraphics[width=\linewidth]{calc/c02.png}
-    \caption{新增 20 列（达到 A--V 共 22 列）}
+    \caption{新增 20 列，增加到 A--V 共 22 列}
     \label{fig:calc-setup-b}
   \end{subfigure}
 
@@ -35,7 +35,7 @@
     \caption{新建列并逐列命名}
     \label{fig:calc-setup-c}
   \end{subfigure}
-  \caption{Origin 计算模板的初始设置：(a) 新建并重命名工作簿；(b) 新增 20 列，达到 A--V 共 22 列；(c) 建立列名。列名将直接作为公式中的变量名使用，因此命名应简洁且不重复。}
+  \caption{Origin 计算模板的初始设置：(a) 新建并重命名工作簿；(b) 新增 20 列，工作表增加到 A--V 共 22 列；(c) 建立列名。列名将直接作为公式中的变量名使用，因此命名应简洁且不重复。}
   \label{fig:calc-setup}
 \end{figure}
 
@@ -158,6 +158,7 @@ r_{hkl}=\frac{\sqrt{h^2+k^2+l^2}}{a},\qquad
 \end{figure}
 
 \subsection{单晶硅 PDF 卡片的构建}
+\label{sec:cromer-mann}
 
 PDF 卡片的核心信息是每一组衍射线的晶面指数 $hkl$、晶面间距 $d$、衍射角 $2\theta$ 和相对强度 $I/I_0$。在已建立的模板后面继续增加四列：$2\theta$、多重性 $N_{hkl}$、$|F_{hkl}|^2$ 和 $I/I_0$，即可把“晶体学计算器”扩展为“PDF 卡片生成器”；若需比较原子散射因子的影响，可再加一列 $I/I_0(f(s))$。
 
@@ -201,12 +202,16 @@ LP=\frac{1+\cos^2 2\theta}{\sin^2\theta\cos\theta}.
   \end{tabular}
 \end{table}
 
-表 \ref{tab:pdf-card} 中前一个强度列取 $f=14$，与第 3 章结构因子/消光系数计算的简化模型一致；后一个强度列把常数 $f$ 换成 Si 的 Cromer--Mann 原子散射因子 $f(s)$，并取温度因子 $B=0.5$~\AA$^2$，即
+表 \ref{tab:pdf-card} 中前一个强度列取 $f=14$，与第 3 章结构因子/消光系数计算的简化模型一致——$f$ 为原子散射因子，$14$ 即 Si 的原子序数，相当于只保留其前向散射值、忽略随角度的衰减（其含义与适用范围见第 \ref{sec:f14} 节）；后一个强度列把常数 $f$ 换成 Si 的 Cromer--Mann 原子散射因子 $f(s)$，并取温度因子 $B=0.5$~\AA$^2$，即
 \begin{equation}
 f(s)=\sum_{i=1}^{4}a_i e^{-b_i s^2}+c,\qquad s=\frac{\sin\theta}{\lambda}=\frac{1}{2d},
 \label{eq:cromer-mann}
 \end{equation}
 其中 $a_1=6.2915$、$b_1=2.4386$，$a_2=3.0353$、$b_2=32.3337$，$a_3=1.9891$、$b_3=0.6785$，$a_4=1.5410$、$b_4=81.6937$，$c=1.1407$。$f(0)\approx14$，正好等于 Si 的原子序数，可作为系数是否抄对的检查。
+
+表 \ref{tab:pdf-card} 与图 \ref{fig:pdf-card} 的数值由同一套公式算出，但作图方式不同：表格数据来自第 2.1--2.4 节的 Origin 模板（逐列输入晶格参数、$2\theta$、多重性和强度公式），而图 \ref{fig:pdf-card} 的棒图是用 \textbf{Python 3 + matplotlib} 编写的脚本自动生成的，没有在 Origin 中手工绘制。脚本的基本做法是：固定晶格常数、波长、常数 $f$ 和温度因子后，遍历 $0\le l\le k\le h\le 8$ 的 $hkl$，用式 \eqref{eq:structure-factor-simple} 求 $|F|^2$（为零即判为消光并剔除），用式 \eqref{eq:bragg} 求 $2\theta$、用式 \eqref{eq:intensity-powder} 求相对强度，按 $d$ 把退化组合（如 333 与 511）合并，归一化后用 \texttt{vlines} 画出两组棒图。
+
+之所以用脚本而不是手工绘图，原因有三点：其一，PDF 卡片需要对上百个 $hkl$ 逐一枚举、按 $d$ 分组并统计多重性，手工录入既慢又容易漏项；其二，同一批数据要同时给出 $f=14$ 与 $f(s)$ 两套强度并排比较，脚本只需改一行常数即可重绘；其三，脚本可以同步打印表 \ref{tab:pdf-card} 的每一行，与 Origin 模板的结果逐行对照，起到交叉校验的作用（两者数值完全一致）。完整的构建思路、代码和运行方法见附录 C。若希望全部在 Origin 内完成，也可以把表 \ref{tab:pdf-card} 的 $2\theta$ 与强度两列直接画成柱状或棒状图，但枚举、分组和多重性统计仍建议由代码完成。
 
 \begin{figure}[H]
   \centering

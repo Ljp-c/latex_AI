@@ -125,12 +125,12 @@ h=mh_1+nh_2,\qquad k=mk_1+nk_2,\qquad l=ml_1+nl_2.
 F(hkl)=\sum_{j=1}^{N}g_jt_j(s)f_j(s)\exp\left[2\pi i(hx_j+ky_j+lz_j)\right],
 \label{eq:structure-factor}
 \end{equation}
-其中 $g_j$ 为占有率，$t_j(s)$ 为温度因子，$f_j(s)$ 为原子散射因子，$(x_j,y_j,z_j)$ 为原子分数坐标。若近似取 $g_j=1$、$t_j=1$、$f_j=f$（常数），则
+其中 $g_j$ 为占有率，$t_j(s)$ 为温度因子，$f_j(s)$ 为原子散射因子，$(x_j,y_j,z_j)$ 为原子分数坐标。原子散射因子描述一个原子在给定方向上的散射振幅相对于一个自由电子散射振幅的比值（量纲为 1），随散射角增大而衰减；在 $s=\sin\theta/\lambda\to0$ 的前向散射极限下，$f(0)$ 近似等于该原子的核外电子数，即原子序数 $Z$。若近似取 $g_j=1$、$t_j=1$、$f_j=f$（常数），则
 \begin{equation}
 F(hkl)=f\sum_{j=1}^{N}\exp\left[2\pi i(hx_j+ky_j+lz_j)\right],\qquad I\propto|F|^2.
 \label{eq:structure-factor-simple}
 \end{equation}
-本作业的 Origin 模板正是采用这一简化形式，并取 Si 的 $f=14$。
+本作业的 Origin 模板正是采用这一简化形式，并取 Si 的 $f=14$（Si 的原子序数 $Z=14$，即取前向散射极限值并忽略其随角度的衰减，详见第 \ref{sec:f14} 节）。
 
 单晶硅为金刚石型立方结构，空间群 $Fd\bar{3}m$（No.~227），点阵常数 $a=5.43$~\AA，每个惯用晶胞含 8 个 Si 原子，其分数坐标列于表 \ref{tab:si-atoms}。该结构可看作两套面心立方点阵沿体对角线相对位移 $(1/4,1/4,1/4)$ 套构而成，每个 Si 原子与 4 个近邻形成正四面体配位，Si--Si 键长为 $\sqrt{3}a/4\approx2.35$~\AA。
 

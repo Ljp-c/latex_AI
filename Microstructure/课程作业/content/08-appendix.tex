@@ -135,7 +135,7 @@ I     = (TOTAL(I))^2 + (TOTAL(J))^2
 
 \section{图片素材索引}
 
-本文正文使用的 56 张操作截图均来自 \texttt{Microstructure/新建文件夹}，按图号索引于表 \ref{tab:image-index}。每张截图在正文中只出现一次，未作裁剪或内容修改；为使文件路径兼容 XeLaTeX，复制到 \texttt{assets/} 时改用了 ASCII 文件名。
+本文正文使用的 56 张操作截图均来自 \texttt{Microstructure/新建文件夹}，按图号索引于表 \ref{tab:image-index}。每张截图在正文中只出现一次，未作裁剪或内容修改；为使文件路径兼容 XeLaTeX，复制到 \texttt{assets/} 时改用了 ASCII 文件名。其中图 4-5～4-9 的 (c) 二维散点图取自各带轴文件夹中的 \texttt{image.png}（Origin 重新导出的完整版），其余各图仍取自同名中文命名的截图。
 
 \begin{table}[H]
   \centering
@@ -170,3 +170,43 @@ I     = (TOTAL(I))^2 + (TOTAL(J))^2
     \bottomrule
   \end{tabular}
 \end{table}
+
+    \section{PDF 卡片绘制程序（Python）}
+    \label{app:pdfcard-code}
+
+    \subsection{构建思路}
+
+    图 \ref{fig:pdf-card} 与表 \ref{tab:pdf-card} 由 \texttt{code/pdfcard.py} 生成。程序只依赖 Python 3 标准库和 \texttt{matplotlib}，整个流程分为六步，与代码中的函数一一对应：
+
+    \begin{enumerate}[label=（\arabic*）,leftmargin=2.2em,itemsep=2pt]
+      \item \textbf{固定输入}：晶格常数 $a=5.43$~\AA、Cu K$\alpha_1$ 波长 $\lambda=1.5406$~\AA、常数原子散射因子 $f_0=14$、温度因子 $B=0.5$~\AA$^2$，以及 Fd-3m 的 8 个 Si 原子分数坐标。
+      \item \textbf{枚举独立反射}：只遍历 $0\le l\le k\le h\le 8$。任意交换或改变正负号得到的 $hkl$ 与它同属一个晶面族，$d$ 和 $|F|$ 完全相同，其贡献通过多重性统一计入，因此不必重复计算。
+      \item \textbf{结构因子与消光}：按 $F/f=\sum_j\exp[2\pi i(hx_j+ky_j+lz_j)]$ 求和后取模。取模后小于 $10^{-6}$ 的晶面即 $|F|^2=0$，判为消光并直接跳过；同时跳过 $\lambda/(2d)>1$、超出 Cu K$\alpha_1$ 衍射极限的反射。
+      \item \textbf{几何量与多重性}：立方晶系用 $d=a/\sqrt{h^2+k^2+l^2}$，由 $2\theta=2\arcsin[\lambda/(2d)]$ 得衍射角；多重性 $N$ 取“排列数 $\times2^{\text{非零指数个数}}$”，等价于把交换和正负号都算进去。Lorentz-偏振因子按 $LP=(1+\cos^22\theta)/(\sin^2\theta\cos\theta)$ 计算。
+      \item \textbf{两种强度模型与分组}：$I\propto N|F|^2LP$。模型一取 $f=f_0=14$；模型二把 $f$ 换成 Cromer--Mann 的 $f(s)$ 并乘温度因子 $e^{-2Bs^2}$。同一个 $d$ 值下可能对应多组 $hkl$（如 333 与 511），用 $\mathrm{round}(d,5)$ 作为键把它们合并，组内强度与多重性分别相加。
+      \item \textbf{归一化与绘图}：以每套模型的最大强度为 100\%，用 \texttt{vlines} 在 $2\theta$ 位置画棒，双面板共享纵轴，300~dpi 保存为 \texttt{assets/pdfcard.png}；同时把每行数据按“表 2-1 的列格式”打印到终端。
+    \end{enumerate}
+
+    这样组织的好处是：把“数据计算”和“绘图”解耦，\texttt{collect\_reflections()} 的输出既可以是表格行，也可以是画图用的数组；只要改动顶部的 $a$、$\lambda$、$f_0$、$B$ 或原子坐标，就能直接用于其它立方晶体。程序中的每一步都对应正文的式 \eqref{eq:structure-factor-simple}、式 \eqref{eq:bragg}、式 \eqref{eq:intensity-powder} 和式 \eqref{eq:cromer-mann}，因此可以逐项核对。
+
+    \subsection{完整代码}
+
+    \lstinputlisting[language=Python,basicstyle=\ttfamily\scriptsize,
+      caption={单晶硅 PDF 卡片的计算与绘图脚本 \texttt{code/pdfcard.py}},
+      label={lst:pdfcard}]{code/pdfcard.py}
+
+    \subsection{运行与自检}
+
+    在 \texttt{课程作业} 目录下执行
+    \begin{lstlisting}
+    cd code
+    python pdfcard.py
+    \end{lstlisting}
+    程序会在终端打印 12 行可直接粘贴到表 \ref{tab:pdf-card} 的数据，并在 \texttt{../assets/pdfcard.png} 生成图 \ref{fig:pdf-card}。若缺少绘图库，先执行 \texttt{pip install matplotlib}。自检要点：
+    \begin{enumerate}[label=（\arabic*）,leftmargin=2.2em,itemsep=1pt]
+      \item $f(0)=6.2915+3.0353+1.9891+1.5410+1.1407\approx14$，与 Si 的原子序数一致；
+      \item 111 反射 $d=3.1350$~\AA、$2\theta=28.45^\circ$、$|F|^2=32f^2=6272$，相对强度为 100；
+      \item 110、200、222、420、600 等不出现（被消光判据剔除），与第 3 章表 \ref{tab:extinction-examples} 一致；
+      \item 脚本打印的 12 行数值应与 Origin 模板逐行相同，若不同，优先检查原子坐标的小数位和 $\lambda$ 的取值。
+    \end{enumerate}
+

@@ -1,0 +1,1656 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>波谱分析 开卷速查手册</title>
+<style>
+@page { size: A4 landscape; margin: 6mm 6mm 5mm 6mm; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin:0; padding:0; }
+body { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; font-size: 7pt; line-height: 1.31; color:#111; }
+.pg { page-break-after: always; break-after: page; }
+.pg.last { page-break-after: auto; break-after: auto; }
+
+/* ---------- page header ---------- */
+.bar { display:flex; align-items:stretch; gap:0; border-bottom:1.4pt solid #1f3864; margin-bottom:1.6mm; }
+.tag { background:#1f3864; color:#fff; font-weight:700; font-size:11pt; line-height:1.1;
+       padding:0.6mm 2.2mm; letter-spacing:0.5pt; }
+.ttl { flex:1; font-weight:700; font-size:9.2pt; padding:0.6mm 2mm; background:#dae3f3; color:#1f3864; }
+.pn  { font-size:6.6pt; color:#555; padding:1mm 1.5mm 0 1.5mm; white-space:nowrap; }
+
+/* ---------- columns ---------- */
+.cols { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:3.2mm; }
+.cols2 { display:grid; grid-template-columns: 1fr 1fr; gap:3.2mm; }
+
+h3 { font-size:7.5pt; margin:0 0 0.9mm 0; padding:0.35mm 1mm 0.35mm 1.4mm;
+     border-left:2.4pt solid #1f3864; background:#e6ecf6; color:#13294b; page-break-after: avoid; }
+h3.g { border-left-color:#1e6b3a; background:#e3f1e7; color:#14502a; }
+h3.o { border-left-color:#a04a00; background:#fbeadb; color:#7a3800; }
+h3.p { border-left-color:#6b2b7a; background:#f0e6f4; color:#4d1f59; }
+h3.s { font-size:7pt; margin-top:1.6mm; }
+
+/* ---------- tables ---------- */
+table { width:100%; border-collapse:collapse; font-size:6.55pt; margin:0 0 1.3mm 0; table-layout:auto; }
+th { background:#eceff5; border:0.4pt solid #8a93a5; padding:0.40mm 0.72mm; text-align:left; font-weight:700; }
+td { border:0.4pt solid #8a93a5; padding:0.36mm 0.72mm; vertical-align:top; }
+td.c, th.c { text-align:center; }
+table.k td:first-child { background:#f7f8fb; }
+
+/* ---------- inline ---------- */
+b, .k2 { font-weight:700; }
+.hl { color:#b3122b; font-weight:700; }
+.gr { color:#0d5c2c; font-weight:700; }
+.bl { color:#1f4e9c; font-weight:700; }
+u { text-decoration:underline; text-underline-offset:1px; }
+.note { background:#fffbe6; border:0.4pt solid #d9b84a; padding:0.7mm 1.2mm; font-size:6.4pt; margin:0 0 1.3mm 0; line-height:1.3; }
+.note.r { background:#fdecee; border-color:#e08a95; }
+.note.g { background:#eaf6ec; border-color:#7fb98c; }
+ul { margin:0 0 1.2mm 0; padding-left:3.2mm; }
+li { margin:0 0 0.25mm 0; }
+p { margin:0 0 1mm 0; }
+.mono { font-family: Consolas, "Courier New", monospace; font-size:6.6pt; }
+.seq { background:#1f3864; color:#fff; font-weight:700; text-align:center; padding:0.5mm; font-size:6.8pt; margin:0 0 1.2mm 0; letter-spacing:0.2pt; overflow-wrap:anywhere; }
+.flip { text-align:right; font-size:6pt; color:#666; margin-top:0.6mm; }
+</style>
+</head>
+<body>
+
+<!-- ==================== 第 1 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">A</span><span class="ttl">总览 · 索引 · 四谱速查</span><span class="pn">第 1 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 题目 → 页码（先看这张）</h3>
+      <table class="k">
+        <tr><th style="width:62%">题目里出现这些词</th><th class="c">翻到</th></tr>
+        <tr><td>四大谱能提供什么信息 / 解决什么问题</td><td class="c"><b>P1</b></td></tr>
+        <tr><td>电子跃迁类型、能量大小、σ n π、发色团助色团</td><td class="c"><b>P2</b></td></tr>
+        <tr><td>R带 K带 B带 E带、ε、Lambert-Beer、A 与 T%</td><td class="c"><b>P2</b></td></tr>
+        <tr><td>红移 蓝移 增色 减色、溶剂极性、pH、溶剂极限</td><td class="c"><b>P3</b></td></tr>
+        <tr><td>算 λ<sub>max</sub>（共轭二烯 / 多烯 / α,β-不饱和羰基）</td><td class="c"><b>P4</b></td></tr>
+        <tr><td>单/二取代苯、稠环、黄酮、顺反、构象、互变异构</td><td class="c"><b>P5</b></td></tr>
+        <tr><td>红外两条件、振动形式、自由度、峰数为什么少</td><td class="c"><b>P6</b></td></tr>
+        <tr><td>诱导/共轭/氢键/环张力/费米共振对峰位的影响</td><td class="c"><b>P7</b></td></tr>
+        <tr><td>查某个官能团的特征频率、取代类型、羰基类型</td><td class="c"><b>P8</b></td></tr>
+        <tr><td>哪些核有 NMR、弛豫 T1/T2、共振条件、屏蔽、TMS</td><td class="c"><b>P9</b></td></tr>
+        <tr><td>查某类氢的化学位移 δ、活泼氢、烯氢计算</td><td class="c"><b>P10</b></td></tr>
+        <tr><td>裂分峰数 n+1、偶合常数 J、低级/高级偶合</td><td class="c"><b>P11</b></td></tr>
+        <tr><td>易混概念、公式、不饱和度 Ω、综合解析流程</td><td class="c"><b>P12</b></td></tr>
+      </table>
+
+      <h3>② 四谱总对比</h3>
+      <table>
+        <tr><th></th><th>UV</th><th>IR</th><th>NMR</th><th>MS</th></tr>
+        <tr><td class="c"><b>作用光</b></td><td>紫外光</td><td>红外光</td><td>射频</td><td>电子轰击<br>电离</td></tr>
+        <tr><td class="c"><b>探测</b></td><td>电子<br>跃迁</td><td>化学键<br>振动</td><td>核的<br>磁性质</td><td>质荷比<br>m/z</td></tr>
+        <tr><td class="c"><b>解决</b></td><td class="hl">共轭<br>体系</td><td class="hl">官能团<br>鉴定</td><td class="hl">碳氢<br>骨架</td><td class="hl">分子量<br>元素组成<br>碎片</td></tr>
+        <tr><td class="c"><b>吸收谱</b></td><td>是</td><td>是</td><td>是</td><td class="hl">不是</td></tr>
+        <tr><td class="c"><b>样品量</b></td><td>Mr×10<sup>-6</sup>~<br>10<sup>-5</sup> g/<br>100 mL</td><td>1–5<br>mg</td><td><sup>1</sup>H 2–5 mg<br><sup>13</sup>C ≥10 mg</td><td>10<sup>-12</sup> g</td></tr>
+        <tr><td class="c"><b>回收</b></td><td>可</td><td>可</td><td>可</td><td class="hl">不可</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>③ 波段 → 跃迁 → 技术（必背）</h3>
+      <table>
+        <tr><th>电磁波波段</th><th>能级跃迁</th><th>技术</th></tr>
+        <tr><td>紫外-可见光</td><td class="hl">电子能级跃迁</td><td>UV-Vis</td></tr>
+        <tr><td>红外光</td><td class="hl">振动-转动能级跃迁</td><td>IR</td></tr>
+        <tr><td>射频（无线电波）</td><td class="hl">核自旋能级跃迁</td><td>NMR</td></tr>
+        <tr><td>——（电离，非吸收）</td><td>质荷比 m/z</td><td>MS</td></tr>
+      </table>
+
+      <h3>④ 能级关系（必背）</h3>
+      <div class="seq">E<sub>e</sub> ≫ E<sub>v</sub> &gt; E<sub>r</sub>　（电子 ≫ 振动 &gt; 转动）</div>
+      <ul>
+        <li>ΔE = hν = hc/λ；<b>ΔE<sub>e</sub> 最大</b>（约 1–20 eV，1 eV = 1.6×10<sup>-19</sup> J）</li>
+        <li>振动能级 <b>&gt; 转动能级</b>、<b>&lt; 电子能级</b></li>
+        <li><b>振动光谱中涵盖转动光谱</b> → IR 又叫"振动-转动光谱"</li>
+        <li>三者都<b>量子化</b>；只有光能 = 两能级差才被吸收</li>
+      </ul>
+
+      <h3>⑤ 电磁波谱分区（认表）</h3>
+      <table>
+        <tr><th>区域</th><th>波长</th><th>跃迁</th><th>谱种</th></tr>
+        <tr><td>γ 射线</td><td>&lt;1 pm</td><td>原子核蜕变</td><td>穆斯堡尔</td></tr>
+        <tr><td>X 射线</td><td>1 nm–1 pm</td><td>原子内层电子</td><td>电子能谱</td></tr>
+        <tr><td class="hl">紫外</td><td>400–1 nm</td><td>原子外层电子</td><td>紫外光谱</td></tr>
+        <tr><td>可见</td><td>750–400 nm</td><td>原子外层电子</td><td>可见光谱</td></tr>
+        <tr><td>近红外</td><td>2.5 μm–750 nm</td><td>振动(倍频)</td><td>近红外</td></tr>
+        <tr><td class="hl">红外</td><td>2.5–7.5 μm</td><td>分子中原子振动</td><td>红外光谱</td></tr>
+        <tr><td>远红外</td><td>1 mm–25 μm</td><td>分子转动</td><td>转动光谱</td></tr>
+        <tr><td class="hl">无线电波</td><td>&gt;1 mm</td><td>原子核自旋</td><td>核磁共振</td></tr>
+      </table>
+
+      <h3>⑥ 样品准备（三者）</h3>
+      <table>
+        <tr><th>要求</th><th>具体</th></tr>
+        <tr><td class="c"><b>足够的量</b></td><td>UV Mr×10<sup>-6</sup>~10<sup>-5</sup> g/100 mL；IR 1–5 mg；<sup>1</sup>H 2–5 mg；<sup>13</sup>C ≥10 mg；MS 10<sup>-12</sup> g</td></tr>
+        <tr><td class="c"><b>足够的纯度</b></td><td class="hl">95% 以上</td></tr>
+        <tr><td class="c"><b>前处理</b></td><td>UV/IR/NMR 后可回收；<b>MS 不可回收</b></td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>⑦ 波谱法五大优点</h3>
+      <ul>
+        <li>灵敏度高、<b>样品用量少</b>（mg–μg，现代 ng）</li>
+        <li>多为<b>无损分析</b>，样品可回收</li>
+        <li>分析速度<b>快</b>、重现性好</li>
+        <li>信息<b>丰富</b>，多谱互补</li>
+        <li>可与分离技术<b>联用</b>（GC-MS、LC-MS）</li>
+      </ul>
+      <div class="note r">陷阱：五大优点<b>不含</b>"不需要纯样品"——恰恰要求纯度 95% 以上。</div>
+
+      <h3>⑧ 黄酮类两个吸收带</h3>
+      <table>
+        <tr><th>带</th><th>波长</th><th>归属</th></tr>
+        <tr><td class="c"><b>带 I</b></td><td class="hl">300–400 nm</td><td>B 环 <b>桂皮酰基</b></td></tr>
+        <tr><td class="c"><b>带 II</b></td><td class="hl">200–300 nm</td><td>A 环 <b>苯甲酰基</b></td></tr>
+      </table>
+      <table>
+        <tr><th>类型</th><th>带 I / 带 II 强度</th></tr>
+        <tr><td>黄酮、黄酮醇</td><td>两者<b>强度相似</b></td></tr>
+        <tr><td>异黄酮、二氢黄酮(醇)</td><td class="hl">带 I 弱、带 II 强</td></tr>
+        <tr><td>查尔酮、橙酮</td><td class="hl">带 I 强、带 II 次强</td></tr>
+      </table>
+
+      <h3>⑨ 不饱和度 Ω（缺氢指数）</h3>
+      <div class="seq">Ω = 1 + n<sub>4</sub> + (n<sub>3</sub> − n<sub>1</sub>)/2</div>
+      <table>
+        <tr><th class="c">Ω</th><th>可能结构</th></tr>
+        <tr><td class="c">0</td><td>无双键、无环（饱和）</td></tr>
+        <tr><td class="c">1</td><td>1 个双键 <b>或</b> 1 个环</td></tr>
+        <tr><td class="c">2</td><td>2 双键 / 1 双键+1 环 / 2 环 / <b>1 个三键</b></td></tr>
+        <tr><td class="c hl">4</td><td>可能含 <b>1 个苯环</b></td></tr>
+        <tr><td class="c">5</td><td>苯环 + 1 个双键（或环）</td></tr>
+      </table>
+      <div class="note">n<sub>4</sub>=四价原子(C/Si)，n<sub>3</sub>=三价(N/P)，n<sub>1</sub>=一价(H/卤素)。例：C<sub>8</sub>H<sub>8</sub> → Ω=(2+16−8)/2=<b>5</b>；C<sub>4</sub>H<sub>6</sub>O<sub>2</sub> → <b>2</b>；C<sub>7</sub>H<sub>9</sub>N → <b>4</b>。</div>
+
+      <h3>⑩ 开卷用法（3 条）</h3>
+      <ul>
+        <li>会做的直接选，<b>不要翻</b>；只有"算 λ<sub>max</sub>／查频率／查 δ"才翻</li>
+        <li>单题翻书 <b>&gt;90 秒</b>就猜一个标记，回头再看</li>
+        <li>方向性错误最多：能量大小 ↔ 波长长短、蓝移 ↔ 红移、高场 ↔ 低场</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="flip">A · 总览　► P2 紫外光谱（跃迁与吸收带）</div>
+</section>
+
+<!-- ==================== 第 2 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">B</span><span class="ttl">紫外光谱 ①　分子轨道 · 四种跃迁 · 基本术语 · 四大吸收带</span><span class="pn">第 2 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 分子轨道</h3>
+      <table>
+        <tr><th>轨道</th><th>形成</th><th>特点</th></tr>
+        <tr><td class="c"><b>σ</b></td><td>两个 p 轨道"头对头"</td><td>绕键轴<b>对称</b>；σ<sub>p</sub>、σ<sub>p</sub>*</td></tr>
+        <tr><td class="c"><b>π</b></td><td>两个 p 轨道"肩并肩"</td><td>绕键轴<b>非对称</b>；π<sub>p</sub>、π<sub>p</sub>*</td></tr>
+        <tr><td class="c"><b>n</b></td><td>原子上的<b>未用电子对</b></td><td class="hl">非成键轨道，<b>没有反键轨道</b></td></tr>
+      </table>
+      <ul>
+        <li>位相<b>相同</b>重叠 → <b>成键轨道</b>（能量低于原子轨道）</li>
+        <li>位相<b>相反</b>重叠 → <b>反键轨道 Ψ\*</b>（能量高于原子轨道）</li>
+        <li>原子轨道相互作用越大，分子轨道越稳定</li>
+      </ul>
+
+      <h3>② 紫外光谱的产生</h3>
+      <ul>
+        <li>分子吸收紫外/可见光 → <b>价键电子由基态跃迁到激发态</b>（反键轨道）</li>
+        <li>相邻电子能级差 ≈ <b>1–20 eV</b></li>
+        <li>只有光能 = 跃迁能量才吸收；吸收与<b>化学键类型</b>有关</li>
+        <li class="hl">为什么是带状光谱：电子跃迁总伴随振动、转动能级改变 → 大量密集子能级叠加</li>
+      </ul>
+
+      <h3>③ 紫外吸收光谱能提供什么</h3>
+      <table>
+        <tr><th>参数</th><th>信息</th></tr>
+        <tr><td>λ<sub>max</sub>（位置）</td><td>共轭体系的有无与长短</td></tr>
+        <tr><td>ε<sub>max</sub>（强度）</td><td>跃迁是否允许、共轭长短</td></tr>
+        <tr><td>峰形</td><td>精细结构（芳环特征）</td></tr>
+      </table>
+      <div class="note r"><b>局限</b>：UV 只能反映<b>共轭体系</b>的特征，不能给出官能团全貌，也不能定碳骨架。</div>
+    </div>
+
+    <div class="col">
+      <h3>④ 四种电子跃迁（核心）</h3>
+      <table>
+        <tr><th>跃迁</th><th>吸收区域</th><th>能量</th><th>强度 / 典型值</th></tr>
+        <tr><td class="c"><b>σ→σ*</b></td><td>远紫外区</td><td class="c hl">最大</td><td>λ<sub>max</sub>&lt;150 nm；<b>甲烷 125、乙烷 135</b></td></tr>
+        <tr><td class="c"><b>n→σ*</b></td><td>远紫外+近紫外</td><td class="c">次大</td><td>末端吸收；<b>CH<sub>3</sub>Cl 173、CH<sub>3</sub>OH 183、(CH<sub>3</sub>)<sub>3</sub>N 227</b></td></tr>
+        <tr><td class="c"><b>π→π*</b></td><td>近紫外–可见（共轭）</td><td class="c">较小</td><td class="hl">ε&gt;10<sup>4</sup> 强；孤立 ~200；乙烯 165、丁二烯 217</td></tr>
+        <tr><td class="c"><b>n→π*</b></td><td class="hl">&gt;250 nm</td><td class="c hl">最小</td><td class="hl">禁阻跃迁，ε 仅 10–100；丙酮 279（ε 10–30，环己烷）</td></tr>
+      </table>
+
+      <div class="seq">能量次序：σ→σ* &gt; n→σ* &gt; π→π* &gt; n→π*</div>
+      <div class="note">只有 <b>π→π* 与 n→π*</b> 能量小、落在近紫外–可见区且吸收较强，是研究重点。<br>
+      <b>波长最长的是 n→π*</b>（能量最小 ↔ 波长最长，方向别反）。</div>
+
+      <h3 class="s">各类化合物的跃迁归属</h3>
+      <table>
+        <tr><th>化合物</th><th>可发生的跃迁</th><th>200–400 nm</th></tr>
+        <tr><td>饱和烃（CH<sub>4</sub>、C<sub>2</sub>H<sub>6</sub>）</td><td>只有 σ→σ*</td><td class="c hl">无吸收（可作溶剂）</td></tr>
+        <tr><td>含 -OH -NH<sub>2</sub> -X -S 的饱和物</td><td>n→σ*</td><td class="c">λ&lt;200（末端）</td></tr>
+        <tr><td>孤立 C=C、C≡C</td><td>π→π*</td><td class="c">一般 &lt;200</td></tr>
+        <tr><td>共轭烯烃</td><td>π→π*</td><td class="c">有，&gt;210，随共轭延长红移</td></tr>
+        <tr><td>C=O、C=S、N=N</td><td>n→π*（弱）+ π→π*</td><td class="c">羰基 270–300，ε&lt;100</td></tr>
+      </table>
+      <div class="note g"><b>醛 vs 酮</b>：醛的 n→π* 在非极性溶剂中<b>有</b>精细结构，随极性增大而消失；<b>酮即使在非极性溶剂中也没有</b>精细结构。</div>
+    </div>
+
+    <div class="col">
+      <h3>⑤ 八个基本术语</h3>
+      <table>
+        <tr><th>术语</th><th>定义 / 关键点</th></tr>
+        <tr><td class="c"><b>发色团</b><br>chromophore</td><td>决定吸收带<b>波长与强度</b>的原子团及化学键；吸收波长 <b>&gt;210 nm</b>。如 -C=C-、-C=O、<b>-NO<sub>2</sub></b></td></tr>
+        <tr><td class="c"><b>助色团</b><br>auxochrome</td><td>本身<b>不吸收 &gt;200 nm</b>，与发色团相连发生 <b>n-π 共轭</b> → <b>红移 + 增色</b>。如 -OH、-NH<sub>2</sub>、-NHR、-OR、-SH、-X</td></tr>
+        <tr><td class="c"><b>红移</b><br>bathochromic</td><td>λ<sub>max</sub> 向<b>长波</b>移动。原因：引入助色团、共轭、极性溶剂(π→π*)</td></tr>
+        <tr><td class="c"><b>蓝移</b><br>hypsochromic</td><td>λ<sub>max</sub> 向<b>短波</b>移动。原因：共轭消失、极性溶剂(n→π*)、苯胺酸化</td></tr>
+        <tr><td class="c"><b>增色</b><br>hyperchromic</td><td>吸收<b>强度增加</b></td></tr>
+        <tr><td class="c"><b>减色</b><br>hypochromic</td><td>吸收<b>强度减弱</b></td></tr>
+      </table>
+      <div class="note">助色团对 n→σ* 的影响：CH<sub>3</sub>Cl <b>170</b> → CH<sub>3</sub>Br <b>204</b> → CH<sub>3</sub>I <b>258</b> nm；苯 254 → 苯酚 <b>270</b> nm。</div>
+
+      <h3>⑥ 四大吸收带（核心表）</h3>
+      <table>
+        <tr><th>带</th><th>跃迁</th><th>波长</th><th>强度</th></tr>
+        <tr><td class="c"><b>R</b><br><span style="font-size:5.6pt">Radikal</span></td><td><b>n→π*</b></td><td class="c"><b>250–500</b></td><td class="hl">很弱<br>ε&lt;100</td></tr>
+        <tr><td class="c"><b>K</b><br><span style="font-size:5.6pt">Konjugierte</span></td><td>共轭双键<br><b>π→π*</b></td><td class="c"><b>210–250</b></td><td class="hl">很强<br>ε&gt;10<sup>4</sup>(lgε&gt;4)</td></tr>
+        <tr><td class="c"><b>B</b><br><span style="font-size:5.6pt">Benzeniod</span></td><td>苯环 π→π*</td><td class="c"><b>230–270</b><br>中心 <b>256</b></td><td>弱<br><b>ε≈220</b></td></tr>
+        <tr><td class="c"><b>E<sub>1</sub></b></td><td>苯环烯键<br>π→π*</td><td class="c"><b>184</b></td><td>强 lgε&gt;4<br>(ε≈60000)</td></tr>
+        <tr><td class="c"><b>E<sub>2</sub></b></td><td>苯环共轭<br>烯键 π→π*</td><td class="c"><b>204</b></td><td>强 lgε=3.9<br>(ε≈7900)</td></tr>
+      </table>
+      <div class="note">口诀：<b>R 弱长、K 强中、B 弱苯环、E 强苯环</b>。<br>
+      · B 带：<b>非极性溶剂有精细结构，极性溶剂中消失</b>成宽单峰<br>
+      · 苯环上有发色团共轭 → <b>B、E 带均红移</b>，且 <b>E<sub>2</sub> 常与 K 带重叠</b></div>
+
+      <h3>⑦ Lambert-Beer 定律</h3>
+      <div class="seq">A = −lgT = lg(1/T) = 2 − lg(T%)　　A = KLC = εCL</div>
+      <table>
+        <tr><th class="c">T%</th><td class="c">100</td><td class="c">50</td><td class="c">25</td><td class="c">10</td><td class="c">1</td></tr>
+        <tr><th class="c">A</th><td class="c">0</td><td class="c hl">0.301</td><td class="c hl">0.602</td><td class="c">1.000</td><td class="c">2.000</td></tr>
+      </table>
+      <ul>
+        <li><b>加和性</b>：A = A<sub>a</sub> + A<sub>b</sub>（HPLC-UV 定量基础）</li>
+        <li><b>ε 的物理意义</b>：浓度 1 mol/L、光程 1 cm 时的吸光度（特征常数）</li>
+      </ul>
+      <table>
+        <tr><th>ε<sub>max</sub></th><th>lgε<sub>max</sub></th><th class="c">强度</th></tr>
+        <tr><td>&gt;10000</td><td>&gt;4</td><td class="c hl">很强</td></tr>
+        <tr><td>5000–10000</td><td>3.7–4</td><td class="c">强</td></tr>
+        <tr><td>200–5000</td><td>2.3–3.7</td><td class="c">中等</td></tr>
+        <tr><td>&lt;200</td><td>&lt;2.3</td><td class="c">弱</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P1 总览　　B · 紫外 ①　► P3 影响因素与溶剂效应</div>
+</section>
+
+<!-- ==================== 第 3 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">B</span><span class="ttl">紫外光谱 ②　影响 λ<sub>max</sub> 的六大因素 · 溶剂效应 · 立体效应 · 吸收强度</span><span class="pn">第 3 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 影响因素总框架</h3>
+      <table>
+        <tr><th>类别</th><th>内容</th></tr>
+        <tr><td class="c">一</td><td>电子跃迁类型</td></tr>
+        <tr><td class="c">二</td><td>发色团与助色团</td></tr>
+        <tr><td class="c">三</td><td>共轭效应（含超共轭）</td></tr>
+        <tr><td class="c">四</td><td>溶剂效应（极性、pH）</td></tr>
+        <tr><td class="c">五</td><td>立体效应（位阻、顺反、跨环）</td></tr>
+        <tr><td class="c">六</td><td>吸收强度（跃迁概率 + 靶面积）</td></tr>
+      </table>
+
+      <h3>（一）电子跃迁类型对 λ<sub>max</sub></h3>
+      <table>
+        <tr><th>跃迁</th><th>吸收峰位置</th></tr>
+        <tr><td>σ→σ*</td><td><b>~150 nm</b></td></tr>
+        <tr><td>n→σ*</td><td><b>~200 nm</b></td></tr>
+        <tr><td>孤立 π→π*</td><td><b>~200 nm</b></td></tr>
+        <tr><td>n→π*</td><td><b>200–400 nm</b></td></tr>
+      </table>
+
+      <h3>（三）共轭效应（红移的根本）</h3>
+      <ul>
+        <li>共轭双键形成<b>一套新的成键/反键轨道</b>，能级变近</li>
+        <li><b>HOMO→LUMO 能差下降 → 吸收峰向长波移动</b></li>
+        <li>共轭越长 → λ<sub>max</sub> 越长、ε<sub>max</sub> 越大（靶面积大）</li>
+        <li><b>超共轭</b>：C-H 键与 π 体系电子云重叠，同样红移</li>
+      </ul>
+      <table>
+        <tr><th>化合物</th><th class="c">双键数</th><th class="c">λ<sub>max</sub>(nm)</th><th class="c">颜色</th></tr>
+        <tr><td>乙烯</td><td class="c">1</td><td class="c">175</td><td class="c">无</td></tr>
+        <tr><td>丁二烯</td><td class="c">2</td><td class="c hl">217</td><td class="c">无</td></tr>
+        <tr><td>己三烯</td><td class="c">3</td><td class="c">258</td><td class="c">无</td></tr>
+        <tr><td>二甲基辛四烯</td><td class="c">4</td><td class="c">296</td><td class="c">淡黄</td></tr>
+        <tr><td>癸五烯</td><td class="c">5</td><td class="c">335</td><td class="c">淡黄</td></tr>
+        <tr><td>二甲基十二碳六烯</td><td class="c">6</td><td class="c">360</td><td class="c">黄</td></tr>
+        <tr><td>α-羟基-β-胡萝卜烯</td><td class="c">8</td><td class="c">415</td><td class="c">橙</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>（四）溶剂效应 —— 方向最易考反</h3>
+      <table>
+        <tr><th>跃迁</th><th class="c">极性↑</th><th>原因</th></tr>
+        <tr><td class="c"><b>n→π*</b></td><td class="c hl">蓝移</td><td>与极性溶剂形成氢键 → <b>基态</b>能量下降较多 → ΔE 增大</td></tr>
+        <tr><td class="c"><b>π→π*</b></td><td class="c hl">红移</td><td>极性溶剂与<b>激发态 π\*</b> 作用更强 → 激发态能量下降多 → ΔE 减小</td></tr>
+      </table>
+      <div class="note r"><b>非极性化合物</b>在极性/非极性溶剂中 λ<sub>max</sub> <b>无明显差异</b>；<b>极性化合物</b>才有变化。</div>
+
+      <h3 class="s">选择溶剂的两条铁律</h3>
+      <ul>
+        <li>不与样品反应，且在测定波段内<b>无紫外吸收</b></li>
+        <li>注意<b>溶剂波长极限（剪切点 cutoff）</b>——低于此波长溶剂自身有吸收</li>
+      </ul>
+
+      <h3 class="s">常用溶剂极限波长（nm）</h3>
+      <table>
+        <tr><th>溶剂</th><th class="c">极限</th><th>溶剂</th><th class="c">极限</th></tr>
+        <tr><td>乙醚 / 环己烷</td><td class="c">210</td><td>1,2-二氯乙烷</td><td class="c">233</td></tr>
+        <tr><td class="hl">水</td><td class="c hl">210</td><td>二氯甲烷</td><td class="c">235</td></tr>
+        <tr><td>正丁醇 / 异丙醇</td><td class="c">210</td><td class="hl">氯仿</td><td class="c hl">245</td></tr>
+        <tr><td class="hl">甲醇</td><td class="c hl">210</td><td>乙酸乙酯 / 甲酸甲酯</td><td class="c">260</td></tr>
+        <tr><td>甲基环己烷 / 乙腈</td><td class="c">210</td><td>甲苯</td><td class="c">285</td></tr>
+        <tr><td>乙醇</td><td class="c">215</td><td>吡啶</td><td class="c">305</td></tr>
+        <tr><td>1,4-二氧六环</td><td class="c">220</td><td class="hl">丙酮</td><td class="c hl">330</td></tr>
+        <tr><td>正己烷 / 2,2,4-三甲戊烷</td><td class="c">220</td><td class="hl">二硫化碳</td><td class="c hl">380</td></tr>
+        <tr><td>甘油</td><td class="c">230</td><td colspan="2">（数值越小越"透明"）</td></tr>
+      </table>
+
+      <h3>（四）2. 溶剂 pH 的影响</h3>
+      <table>
+        <tr><th>现象</th><th>结论</th></tr>
+        <tr><td>中性→<b>碱性</b> 谱带较大<b>红移</b>，酸化后恢复原位</td><td>有 <b>酚羟基、烯醇或不饱和羧酸</b></td></tr>
+        <tr><td>中性→<b>酸性</b> 谱带<b>蓝移</b>，加碱后恢复原位</td><td>有 <b>氨基（胺基）与芳环相连</b>（苯胺→苯胺离子）</td></tr>
+      </table>
+      <div class="note">苯胺（230/280）→ 酸性中 -NH<sub>3</sub><sup>+</sup>（203/254，几乎回到苯）；苯酚（210.5/270）→ 碱性中 -O<sup>−</sup>（235/<b>287</b>）。</div>
+    </div>
+
+    <div class="col">
+      <h3>（五）立体效应</h3>
+      <table>
+        <tr><th>类型</th><th>对 λ<sub>max</sub> 的影响</th></tr>
+        <tr><td class="c"><b>空间位阻</b></td><td>发色团/助色团太拥挤 → 被排斥离开同一平面 → 共轭程度降低 → <b>λ<sub>max</sub> 减小（蓝移）</b></td></tr>
+        <tr><td class="c"><b>顺反异构</b></td><td><b>反式</b>位阻小、能有效共轭、张力小 → <b>λ<sub>max</sub> 与 ε 都更大</b>；顺式反之</td></tr>
+        <tr><td class="c"><b>跨环效应</b></td><td>非共轭发色团处于有利空间位置发生轨道相互作用（<b>非共轭基团之间</b>）</td></tr>
+      </table>
+      <table>
+        <tr><th>化合物</th><th class="c">顺式 λ/ε</th><th class="c">反式 λ/ε</th></tr>
+        <tr><td>均二苯代乙烯</td><td class="c">280 / 10500</td><td class="c hl">295.5 / 29000</td></tr>
+        <tr><td>肉桂酸</td><td class="c">280 / 13500</td><td class="c">295 / 27000</td></tr>
+        <tr><td>偶氮苯</td><td class="c">295 / 12600</td><td class="c hl">315 / 50100</td></tr>
+        <tr><td>丁烯二酸</td><td class="c">198 / 26000</td><td class="c">214 / 34000</td></tr>
+      </table>
+
+      <h3>（六）吸收强度</h3>
+      <div class="seq">ε<sub>max</sub> = 0.87×10<sup>20</sup> · P · a</div>
+      <ul>
+        <li><b>P</b> = 跃迁概率(0~1)；<b>a</b> = 发色团<b>靶面积</b></li>
+        <li><b>允许跃迁</b>：按选律可能 → 概率大 → 吸收强</li>
+        <li><b>禁阻跃迁</b>：按选律不可能 → 极弱甚至观察不到（n→π*）</li>
+        <li>发色团<b>共轭越长，ε<sub>max</sub> 越大</b></li>
+      </ul>
+      <div class="note g"><b>经典问答</b>：为什么 π→π* 的 ε 远大于 n→π*？<br>
+      → π→π* 是<b>允许跃迁</b>、靶面积大；n→π* 是<b>禁阻跃迁</b>（n 与 π* 轨道空间重叠差）、跃迁概率小。</div>
+
+      <h3>常见红移/蓝移原因速判</h3>
+      <table>
+        <tr><th>现象</th><th>典型原因</th></tr>
+        <tr><td class="c">红移</td><td>加助色团、延长共轭、极性溶剂(π→π*)、成盐（酚成酚氧负离子）</td></tr>
+        <tr><td class="c">蓝移</td><td>共轭被位阻破坏、极性溶剂(n→π*)、质子化（芳胺）</td></tr>
+        <tr><td class="c">增色</td><td>共轭延长、结构刚性化</td></tr>
+        <tr><td class="c">减色</td><td>共轭被打断、位阻使不能共面</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P2 跃迁与吸收带　　B · 紫外 ②　► P4 三套计算规则</div>
+</section>
+
+<!-- ==================== 第 4 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">B</span><span class="ttl">紫外光谱 ③　三套计算规则 · 算例模板（算 λ<sub>max</sub> 专页）</span><span class="pn">第 4 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① Woodward-Fieser（共轭二/三/四烯的 K 带）</h3>
+      <table class="k">
+        <tr><th>项目</th><th class="c">校正值 (nm)</th></tr>
+        <tr><td><b>基值（丁二烯）</b></td><td class="c hl"><b>217</b></td></tr>
+        <tr><td>同环二烯</td><td class="c"><b>+36</b></td></tr>
+        <tr><td>烷基（或环基）</td><td class="c">+5 / 个</td></tr>
+        <tr><td>环外双键</td><td class="c">+5 / 个</td></tr>
+        <tr><td>每增加 1 个共轭双键</td><td class="c"><b>+30</b></td></tr>
+        <tr><td>助色团 -OCOR</td><td class="c">0</td></tr>
+        <tr><td>助色团 -OR</td><td class="c">+6</td></tr>
+        <tr><td>助色团 -SR</td><td class="c">+30</td></tr>
+        <tr><td>助色团 -Cl、-Br</td><td class="c">+5</td></tr>
+        <tr><td>助色团 -NR<sub>1</sub>R<sub>2</sub></td><td class="c">+60</td></tr>
+      </table>
+      <h3 class="s">四条使用限制（考"错误的是"）</h3>
+      <ul>
+        <li>只适用于<b>共轭二烯、三烯、四烯</b>（再多用 Fieser-Kuhn）</li>
+        <li>选<b>较长</b>的共轭体系作母体</li>
+        <li><b>交叉共轭</b>只选<b>一个</b>共轭键；分叉双键<b>不算</b>延长双键；取吸收带较长者</li>
+        <li class="hl">不适用于芳香体系；所有取代基与所有环外双键都要计入</li>
+      </ul>
+
+      <h3>② Fieser-Kuhn（&gt;4 个共轭双键）</h3>
+      <div class="seq">λ<sub>max</sub> = 114 + 5M + n(48 − 1.7n) − 16.5R<sub>endo</sub> + 10R<sub>exo</sub></div>
+      <div class="seq">ε<sub>max</sub> = 1.74×10<sup>4</sup> · n</div>
+      <table>
+        <tr><th class="c">符号</th><th>含义</th></tr>
+        <tr><td class="c">M</td><td>烷基数（含环上烷基）</td></tr>
+        <tr><td class="c">n</td><td>共轭双键数</td></tr>
+        <tr><td class="c">R<sub>endo</sub></td><td>有<b>环内</b>双键的环数</td></tr>
+        <tr><td class="c">R<sub>exo</sub></td><td>有<b>环外</b>双键的环数</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>③ 共轭不饱和羰基（K 带）母体值</h3>
+      <table>
+        <tr><th>母体</th><th class="c">基值 (nm)</th></tr>
+        <tr><td>α,β-不饱和<b>醛</b></td><td class="c hl"><b>207</b></td></tr>
+        <tr><td>α,β-不饱和<b>酮</b></td><td class="c hl"><b>215</b></td></tr>
+        <tr><td>α,β-不饱和<b>六元环酮</b></td><td class="c hl"><b>215</b></td></tr>
+        <tr><td>α,β-不饱和<b>五元环酮</b></td><td class="c hl"><b>202</b></td></tr>
+        <tr><td>α,β-不饱和<b>酸或酯</b></td><td class="c hl"><b>193</b></td></tr>
+      </table>
+
+      <h3 class="s">增加值</h3>
+      <table>
+        <tr><th>取代基 / 结构</th><th class="c">α</th><th class="c">β</th><th class="c">γ</th><th class="c">δ</th></tr>
+        <tr><td>烷基（或环基）</td><td class="c">10</td><td class="c">12</td><td class="c">18</td><td class="c">—</td></tr>
+        <tr><td>-OH</td><td class="c">35</td><td class="c">30</td><td class="c">50</td><td class="c">—</td></tr>
+        <tr><td>-OR</td><td class="c">35</td><td class="c">30</td><td class="c">17</td><td class="c">31</td></tr>
+        <tr><td>-OAc</td><td class="c" colspan="3">6（α、β、γ 通用）</td><td class="c">—</td></tr>
+        <tr><td>-SR</td><td class="c">—</td><td class="c">85</td><td class="c">—</td><td class="c">—</td></tr>
+        <tr><td>-Cl</td><td class="c">15</td><td class="c">12</td><td class="c">—</td><td class="c">—</td></tr>
+        <tr><td>-Br</td><td class="c">25</td><td class="c">30</td><td class="c">—</td><td class="c">—</td></tr>
+        <tr><td>-NR<sub>1</sub>R<sub>2</sub></td><td class="c">—</td><td class="c">95</td><td class="c">—</td><td class="c">—</td></tr>
+        <tr><td>共轭双键（每个）</td><td class="c" colspan="4">+30</td></tr>
+        <tr><td>环外双键（<b>不含 C=O</b>）</td><td class="c" colspan="4">+5</td></tr>
+        <tr><td>同环二烯</td><td class="c" colspan="4"><b>+39</b>（注意与二烯规则的 36 不同）</td></tr>
+      </table>
+
+      <h3>④ 溶剂校正值（必做）</h3>
+      <table>
+        <tr><th>溶剂</th><td class="c">甲醇</td><td class="c">乙醇</td><td class="c">水</td><td class="c">氯仿</td><td class="c">二氧<br>六环</td><td class="c">乙醚</td><td class="c">己烷</td><td class="c">环己烷</td></tr>
+        <tr><th>校正</th><td class="c">0</td><td class="c">0</td><td class="c hl">−8</td><td class="c">+5</td><td class="c">+5</td><td class="c">+7</td><td class="c hl">+11</td><td class="c hl">+11</td></tr>
+      </table>
+      <h3 class="s">三条注意</h3>
+      <ul>
+        <li><b>环上的羰基不作为环外双键</b>看待</li>
+        <li>有两个共轭不饱和羰基时，优先选<b>波长较大</b>者</li>
+        <li>K 带 λ<sub>max</sub> <b>受溶剂极性影响较大</b> → 必须做溶剂校正</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>⑤ 算例模板（照抄格式）</h3>
+      <h3 class="s">例1　共轭二烯（教材原例）</h3>
+      <table>
+        <tr><th>项目</th><th class="c">nm</th></tr>
+        <tr><td>烯烃基值</td><td class="c">217</td></tr>
+        <tr><td>烷基及环基 4 个</td><td class="c">4×5 = 20</td></tr>
+        <tr><td>环外双键 1 个</td><td class="c">5</td></tr>
+        <tr><td><b>计算值</b></td><td class="c hl"><b>242</b></td></tr>
+        <tr><td>实测值</td><td class="c">243 ✔</td></tr>
+      </table>
+
+      <h3 class="s">例2　含同环二烯</h3>
+      <table>
+        <tr><th>项目</th><th class="c">nm</th></tr>
+        <tr><td>基值</td><td class="c">217</td></tr>
+        <tr><td>增加共轭双键</td><td class="c">+30</td></tr>
+        <tr><td>烷基（或环基）3 个</td><td class="c">3×5 = 15</td></tr>
+        <tr><td>环外双键</td><td class="c">+5</td></tr>
+        <tr><td>同环双烯</td><td class="c">+36</td></tr>
+        <tr><td><b>计算值</b></td><td class="c hl"><b>303</b></td></tr>
+        <tr><td>实测值</td><td class="c">303 ✔</td></tr>
+      </table>
+
+      <h3 class="s">例3　六元环酮 + 2 个 β 烷基</h3>
+      <table>
+        <tr><th>项目</th><th class="c">甲醇中</th><th class="c">己烷中</th></tr>
+        <tr><td>基值（六元环酮）</td><td class="c">215</td><td class="c">215</td></tr>
+        <tr><td>β 烷基 ×2</td><td class="c">24</td><td class="c">24</td></tr>
+        <tr><td><b>计算值</b></td><td class="c">239</td><td class="c">239</td></tr>
+        <tr><td>溶剂校正</td><td class="c">0</td><td class="c">+11→250</td></tr>
+        <tr><td>实测值</td><td class="c hl">237 ✔</td><td class="c">230(+11)=241 ✔</td></tr>
+      </table>
+
+      <h3 class="s">例4　强心苷苷元 A/B 判断</h3>
+      <table>
+        <tr><th>结构</th><th>累加</th><th class="c">计算</th></tr>
+        <tr><td class="c">A</td><td>不饱和酯基 193 + β 烷基 12×2</td><td class="c hl">217</td></tr>
+        <tr><td class="c">B</td><td>193 + 共轭双键 30 + 同环二烯 39 + γ 烷基 18 + δ-OR 31</td><td class="c">311</td></tr>
+      </table>
+      <div class="note">实测 λ<sub>max</sub><sup>EtOH</sup> = <b>218 nm</b> → 与 A 的 217 吻合 → <b>A 型</b>。</div>
+
+      <h3 class="s">例5　番茄红素（Fieser-Kuhn）</h3>
+      <div class="note g">n=11、M=8、R<sub>endo</sub>=R<sub>exo</sub>=0<br>
+      λ = 114 + 5×8 + 11×(48 − 18.7) = <b>476.3 nm</b>（实测 474）<br>
+      ε = 1.74×10<sup>4</sup> × 11 = <b>1.91×10<sup>5</sup></b>（实测 1.86×10<sup>5</sup>）</div>
+
+      <h3>⑥ 算完必查（漏项自查）</h3>
+      <ul>
+        <li>环外双键是否<b>全部</b>计入？</li>
+        <li>环上羰基是否被误当<b>环外双键</b>？</li>
+        <li>交叉共轭是否只取了<b>一个</b>共轭键？</li>
+        <li>溶剂是己烷/环己烷（+11）还是水（−8）？</li>
+        <li>母体选对了吗（醛 207 / 酮 215 / 五元环酮 202 / 酸酯 193）？</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="flip">◄ P3 影响因素　　B · 紫外 ③　► P5 芳香族与应用</div>
+</section>
+
+<!-- ==================== 第 5 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">B</span><span class="ttl">紫外光谱 ④　芳香族规律 · 六条经验规律 · 黄酮诊断 · 构型构象 · 互变异构</span><span class="pn">第 5 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 苯本身</h3>
+      <table>
+        <tr><th>带</th><th class="c">λ<sub>max</sub></th><th class="c">ε</th></tr>
+        <tr><td>E<sub>1</sub></td><td class="c">184 nm</td><td class="c">≈60000</td></tr>
+        <tr><td>E<sub>2</sub></td><td class="c">204 nm</td><td class="c">≈7900</td></tr>
+        <tr><td>B（中心）</td><td class="c">256 nm</td><td class="c">220</td></tr>
+      </table>
+      <ul>
+        <li>E<sub>2</sub>、B 带都是<b>禁阻跃迁</b> → 强度弱</li>
+        <li>B 带在<b>非极性溶剂中有精细结构</b>；极性溶剂或苯环被单一功能基取代时<b>精细结构消失</b>，成宽单峰</li>
+      </ul>
+
+      <h3>② 单取代苯（给电子基使 E、B 带红移）</h3>
+      <table>
+        <tr><th>取代基</th><th class="c">E 带 λ/ε</th><th class="c">B 带 λ/ε</th></tr>
+        <tr><td>（苯）</td><td class="c">203.5 / 7400</td><td class="c">254 / 204</td></tr>
+        <tr><td>-OH</td><td class="c">210.5 / 6200</td><td class="c hl">270 / 1450</td></tr>
+        <tr><td>-O<sup>−</sup></td><td class="c">235 / 9400</td><td class="c hl">287 / 2600</td></tr>
+        <tr><td>-NH<sub>2</sub></td><td class="c">230 / 8600</td><td class="c hl">280 / 1430</td></tr>
+        <tr><td>-NH<sub>3</sub><sup>+</sup></td><td class="c">203 / 7500</td><td class="c">254 / 169</td></tr>
+        <tr><td>-COOH</td><td class="c">230 / 11600</td><td class="c">273 / 970</td></tr>
+        <tr><td>-COO<sup>−</sup></td><td class="c">224 / 8700</td><td class="c">268 / 560</td></tr>
+      </table>
+      <div class="note">三条规律：<br>
+      ① 含<b>未共用电子对</b>的基团（-NH<sub>2</sub>、-OH、-OCH<sub>3</sub>、卤素）→ 孤对与 π 共振 → <b>红移</b><br>
+      ② 取代基带<b>π 键</b>（-CH=CH-、-C=O）→ 产生新的电子迁移带 → <b>显著红移</b><br>
+      ③ <b>吸电子基若不是发色团 → 对 B 带位置无影响</b>；<b>给电子基 → B 带波长与强度都增加</b></div>
+
+      <h3>③ 二取代苯（高频）</h3>
+      <table>
+        <tr><th>位置/类型</th><th>λ<sub>max</sub> 移动规律</th></tr>
+        <tr><td class="c"><b>对位</b><br>两基同为给电子或同为吸电子</td><td>与单取代苯相同，<b>作用较强</b>的基团决定 E 带迁移程度</td></tr>
+        <tr><td class="c"><b>对位</b><br>一吸一给</td><td class="hl">迁移幅度<b>大于</b>两单基团影响之<b>加和</b>（直接共振）</td></tr>
+        <tr><td class="c"><b>邻位 / 间位</b></td><td>移动 ≈ 各基团影响的<b>加和</b>；邻位还有空间位阻使其不能共面、阻碍共振</td></tr>
+      </table>
+
+      <h3>④ 多取代苯 / 稠环 / 杂环</h3>
+      <ul>
+        <li>多取代苯：影响更复杂，<b>空间位阻</b>对 λ<sub>max</sub> 影响较大</li>
+        <li class="hl"><b>线型</b>稠环（萘、蒽）：共轭更大 → <b>红移更多、强度增大、精细结构更明显</b></li>
+        <li class="hl"><b>角式</b>稠环（菲）：较线型<b>强度减弱</b>、λ<sub>max</sub> <b>蓝移</b></li>
+        <li>芳杂环：π→π* 与 n→π*，谱图复杂；有的孤对<b>参与</b>大 π 键共轭（呋喃、吡咯、噻吩），有的<b>不参与</b>（如吡啶，与苯相似）</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>⑤ 六条经验规律（几乎必考）</h3>
+      <table>
+        <tr><th>谱图特征</th><th>结论</th></tr>
+        <tr><td><b>200–400 nm 无吸收</b></td><td>无共轭体系 / 饱和化合物</td></tr>
+        <tr><td>270–350 nm <b>弱峰 ε=10–100</b>，且 200 nm 以上无其他吸收</td><td>带孤对电子的<b>未共轭发色团</b>（n→π*）</td></tr>
+        <tr><td>许多峰，甚至出现在<b>可见区</b></td><td><b>长链共轭</b>或<b>稠环芳香</b>；有颜色则至少 4–5 个互相共轭的双键（含氮物、碘仿除外）</td></tr>
+        <tr><td>长波峰 <b>ε = 10000–20000</b></td><td><b>α,β-不饱和酮</b>或<b>共轭烯烃</b></td></tr>
+        <tr><td>长波峰 <b>&gt;250 nm</b> 且 <b>ε = 1000–10000</b></td><td>通常具<b>芳香结构</b>（精细结构是芳环特征；共轭延长后 ε 可 &gt;10<sup>4</sup>）</td></tr>
+        <tr><td>只有<b>改变 pH</b> 才显著变化</td><td>有<b>可离子化基团</b>且与共轭体系有关</td></tr>
+      </table>
+
+      <h3>⑥ 黄酮类诊断试剂（必考）</h3>
+      <table>
+        <tr><th>试剂</th><th>作用</th><th class="c">带 I</th><th class="c">带 II</th></tr>
+        <tr><td>CH<sub>3</sub>OH</td><td>参比</td><td class="c">359</td><td class="c">259</td></tr>
+        <tr><td><b>CH<sub>3</sub>ONa</b></td><td><b>强碱</b>，使<b>所有</b>酚羟基解离</td><td class="c hl">410</td><td class="c hl">272</td></tr>
+        <tr><td><b>CH<sub>3</sub>COONa</b></td><td><b>弱碱</b>，仅使酸性强的 <b>7-OH 与 4′-OH</b> 解离</td><td class="c">393<br><span style="font-size:5.6pt">示 4′-OH</span></td><td class="c">271<br><span style="font-size:5.6pt">示 7-OH</span></td></tr>
+        <tr><td><b>AlCl<sub>3</sub></b></td><td>与 <b>B 环邻二酚羟基</b>及 A/C 环<b>迫位结构</b>成螯合物</td><td class="c">433</td><td class="c">275</td></tr>
+      </table>
+      <div class="note">UV 不仅能推定不饱和骨架，还能判断共轭体系上<b>取代基的位置、种类和数目</b>。</div>
+
+      <h3>⑦ 构型（configuration）与构象（conformation）</h3>
+      <table>
+        <tr><th>概念</th><th>定义</th></tr>
+        <tr><td class="c"><b>构型</b></td><td>各原子/基团间固定的空间排列，<b>较稳定</b></td></tr>
+        <tr><td class="c"><b>构象</b></td><td>绕 <b>C-C 单键自由旋转</b>形成的暂时性、易变的空间结构，可相互转变</td></tr>
+      </table>
+      <ul>
+        <li>构型判断：<b>反式</b>的 λ<sub>max</sub> 与 ε 都<b>大于</b>顺式（立体障碍）</li>
+        <li>共轭二烯：<b>s-trans 比 s-cis 稳定</b>，主要以 s-trans 存在</li>
+        <li class="hl">环状二烯、有环的 α,β-不饱和酮：<b>顺式波长更长、但强度更弱</b></li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3 class="s">α-卤代环己酮的 λ<sub>max</sub> 位移值（判 a/e 键）</h3>
+      <table>
+        <tr><th>α-取代基</th><th class="c">直立键 a</th><th class="c">平伏键 e</th></tr>
+        <tr><td>-Cl</td><td class="c hl"><b>+22</b></td><td class="c hl"><b>−7</b></td></tr>
+        <tr><td>-Br</td><td class="c">+28</td><td class="c">−5</td></tr>
+        <tr><td>-OH</td><td class="c">+17</td><td class="c">−12</td></tr>
+        <tr><td>-OAc</td><td class="c">+10</td><td class="c">−5</td></tr>
+      </table>
+      <div class="note g"><b>教材例</b>：胆甾烷-3-酮 λ<sub>max</sub> 286 nm；2 位引入 Cl 后为 279 nm（位移 <b>−7</b>）→ 氯在 <b>e 键（平伏键）</b>。</div>
+
+      <h3>⑧ 互变异构体</h3>
+      <ul>
+        <li>一般<b>共轭体系</b>的 λ<sub>max</sub> 与 ε <b>大于</b>非共轭体系</li>
+        <li>乙酰乙酸乙酯：<b>烯醇式 245 nm（ε 18000）</b> vs 酮式 240 nm（ε<b>110</b>）</li>
+        <li>乙酰丙酮：水中 269（12100，烯醇式）；己烷中 277（1900，酮式）</li>
+        <li>苯甲酰基乙酰苯胺：环己烷中 245、308 nm；pH 12 时 308 → <b>323 nm</b></li>
+        <li>氮杂芳环 α/γ 位 -OH：3-羟基吡啶 279 nm ↔ 吡啶酮 293 nm；<b>水溶液中主要以内酰胺（酰胺型）存在</b></li>
+      </ul>
+
+      <h3>⑨ 纳米材料（绪论延伸，易出概念题）</h3>
+      <table>
+        <tr><th>体系</th><th>规律</th></tr>
+        <tr><td><b>金纳米球</b></td><td>颜色来自 <b>SPR（表面等离子体共振）</b>；<b>粒径越大 → 吸收波长越大</b>（10 nm ≈515–520；15 nm ≈520；20 nm ≈525）</td></tr>
+        <tr><td><b>金纳米棒</b></td><td><b>横向 + 纵向双 SPR 峰</b>；纵向峰位随<b>长径比</b>从可见区调到近红外区</td></tr>
+        <tr><td><b>半导体量子点</b></td><td>尺寸减小 → 吸收峰<b>蓝移</b>（量子尺寸效应）</td></tr>
+        <tr><td><b>GO → RGO</b></td><td>可用 UV 监测还原过程（黄褐 → 浅褐）</td></tr>
+      </table>
+
+      <h3>⑩ 本章易错 6 条</h3>
+      <ul>
+        <li>σ→σ* <b>能量最大</b>，n→π* <b>波长最长</b></li>
+        <li>π→π* <b>允许、ε 大</b>；n→π* <b>禁阻、ε 10–100</b></li>
+        <li>极性溶剂：n→π* <b>蓝移</b>、π→π* <b>红移</b></li>
+        <li>苯胺<b>酸</b>中蓝移；苯酚<b>碱</b>中红移</li>
+        <li>反式 λ、ε 都大；<b>但环状二烯是顺式波长更长</b></li>
+        <li>同环二烯：二烯规则 <b>+36</b>，羰基规则 <b>+39</b></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="flip">◄ P4 计算规则　　B · 紫外 ④　► P6 红外光谱（原理）</div>
+</section>
+
+<!-- ==================== 第 6 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">C</span><span class="ttl">红外光谱 ①　两个必要条件 · 分区与坐标 · 波数公式 · 振动形式 · 自由度</span><span class="pn">第 6 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 本质与特点</h3>
+      <ul>
+        <li>由<b>分子振动-转动能级跃迁</b>引起 → 称"<b>振动-转动光谱</b>"</li>
+        <li><b>有共价键的化合物都有其特征红外光谱</b> → <b>"指纹性"</b></li>
+        <li class="hl">除<b>光学异构体</b>及<b>长链烷烃同系物</b>外，几乎没有两种化合物红外光谱相同</li>
+        <li>特点：特征性强、应用范围广（气/液/固）、速度快、用量少、<b>不破坏样品</b></li>
+      </ul>
+      <table>
+        <tr><th>UV</th><th>IR</th></tr>
+        <tr><td>基于<b>电子能级跃迁</b>，主要提供<b>共轭体系</b>信息</td><td>基于<b>振动、转动能级跃迁</b>，主要提供<b>官能团</b>信息</td></tr>
+      </table>
+
+      <h3>② 红外吸收的两个必要条件（最核心）</h3>
+      <table>
+        <tr><td class="c"><b>条件一</b><br>能量匹配</td><td>照射光能量 = 两振动能级差，<b>ΔE = hν</b>；能级量子化，只有频率等于某振动方式固有频率才吸收</td></tr>
+        <tr><td class="c"><b>条件二</b><br>偶极矩变化</td><td>振动时<b>偶极矩必须变化 Δμ ≠ 0</b></td></tr>
+      </table>
+      <table>
+        <tr><th>振动</th><th>偶极矩</th><th>结果</th></tr>
+        <tr><td><b>红外活性</b></td><td>有变化</td><td>有吸收峰</td></tr>
+        <tr><td><b>非红外活性</b></td><td>无变化</td><td class="hl">无吸收峰</td></tr>
+      </table>
+      <table>
+        <tr><th>分子</th><th>情况</th><th>结论</th></tr>
+        <tr><td>H<sub>2</sub>、O<sub>2</sub>、Cl<sub>2</sub></td><td>同核双原子，μ 恒 0</td><td class="hl">不产生红外吸收</td></tr>
+        <tr><td>CO<sub>2</sub> <b>对称伸缩</b></td><td>Δμ = 0</td><td class="hl">红外非活性</td></tr>
+        <tr><td>CO<sub>2</sub> 不对称伸缩、弯曲</td><td>有 Δμ</td><td>2349、667 cm<sup>-1</sup></td></tr>
+        <tr><td>HCl</td><td>伸缩有 Δμ</td><td>有吸收</td></tr>
+      </table>
+      <div class="note">偶极矩 = 电荷量 × 正负电荷中心距离。<b>对称性越高 → 瞬间偶极矩变化越小 → 峰越弱</b>。</div>
+
+      <h3>③ 红外三个区域</h3>
+      <table>
+        <tr><th>区域</th><th class="c">波数 (cm<sup>-1</sup>)</th><th>用途</th></tr>
+        <tr><td>近红外</td><td class="c">12820–4000</td><td>OH、NH、CH 的<b>倍频与组频</b></td></tr>
+        <tr><td class="hl"><b>中红外</b></td><td class="c hl"><b>4000–400</b></td><td>大部分有机物的振动、转动（最常用）</td></tr>
+        <tr><td>远红外</td><td class="c">400–33</td><td>转动光谱、<b>重原子成键</b>振动</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>④ 坐标与峰型</h3>
+      <div class="seq">ṽ(cm<sup>-1</sup>) = 10<sup>4</sup> / λ(μm)　　A = lg(1/T)</div>
+      <ul>
+        <li>横坐标 <b>波数</b>：<b>数值越大 → 能量越高</b>（与 UV 横坐标方向相反）</li>
+        <li>纵坐标 A 或 <b>T%</b>：<b>T% 小 → A 大 → 吸收强</b></li>
+      </ul>
+      <table>
+        <tr><th>峰型</th><th>产生</th><th class="c">强度</th></tr>
+        <tr><td class="c"><b>基频峰</b></td><td>v<sub>0</sub>→v<sub>1</sub></td><td class="c hl">强，主要吸收峰<br><b>峰位 = 分子振动频率</b></td></tr>
+        <tr><td class="c"><b>泛频峰</b></td><td>倍频(v<sub>0</sub>→v<sub>2</sub>、v<sub>3</sub>) + 合频(ν<sub>1</sub>+ν<sub>2</sub>) + 差频</td><td class="c">弱</td></tr>
+      </table>
+
+      <h3>⑤ 双原子分子振动与波数公式（会算）</h3>
+      <div class="seq">ν = (1/2π)√(k/m)　⟹　ṽ = 1307 √(k/μ′)　　μ′ = m<sub>A</sub>m<sub>B</sub>/(m<sub>A</sub>+m<sub>B</sub>)</div>
+      <table>
+        <tr><th class="c">键型</th><th class="c">k (mD/Å)</th><th class="c">计算</th><th class="c">波数</th></tr>
+        <tr><td class="c">C–C</td><td class="c">~5</td><td class="c">1307√(5/6)</td><td class="c hl"><b>1190</b></td></tr>
+        <tr><td class="c">C=C</td><td class="c">~10</td><td class="c">1307√(10/6)</td><td class="c hl"><b>1690</b></td></tr>
+        <tr><td class="c">C≡C</td><td class="c">~15</td><td class="c">1307√(15/6)</td><td class="c hl"><b>2060</b></td></tr>
+      </table>
+      <div class="note">碳碳键折合质量 μ′ = 12×12/(12+12) = <b>6</b></div>
+
+      <h3 class="s">四条结论（按此判大小）</h3>
+      <table>
+        <tr><th>规律</th><th>结论</th></tr>
+        <tr><td class="c">键<b>越强</b> k↑</td><td>波数↑：<b>ν<sub>C≡C</sub> &gt; ν<sub>C=C</sub> &gt; ν<sub>C-C</sub></b></td></tr>
+        <tr><td class="c">原子<b>越重</b> μ′↑</td><td>波数↓：C-H ~3000 &gt; C-O ~1100 &gt; C-Cl ~750</td></tr>
+        <tr><td class="c">与 <b>H</b> 相连</td><td>μ′ 极小 → 必在高波数：<b>ν<sub>C-H</sub>≈2900、ν<sub>O-H</sub> 3600–3200、ν<sub>N-H</sub> 3500–3300</b></td></tr>
+        <tr><td class="c"><b>弯曲</b>比伸缩易</td><td>力常数小 → 低波数：<b>δ<sub>C-H</sub>≈1340、γ<sub>=CH</sub> 1000–650</b>（ν<sub>伸缩</sub> &gt; δ<sub>弯曲</sub>）</td></tr>
+      </table>
+
+      <h3>⑥ 振动能量</h3>
+      <div class="seq">E<sub>v</sub> = (v + ½)hν　；E<sub>0</sub> = ½hν，E<sub>1</sub> = 3/2 hν → ΔE = hν</div>
+      <ul>
+        <li>势能曲线：振幅↑→振动能↑；<b>能级越高间隔越密</b>；到 v<sub>3</sub>、v<sub>4</sub> 偏离简谐；振幅过大 → <b>键断裂、分子离解</b></li>
+        <li>红外主要讨论 v<sub>0</sub>→v<sub>1</sub>（及 v<sub>2</sub>）的跃迁</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>⑦ 振动形式（必背分类）</h3>
+      <table>
+        <tr><th>大类</th><th>细分</th><th class="c">符号</th></tr>
+        <tr><td class="c" rowspan="2"><b>伸缩 ν</b><br><span style="font-size:5.6pt">键长周期变化</span></td><td>对称伸缩</td><td class="c">ν<sub>s</sub></td></tr>
+        <tr><td>不对称伸缩</td><td class="c">ν<sub>as</sub></td></tr>
+        <tr><td class="c" rowspan="4"><b>弯曲 δ</b><br><span style="font-size:5.6pt">键角周期变化</span></td><td>面内：<b>剪式</b></td><td class="c">δ</td></tr>
+        <tr><td>面内：<b>面内摇摆</b></td><td class="c">ρ</td></tr>
+        <tr><td>面外：<b>面外摇摆</b></td><td class="c">ω</td></tr>
+        <tr><td>面外：<b>扭曲</b></td><td class="c">τ</td></tr>
+      </table>
+      <table>
+        <tr><th>振动</th><th class="c">波数 (cm<sup>-1</sup>)</th></tr>
+        <tr><td>-CH<sub>2</sub>- 剪式 δ</td><td class="c hl">~1465</td></tr>
+        <tr><td>-CH<sub>2</sub>- 面内摇摆 ρ</td><td class="c hl">~720</td></tr>
+        <tr><td>扭曲 τ</td><td class="c">~1350–1150</td></tr>
+        <tr><td>δ<sub>s</sub>(CH<sub>3</sub>) 对称变形</td><td class="c hl"><b>1380</b></td></tr>
+        <tr><td>δ<sub>as</sub>(CH<sub>3</sub>) 不对称变形</td><td class="c hl"><b>1460</b></td></tr>
+      </table>
+      <div class="seq">能量序：ν<sub>as</sub> &gt; ν<sub>s</sub> &gt; δ(剪式) &gt; γ(面外)</div>
+      <div class="note">实际出现最多：<b>ν<sub>s</sub>、ν<sub>as</sub>、剪式 δ、面外弯曲 γ</b>。</div>
+
+      <h3>⑧ 振动自由度</h3>
+      <table>
+        <tr><th>分子形状</th><th class="c">转动自由度</th><th class="c">振动自由度 F</th></tr>
+        <tr><td class="c"><b>线性分子</b></td><td class="c">2</td><td class="c hl"><b>3N − 5</b></td></tr>
+        <tr><td class="c"><b>非线性分子</b></td><td class="c">3</td><td class="c hl"><b>3N − 6</b></td></tr>
+      </table>
+      <ul>
+        <li>水（非线性，N=3）：F = 9 − 6 = <b>3</b>（对称伸缩、不对称伸缩、弯曲）</li>
+        <li>CO<sub>2</sub>（线性，N=3）：F = 9 − 5 = <b>4</b></li>
+      </ul>
+
+      <h3 class="s">CO<sub>2</sub> 四个振动只出两个峰</h3>
+      <ul>
+        <li>对称伸缩 → <b>红外非活性</b>（Δμ=0）</li>
+        <li>不对称伸缩 → <b>2349 cm<sup>-1</sup></b></li>
+        <li>弯曲振动 2 个 → <b>简并</b> → <b>667 cm<sup>-1</sup></b> 一个峰</li>
+      </ul>
+
+      <h3>⑨ 峰数少于自由度的 5 个原因（必背）</h3>
+      <table>
+        <tr><td class="c">1</td><td><b>红外非活性振动</b>（无瞬间偶极矩变化）</td></tr>
+        <tr><td class="c">2</td><td><b>简并</b>——振动频率相同的峰重叠</td></tr>
+        <tr><td class="c">3</td><td><b>弱峰被强、宽峰覆盖</b></td></tr>
+        <tr><td class="c">4</td><td>吸收峰<b>太弱</b>（低于检测能力）</td></tr>
+        <tr><td class="c">5</td><td>振动频率落在<b>中红外区（4000–400）以外</b></td></tr>
+      </table>
+
+      <h3>⑩ 峰强度</h3>
+      <table>
+        <tr><th class="c">ε</th><th class="c">符号</th><th>含义</th></tr>
+        <tr><td class="c">&gt;100</td><td class="c"><b>vs</b></td><td>很强吸收</td></tr>
+        <tr><td class="c">20–100</td><td class="c"><b>s</b></td><td>强吸收</td></tr>
+        <tr><td class="c">10–20</td><td class="c"><b>m</b></td><td>中强吸收</td></tr>
+        <tr><td class="c">1–10</td><td class="c"><b>w</b></td><td>弱吸收</td></tr>
+        <tr><td class="c">&lt;1</td><td class="c"><b>vw</b></td><td>很弱吸收</td></tr>
+      </table>
+      <div class="note">强度 ∝ <b>偶极矩变化的平方</b>；<b>基频 &gt; 泛频</b>；浓度加大峰增强。</div>
+    </div>
+
+  </div>
+  <div class="flip">◄ P5 芳香族与应用　　C · 红外 ①　► P7 影响因素与分区</div>
+</section>
+
+<!-- ==================== 第 7 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">C</span><span class="ttl">红外光谱 ②　影响峰位的内部 7 因素 + 外部 3 因素 · 特征区与指纹区 · 八大区域 · 制样</span><span class="pn">第 7 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 影响峰位的因素总框架</h3>
+      <table>
+        <tr><th class="c">内部因素</th><th>外部因素</th></tr>
+        <tr><td>(1) 电子效应：诱导 I、共轭 C/M<br>(2) 空间效应：场效应 F、空间位阻<br>(3) 跨环共轭<br>(4) 环张力<br>(5) 氢键效应<br>(6) 互变异构<br>(7) 振动偶合（含费米共振）</td><td>(1) 样品物理状态 / 溶剂效应<br>(2) 制样方法<br>(3) 仪器色散元件</td></tr>
+      </table>
+
+      <h3>（1）电子效应</h3>
+      <table>
+        <tr><th class="c">效应</th><th>方向 / 例</th></tr>
+        <tr><td class="c"><b>诱导 I</b></td><td>吸电子基 → 电子云密度↓ → <b>力常数↑ → 频率↑（蓝移）</b>；<b>酰氯 ≈1800</b></td></tr>
+        <tr><td class="c"><b>共轭 C/M</b></td><td>双键共轭 → π 电子离域、键强↓ → <b>频率↓（红移）</b>；<b>酰胺 ~1690</b></td></tr>
+        <tr><td class="c">苯环</td><td><b>吸电子共轭(−C) → 频率↑</b>；<b>推电子共轭(+C) → 频率↓</b></td></tr>
+      </table>
+      <table>
+        <tr><th>诱导 vs 共轭</th><th class="c">ν<sub>C=O</sub></th></tr>
+        <tr><td><b>共轭 &gt; 诱导</b></td><td class="c hl">红移到 ~<b>1689</b></td></tr>
+        <tr><td><b>诱导 &gt; 共轭</b></td><td class="c">高频区 <b>1735</b></td></tr>
+      </table>
+      <div class="note g"><b>思考题</b>：为什么羧酸 ν<sub>C=O</sub>(~1710) 比酮(~1715) 略低？→ 羧基的 <b>+C 共轭</b>（O 孤对给电子）作用超过诱导效应。</div>
+
+      <h3>（2）空间效应 / （3）跨环 / （4）环张力</h3>
+      <table>
+        <tr><th>因素</th><th>表现</th></tr>
+        <tr><td class="c"><b>场效应 F</b></td><td>通过空间静电场影响（1716 → 1728 cm<sup>-1</sup>）</td></tr>
+        <tr><td class="c"><b>空间位阻</b></td><td>破坏共面 → 共轭减弱 → 频率<b>回升</b>（1663 → 1715 cm<sup>-1</sup>）</td></tr>
+        <tr><td class="c"><b>跨环共轭</b></td><td>环上两个非共轭基团空间靠近而相互作用</td></tr>
+        <tr><td class="c"><b>环张力</b></td><td>环越小、张力越大 → ν<sub>C=O</sub> <b>越高</b></td></tr>
+      </table>
+      <table>
+        <tr><th>内酯</th><th class="c">ν<sub>C=O</sub></th></tr>
+        <tr><td>五元内酯</td><td class="c hl">1780–1760</td></tr>
+        <tr><td>六、七元内酯</td><td class="c">1750–1730</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>（5）氢键效应（必考）</h3>
+      <div class="seq">氢键 → 频率↓、强度↑、谱带变宽</div>
+      <table>
+        <tr><th>状态</th><th class="c">ν<sub>O-H</sub></th><th>峰形</th></tr>
+        <tr><td>游离（醇、酚）</td><td class="c hl"><b>3640</b></td><td>中等强度、<b>尖锐</b></td></tr>
+        <tr><td>氢键缔合</td><td class="c hl"><b>3300</b></td><td><b>增强、加宽</b></td></tr>
+      </table>
+      <ul>
+        <li><b>分子间氢键受浓度影响大</b>（稀释 → 缔合减少 → 向高频移回）</li>
+        <li><b>分子内氢键</b>：浓度影响甚微（据此与分子间氢键区分）；温度升高不利形成</li>
+      </ul>
+
+      <h3>（6）互变异构</h3>
+      <p>互变异构使峰位移，红外图上能同时看到各互变异构体的峰（β-二羰基的酮式/烯醇式）。</p>
+
+      <h3>（7）振动偶合效应（高频）</h3>
+      <div class="note r"><b>振动偶合</b>：分子中<b>相同的两个基团</b>靠得很近时，特征吸收峰<b>分裂成两个峰</b>。</div>
+      <table>
+        <tr><th>体系</th><th>现象</th></tr>
+        <tr><td>酸酐、丙二酸、丁二酸及其酯</td><td>两羧基偶合 → 双峰（酸酐 <b>1770、1730</b>）</td></tr>
+        <tr><td><b>-CH(CH<sub>3</sub>)<sub>2</sub> 或 -C(CH<sub>3</sub>)<sub>3</sub></b></td><td class="hl">甲基对称面内弯曲分裂 → <b>1390、1365</b>（<b>1365 强度约为 1390 的 2 倍</b>）</td></tr>
+        <tr><td><b>伯胺 / 伯酰胺</b></td><td>3500–3100 <b>两个吸收带</b>（两个 N-H 偶合）</td></tr>
+      </table>
+
+      <h3 class="s">费米共振（Fermi resonance）</h3>
+      <div class="note"><b>倍频/泛频峰</b>出现在某<b>强基频峰</b>附近时，弱峰<b>强度被增强甚至分裂</b>。<br>
+      · <b>醛</b>：δ<sub>C-H</sub>(1390) 倍频 2780 与 ν<sub>C-H</sub>(2800) 共振 → <b>2820、2720</b> 两峰<br>
+      · 骨架伸缩 889 的倍频 1778 与 ν<sub>C=O</sub> 1745 共振 → <b>1746、1728</b></div>
+
+      <h3>外部因素</h3>
+      <table>
+        <tr><th>状态</th><th class="c">ν<sub>C=O</sub></th></tr>
+        <tr><td><b>气态</b>（游离分子）</td><td class="c">1738（峰尖）</td></tr>
+        <tr><td><b>液态</b>（缔合、氢键）</td><td class="c">1715</td></tr>
+      </table>
+      <ul>
+        <li><b>极性基团伸缩频率随溶剂极性增加而降低</b></li>
+        <li class="hl">羧酸 ν<sub>C=O</sub>：气态 <b>1780</b> &gt; 非极性溶剂 1760 &gt; 乙醚 1735 &gt; 乙醇 1720 &gt; 碱液 <b>1610</b></li>
+        <li>制样方法、色散元件（棱镜/光栅）不同 → 谱图不同 → <b>红外谱图应注明测试方法</b></li>
+      </ul>
+
+      <h3>峰强度影响因素（4 条）</h3>
+      <ul>
+        <li>∝ <b>偶极矩变化的平方</b>；原子电负性差越大越强：<b>ν<sub>C=O</sub> &gt; ν<sub>C=C</sub>、ν<sub>C=N</sub>、ν<sub>C≡C</sub>；ν<sub>C-X</sub> &gt; ν<sub>C-C</sub></b></li>
+        <li>振动形式：<b>ν<sub>as</sub> &gt; ν<sub>s</sub> &gt; δ</b></li>
+        <li>分子对称性越高 → 瞬间偶极矩变化越小 → <b>峰越弱</b>（CO<sub>2</sub> 对称伸缩无吸收）</li>
+        <li>Δv = ±1 跃迁概率最大 → <b>基频 &gt; 泛频</b>；费米共振、氢键、与强偶极基团共轭都会使峰增强</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>② 特征区 · 指纹区 · 相关峰</h3>
+      <table>
+        <tr><th>区域</th><th class="c">波数</th><th>内容</th></tr>
+        <tr><td class="c"><b>特征区</b><br>官能团区</td><td class="c hl"><b>4000–1300</b></td><td>化学键与基团的特征振动频率区，用于<b>鉴定官能团</b>；峰称<b>特征峰</b></td></tr>
+        <tr><td class="c"><b>指纹区</b></td><td class="c hl"><b>1300–400</b></td><td>峰多而复杂；主要由 <b>C-O、C-N、C-X 伸缩</b>、<b>C-H/O-H 弯曲</b>、<b>C-C 骨架振动</b>产生。<b>结构稍有不同吸收就有差异</b></td></tr>
+      </table>
+      <h3 class="s">特征区四个小区</h3>
+      <table>
+        <tr><td class="c">4000–2500</td><td>O-H、N-H、C-H 的<b>伸缩</b></td></tr>
+        <tr><td class="c">2500–1600</td><td>C≡N、C≡C、C=O、C=C 等<b>不饱和基团</b></td></tr>
+        <tr><td class="c">1600–1450</td><td><b>苯环骨架振动</b></td></tr>
+        <tr><td class="c">1600–1300</td><td>-CH<sub>3</sub>、-CH<sub>2</sub>-、-CH 及 <b>OH 面内弯曲</b>（判烷基）</td></tr>
+      </table>
+      <div class="note"><b>相关峰</b>：一个基团有数种振动形式，每种红外活动振动都给出吸收峰；<b>相互依存、相互佐证</b>的峰称相关峰。<br>
+      · 羧基 5 种：ν<sub>O-H</sub>、ν<sub>C=O</sub>、δ<sub>O-H</sub>、ν<sub>C-O</sub>、γ<sub>O-H</sub><br>
+      · 特征峰 → <b>推测</b>；相关峰 → <b>旁证</b></div>
+
+      <h3>③ 红外八大区域（岛内武彦）</h3>
+      <table>
+        <tr><th class="c">波数 (cm<sup>-1</sup>)</th><th>键的振动类型</th></tr>
+        <tr><td class="c">3750–3000</td><td>ν<sub>OH</sub>、ν<sub>NH</sub></td></tr>
+        <tr><td class="c">3300–3000</td><td>ν<sub>≡CH</sub> &gt; ν<sub>=CH</sub> ≈ ν<sub>ArCH</sub></td></tr>
+        <tr><td class="c">3000–2700</td><td>ν<sub>CH</sub>（-CH<sub>3</sub>、-CH<sub>2</sub>、-CH、-CHO）</td></tr>
+        <tr><td class="c">2400–2100</td><td>ν<sub>C≡C</sub>、ν<sub>C≡N</sub></td></tr>
+        <tr><td class="c">1900–1650</td><td>ν<sub>C=O</sub>（酸、醛、酮、酰胺、酯、醋酐）</td></tr>
+        <tr><td class="c">1680–1500</td><td>ν<sub>C=C</sub>、ν<sub>C=N</sub></td></tr>
+        <tr><td class="c">1475–1300</td><td>δ<sub>C-H</sub>（面内）</td></tr>
+        <tr><td class="c">1300–1000</td><td>ν<sub>C-O</sub>（酚、醇、醚、酯、羧酸）</td></tr>
+        <tr><td class="c">1000–650</td><td>γ<sub>=C-H, Ar-H</sub>（不饱和碳氢面外弯曲）</td></tr>
+      </table>
+      <div class="note g"><b>3000 cm<sup>-1</sup> 是分水岭</b><br>
+      · 3000 <b>以上</b>有峰 → 有不饱和 C-H（=C-H、≡C-H、Ar-H）<br>
+      · 只有 3000 <b>以下</b> → 饱和烷基</div>
+
+      <h3>④ 样品要求与制样</h3>
+      <table>
+        <tr><td class="c">纯度</td><td class="hl"><b>&gt;98%</b></td></tr>
+        <tr><td class="c">厚度/浓度</td><td>透射比 <b>T% = 15%–70%</b></td></tr>
+        <tr><td class="c">水分</td><td class="hl"><b>不得含游离水</b>（侵蚀盐窗，且水本身有吸收）</td></tr>
+      </table>
+      <table>
+        <tr><th>状态</th><th>方法</th></tr>
+        <tr><td class="c">固体</td><td><b>压片法(KBr)</b>；糊膏法（液体石蜡 400–1300、全氟代烃 1300–4000）；薄膜法</td></tr>
+        <tr><td class="c">液体</td><td>液体池法（CCl<sub>4</sub> 4000–1350、CS<sub>2</sub> 1350–600）；夹片法、涂片法</td></tr>
+        <tr><td class="c">气体</td><td>气体池</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P6 红外原理　　C · 红外 ②　► P8 红外官能团频率总表</div>
+</section>
+
+<!-- ==================== 第 8 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">C</span><span class="ttl">红外光谱 ③　各类官能团特征频率总表（查峰专页）</span><span class="pn">第 8 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 烷烃</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数 (cm<sup>-1</sup>)</th><th class="c">强度</th></tr>
+        <tr><td>ν<sub>C-H</sub>（-CH<sub>3</sub>）</td><td class="c">2960 及 2870</td><td class="c">高强<br><b>双峰</b></td></tr>
+        <tr><td>ν<sub>C-H</sub>（-CH<sub>2</sub>-）</td><td class="c">2930 及 2850</td><td class="c">强</td></tr>
+        <tr><td>ν<sub>C-H</sub>（-CH-）</td><td class="c">2890</td><td class="c">中强</td></tr>
+        <tr><td>δ<sub>as</sub>(CH<sub>3</sub>)</td><td class="c">1470–1430 (~1460)</td><td class="c">中</td></tr>
+        <tr><td><b>δ<sub>s</sub>(CH<sub>3</sub>)</b></td><td class="c hl"><b>1396–1365（中心1380）</b></td><td class="c">中→强</td></tr>
+        <tr><td>δ<sub>as</sub>(-CH<sub>2</sub>-)</td><td class="c">1470–1430</td><td class="c">中</td></tr>
+        <tr><td class="hl"><b>-CH(CH<sub>3</sub>)<sub>2</sub> / -C(CH<sub>3</sub>)<sub>3</sub></b></td><td class="c hl"><b>1390、1365</b></td><td class="c">双峰<br>1365≈2×1390</td></tr>
+        <tr><td>-OCH<sub>3</sub></td><td class="c hl">2835–2815</td><td class="c">尖、中强</td></tr>
+        <tr><td>-CHO</td><td class="c">2720–2750</td><td class="c">中强</td></tr>
+        <tr><td>-O-CH<sub>2</sub>-O-</td><td class="c">2780–2765</td><td class="c">弱→中</td></tr>
+        <tr><td><b>-(CH<sub>2</sub>)<sub>n</sub>-（n&gt;4）</b></td><td class="c hl"><b>ρ = 720</b></td><td class="c">长链特征</td></tr>
+      </table>
+      <div class="note">饱和 ν<sub>C-H</sub> <b>全部在 3000 以下</b>（3000–2700）。n&gt;15 时 720 峰失去鉴别意义。</div>
+
+      <h3>② 烯烃</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数 (cm<sup>-1</sup>)</th><th class="c">强度</th></tr>
+        <tr><td><b>ν<sub>=C-H</sub></b></td><td class="c hl"><b>3100–3010</b>（&gt;3000）</td><td class="c">很弱</td></tr>
+        <tr><td><b>ν<sub>C=C</sub></b></td><td class="c hl"><b>1690–1620</b></td><td class="c">较弱</td></tr>
+        <tr><td>共轭 ν<sub>C=C</sub></td><td class="c">移至 ~1600</td><td class="c">增强</td></tr>
+      </table>
+      <div class="note r"><b>C=C 与 C=O 都在 1650–1700</b>：<b>C=C 弱而峰尖</b>，<b>C=O 峰很强</b>。</div>
+
+      <h3 class="s">γ<sub>=C-H</sub>（面外 1000–690）判双键取代类型</h3>
+      <table>
+        <tr><th>取代类型</th><th class="c">频率</th><th class="c">强度</th></tr>
+        <tr><td><b>RCH=CH<sub>2</sub></b></td><td class="c hl"><b>990 和 910</b></td><td class="c">s</td></tr>
+        <tr><td><b>R<sub>2</sub>C=CH<sub>2</sub></b></td><td class="c hl"><b>890</b></td><td class="c">m–s</td></tr>
+        <tr><td><b>RCH=CR′H（顺式）</b></td><td class="c hl"><b>690</b></td><td class="c">m–s</td></tr>
+        <tr><td><b>RCH=CR′H（反式）</b></td><td class="c hl"><b>970</b></td><td class="c">m–s</td></tr>
+        <tr><td><b>R<sub>2</sub>C=CRH</b></td><td class="c hl"><b>840–790</b></td><td class="c">m–s</td></tr>
+      </table>
+
+      <h3>③ 炔烃</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数 (cm<sup>-1</sup>)</th><th class="c">强度</th></tr>
+        <tr><td><b>ν<sub>≡C-H</sub></b></td><td class="c hl"><b>~3300</b>（3300–3000）</td><td class="c"><b>强而尖</b></td></tr>
+        <tr><td><b>ν<sub>C≡C</sub></b>（H-C≡C-R）</td><td class="c">2140–2100</td><td class="c">强</td></tr>
+        <tr><td>R-C≡C-R′</td><td class="c">2260–2190</td><td class="c">可变</td></tr>
+        <tr><td class="hl">R-C≡C-R（对称）</td><td class="c hl"><b>无吸收</b></td><td class="c">—</td></tr>
+        <tr><td>R-C≡C-C≡C-R′</td><td class="c">2400–2100（2–3 峰）</td><td class="c">弱→中强</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>④ 芳香族（五种振动）</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数 (cm<sup>-1</sup>)</th><th>说明</th></tr>
+        <tr><td>ν<sub>=C-H</sub>（Ar-H）</td><td class="c hl">~3030</td><td>弱→中</td></tr>
+        <tr><td><b>ν<sub>C=C</sub> 骨架</b></td><td class="c hl"><b>1650–1450 常四重峰</b>；<b>1600–1500 两条最重要</b></td><td>作为<b>芳环存在的依据</b></td></tr>
+        <tr><td>δ<sub>C-H</sub>（面内）</td><td class="c">1225–955</td><td>—</td></tr>
+        <tr><td><b>γ<sub>=C-H</sub>（面外）</b></td><td class="c hl"><b>900–690</b></td><td><b>强</b>（相邻 H 偶合）</td></tr>
+        <tr><td><b>泛频峰</b></td><td class="c hl"><b>2000–1666</b></td><td>很弱；形状/数目可判<b>取代类型</b>，<b>与取代基性质无关</b></td></tr>
+      </table>
+
+      <h3>⑤ 醇与酚</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数</th><th>强度/特点</th></tr>
+        <tr><td>ν<sub>O-H</sub> 游离</td><td class="c">3700–3500</td><td><b>较强、尖锐</b></td></tr>
+        <tr><td>ν<sub>O-H</sub> 缔合</td><td class="c">3450–3200</td><td><b>强、宽</b>（特征）</td></tr>
+        <tr><td>δ<sub>O-H</sub>（面内）</td><td class="c">1400–1200</td><td>干扰大，应用受限</td></tr>
+        <tr><td>ν<sub>C-O</sub> 醇 / 酚</td><td class="c">1100–1050 / 1250–1100</td><td>—</td></tr>
+      </table>
+
+      <h3>⑥ 醚（只有 ν<sub>C-O</sub>）</h3>
+      <table>
+        <tr><td>脂肪族醚</td><td class="c hl"><b>1150–1050</b></td></tr>
+        <tr><td>芳香醚（对称）</td><td class="c"><b>1275–1200 (s)</b></td></tr>
+        <tr><td>芳香醚（不对称）</td><td class="c"><b>1075–1020</b></td></tr>
+      </table>
+
+      <h3>⑦ 羰基化合物（最常考）</h3>
+      <div class="seq">酐Ⅰ1810 &gt; 酰氯1800 &gt; 酐Ⅱ1760 &gt; 酯1735 &gt; 醛1725 &gt; 酮1715 &gt; 酸1710 &gt; 酰胺1690</div>
+      <table>
+        <tr><th>类型</th><th class="c">ν<sub>C=O</sub></th><th>类型</th><th class="c">ν<sub>C=O</sub></th></tr>
+        <tr><td>酮（饱和）</td><td class="c">1740–1720</td><td>酰卤</td><td class="c">1815–1720</td></tr>
+        <tr><td>醛（饱和）</td><td class="c">1705–1725</td><td><b>酸酐</b></td><td class="c hl"><b>1850–1800、<br>1780–1740</b><br><span style="font-size:5.6pt">间隔 ~60</span></td></tr>
+        <tr><td>酸（饱和）</td><td class="c">1705–1725</td><td>酰胺（游离）</td><td class="c">1700–1680</td></tr>
+        <tr><td>六、七元内酯</td><td class="c">1750–1730</td><td>酰胺（缔合）</td><td class="c">1660–1640</td></tr>
+        <tr><td><b>五元内酯</b></td><td class="c">1780–1760</td><td>酯（非环状）</td><td class="c">1740–1710</td></tr>
+      </table>
+      <div class="note"><b>醛</b>：ν<sub>C=O</sub> 1725 + <b>ν<sub>C-H</sub> 2820、2720 双峰</b>（费米共振）<br>
+      <b>羧酸</b>：ν<sub>O-H</sub> 由 3550 变 <b>2500–3000（强宽）</b>；ν<sub>C=O</sub> 由 1760 变 1725–1705</div>
+    </div>
+
+    <div class="col">
+      <h3>⑧ 胺类</h3>
+      <table>
+        <tr><th>振动</th><th class="c">波数</th><th>说明</th></tr>
+        <tr><td><b>ν<sub>N-H</sub> 游离伯胺</b></td><td class="c hl"><b>3490、3400</b></td><td><b>双峰</b>（两 N-H 偶合）</td></tr>
+        <tr><td><b>ν<sub>N-H</sub> 仲胺</b></td><td class="c hl">3500–3400</td><td><b>单峰</b>；脂肪弱、芳香强</td></tr>
+        <tr><td>ν<sub>N-H</sub> 结合</td><td class="c">3500–3100</td><td>弱而（稍）尖</td></tr>
+        <tr><td>δ<sub>N-H</sub> 伯胺 / 仲胺</td><td class="c">1650–1570 / ~1500</td><td>—</td></tr>
+        <tr><td>ν<sub>C-N</sub> 脂肪 / 芳香</td><td class="c">1020–1250 / 1380–1250</td><td>—</td></tr>
+      </table>
+
+      <h3>⑨ 硝基化合物</h3>
+      <table>
+        <tr><td><b>ν<sub>N=O</sub> 不对称</b></td><td class="c hl"><b>1600–1500</b></td><td class="c">强</td></tr>
+        <tr><td><b>ν<sub>N=O</sub> 对称</b></td><td class="c hl"><b>1390–1300</b></td><td class="c">强</td></tr>
+        <tr><td>ν<sub>C-N</sub></td><td class="c">920–800</td><td class="c">—</td></tr>
+      </table>
+
+      <h3>⑩ 氰类</h3>
+      <table>
+        <tr><td><b>ν<sub>C≡N</sub></b></td><td class="c hl"><b>2260–2215</b></td><td class="c">中等强度<b>尖峰</b>，特征性强；与双键或苯共轭时<b>向低频移动</b></td></tr>
+      </table>
+
+      <h3>⑪ 必记干扰峰（解析前先排除）</h3>
+      <table>
+        <tr><td class="c hl"><b>水</b></td><td class="c">~3400、1640 cm<sup>-1</sup></td></tr>
+        <tr><td class="c hl"><b>CO<sub>2</sub></b></td><td class="c">~2350 cm<sup>-1</sup></td></tr>
+      </table>
+
+      <h3>⑫ 一眼定性速查（3000 上下）</h3>
+      <table>
+        <tr><th>看到的峰</th><th>结论</th></tr>
+        <tr><td>3500–3200 <b>宽</b></td><td>O-H（醇/酚/羧酸）</td></tr>
+        <tr><td>3490/3400 <b>双峰</b></td><td>伯胺 -NH<sub>2</sub></td></tr>
+        <tr><td>3500–3400 <b>单峰</b></td><td>仲胺</td></tr>
+        <tr><td>~3300 <b>强尖</b></td><td>≡C-H（炔）</td></tr>
+        <tr><td>~3030 弱</td><td>Ar-H（芳环）</td></tr>
+        <tr><td>3100–3010 弱</td><td>=C-H（烯）</td></tr>
+        <tr><td>3000–2700</td><td>饱和烷基 C-H</td></tr>
+        <tr><td>2835–2815</td><td>-OCH<sub>3</sub></td></tr>
+        <tr><td>2820 + 2720</td><td>-CHO（醛）</td></tr>
+        <tr><td>2260–2215 尖</td><td>C≡N</td></tr>
+        <tr><td>1900–1650 <b>强</b></td><td>C=O</td></tr>
+        <tr><td>1650–1450 四重峰</td><td>芳环</td></tr>
+        <tr><td>1600–1500 + 1390–1300 双强</td><td>-NO<sub>2</sub></td></tr>
+        <tr><td>900–690 强</td><td>芳环取代（判取代类型）</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P7 影响因素　　C · 红外 ③　► P9 氢核磁共振（基础）</div>
+</section>
+
+<!-- ==================== 第 9 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">D</span><span class="ttl">氢核磁共振 ①　哪些核有信号 · 自旋与磁矩 · 弛豫 · 共振条件 · 屏蔽与化学位移 · TMS</span><span class="pn">第 9 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 三大线索（本章骨架）</h3>
+      <table>
+        <tr><th>参数</th><th>回答</th><th>提供</th></tr>
+        <tr><td class="c"><b>化学位移 δ</b></td><td>氢在什么环境（几组、在哪）</td><td><b>部分结构</b></td></tr>
+        <tr><td class="c"><b>偶合常数 J</b></td><td>邻居是谁</td><td><b>邻近基团性质</b></td></tr>
+        <tr><td class="c"><b>峰面积</b></td><td>几个氢</td><td><b>氢核数目</b></td></tr>
+      </table>
+      <div class="note">丙烷 CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub> → <b>3 组</b>；CH<sub>4</sub> → 1 组；(CH<sub>3</sub>)<sub>2</sub>CHCH<sub>2</sub>CH<sub>2</sub>(CH<sub>3</sub>)<sub>2</sub> → <b>2 组</b>。</div>
+
+      <h3>② 哪些核有 NMR（判据：自旋量子数 I）</h3>
+      <table>
+        <tr><th class="c">质量数 A</th><th class="c">原子序数 Z</th><th class="c">I</th><th>实例</th></tr>
+        <tr><td class="c"><b>偶</b></td><td class="c"><b>偶</b></td><td class="c hl"><b>0</b></td><td class="hl"><b><sup>12</sup>C、<sup>16</sup>O、<sup>32</sup>S</b>（无信号）</td></tr>
+        <tr><td class="c">偶</td><td class="c">奇</td><td class="c">整数</td><td><sup>2</sup>H、<sup>14</sup>N（椭球形）</td></tr>
+        <tr><td class="c"><b>奇</b></td><td class="c">奇或偶</td><td class="c hl">半整数</td><td class="hl"><sup>1</sup>H、<sup>13</sup>C、<sup>19</sup>F、<sup>31</sup>P、<sup>15</sup>N、<sup>17</sup>O、<sup>35</sup>Cl、<sup>79</sup>Br、<sup>125</sup>I</td></tr>
+      </table>
+      <ul>
+        <li><b>I = 0</b>：无自旋、无自旋角动量、无核磁矩 → <b>不产生磁共振</b></li>
+        <li class="hl"><b>I = 1/2</b>：核呈均匀<b>球形</b>分布，谱线最窄 → <b>最适宜 NMR 检测</b>（¹H、¹³C、¹⁹F、³¹P）</li>
+        <li><b>I ≠ 0 但电四极矩大</b>（<sup>35</sup>Cl、<sup>79</sup>Br、<sup>127</sup>I）→ 引起自旋去偶，<b>看不到偶合</b></li>
+      </ul>
+
+      <h3>③ 三个矢量</h3>
+      <div class="seq">μ = γP　　P = √(I(I+1)) · h/2π</div>
+      <table>
+        <tr><th>量</th><th>含义</th></tr>
+        <tr><td class="c"><b>P</b></td><td>自旋角动量（表示自旋运动特性）</td></tr>
+        <tr><td class="c"><b>μ</b></td><td>核磁矩（表示磁性强弱）</td></tr>
+        <tr><td class="c"><b>γ</b></td><td>磁旋比——原子核的重要特征常数</td></tr>
+      </table>
+      <table>
+        <tr><th>核</th><th class="c">γ (×10<sup>7</sup>/T·s)</th></tr>
+        <tr><td><b><sup>1</sup>H</b></td><td class="c hl"><b>26.7519</b></td></tr>
+        <tr><td><b><sup>13</sup>C</b></td><td class="c hl"><b>6.7283</b></td></tr>
+      </table>
+      <div class="note"><b>γ 越大 → 磁性越强 → 灵敏度越高</b>；μ<sub>H</sub> ≈ 4μ<sub>C</sub> → <b>¹H 所需射频约为 ¹³C 的 4 倍</b>。</div>
+    </div>
+
+    <div class="col">
+      <h3>④ 外加磁场中的行为</h3>
+      <div class="seq">自旋取向数 = 2I + 1　　m = I, I−1, …, −I</div>
+      <table>
+        <tr><th class="c">核</th><th class="c">I</th><th class="c">取向数</th></tr>
+        <tr><td class="c"><sup>1</sup>H、<sup>13</sup>C</td><td class="c">1/2</td><td class="c hl"><b>2</b>（+1/2、−1/2）</td></tr>
+        <tr><td class="c"><sup>2</sup>H、<sup>14</sup>N</td><td class="c">1</td><td class="c">3</td></tr>
+      </table>
+      <h3 class="s">能级差（必背）</h3>
+      <div class="seq">ΔE = E<sub>2</sub> − E<sub>1</sub> = 2μH<sub>0</sub>　（有屏蔽：2μH<sub>0</sub>(1−σ)）</div>
+
+      <h3 class="s">Boltzmann · 饱和 · 弛豫</h3>
+      <table>
+        <tr><td class="c">常温</td><td>两能态都有核，<b>低能态核数稍多</b>（Boltzmann）；绝对零度时全在低能态</td></tr>
+        <tr><td class="c hl"><b>饱和</b></td><td><b>+1/2 与 −1/2 能级核数相等</b>时，<b>不再吸收能量</b></td></tr>
+        <tr><td class="c hl"><b>弛豫</b></td><td>多出的 −1/2 核释放能量回到 +1/2，<b>恢复 Boltzmann 分布</b></td></tr>
+      </table>
+      <table>
+        <tr><th class="c">类型</th><th>机制</th><th class="c">整体能量</th><th class="c">时间</th></tr>
+        <tr><td class="c"><b>T<sub>1</sub></b><br>自旋-晶格</td><td>高能态核与<b>周围环境</b>交换能量</td><td class="c hl"><b>下降</b></td><td class="c">气体/液体<br>10<sup>-4</sup>–10<sup>-2</sup> s</td></tr>
+        <tr><td class="c"><b>T<sub>2</sub></b><br>自旋-自旋</td><td>高能态核把能量给<b>同类低能态核</b>，后者跃迁上去</td><td class="c hl"><b>不变</b></td><td class="c">固体/黏稠<br>~10<sup>-3</sup> s；<br>非黏稠 ~1 s</td></tr>
+      </table>
+
+      <h3>⑤ 拉莫尔进动与共振条件</h3>
+      <div class="seq">ω = γH<sub>0</sub>/2π　　2μH<sub>0</sub> = hν　⟹　ν = (2μ/h)H<sub>0</sub></div>
+      <table>
+        <tr><td class="c"><b>扫频</b></td><td><b>固定磁场</b> H<sub>0</sub>，改变频率 ν</td></tr>
+        <tr><td class="c"><b>扫场</b></td><td><b>固定频率</b> ν，改变磁场 H<sub>0</sub></td></tr>
+      </table>
+      <table>
+        <tr><th class="c">同位素</th><th class="c">丰度%</th><th class="c">1.4092 T</th><th class="c">2.35 T</th></tr>
+        <tr><td class="c"><b><sup>1</sup>H</b></td><td class="c">99.985</td><td class="c hl"><b>60.0</b></td><td class="c hl"><b>100</b></td></tr>
+        <tr><td class="c"><b><sup>13</sup>C</b></td><td class="c hl">1.107</td><td class="c">15.1</td><td class="c">25.2</td></tr>
+        <tr><td class="c"><sup>2</sup>H</td><td class="c">0.015</td><td class="c">9.21</td><td class="c">15.4</td></tr>
+        <tr><td class="c"><sup>19</sup>F</td><td class="c">100</td><td class="c">56.4</td><td class="c">94.2</td></tr>
+        <tr><td class="c"><sup>31</sup>P</td><td class="c">100</td><td class="c">24.3</td><td class="c">40.5</td></tr>
+      </table>
+      <div class="note">仪器"多少兆"指的就是<b>质子的共振频率</b>。不同种类的核磁矩不同，同磁场中共振频率也不同。</div>
+    </div>
+
+    <div class="col">
+      <h3>⑥ 屏蔽效应</h3>
+      <div class="note r">核外电子产生<b>与外加磁场相对抗的第二磁场</b>，给核增加一层"防御" → <b>屏蔽效应</b>。</div>
+      <div class="seq">H<sub>N</sub> = H<sub>0</sub> − σH<sub>0</sub> = H<sub>0</sub>(1−σ)　　ΔE = 2μH<sub>0</sub>(1−σ)</div>
+      <table>
+        <tr><td class="c"><b>σ</b></td><td>屏蔽常数，取决于核外<b>电子云密度</b>，而电子云密度取决于<b>化学环境</b></td></tr>
+        <tr><td class="c hl"><b>结论</b></td><td><b>屏蔽越强 → 核跃迁能越小 → 共振外场越低 → 高场（δ 小）</b></td></tr>
+      </table>
+      <table>
+        <tr><td class="c">CH<sub>4</sub></td><td>屏蔽效应<b>较大</b>（δ 小，高场）</td></tr>
+        <tr><td class="c">CH<sub>3</sub>OH</td><td>屏蔽效应<b>较小</b>（δ 大，低场，因 O 吸电子）</td></tr>
+      </table>
+      <div class="note g"><b>方向铁律</b>：δ 越大 = 越在<b>低场</b> = <b>去屏蔽</b>越强。<br>"化学位移越大越在高磁场"是<b>错的</b>！</div>
+
+      <h3>⑦ 化学位移</h3>
+      <div class="seq">δ = (ν<sub>试样</sub> − ν<sub>TMS</sub>)/ν<sub>仪器</sub> × 10<sup>6</sup> (ppm)</div>
+      <ul>
+        <li>TMS 定为 <b>0</b>；按"<b>左正右负</b>"，多数 H 的 δ &gt; 0</li>
+        <li><b>δ 无量纲</b>：场强增大时共振峰频率与横坐标幅度都增大，但 <b>δ 不变</b> → 不同仪器可直接比较</li>
+      </ul>
+      <table>
+        <tr><th>基团（1-苯基-2-丙酮）</th><th class="c">60 MHz</th><th class="c">100 MHz</th></tr>
+        <tr><td>苯环氢</td><td class="c">730/100=7.30</td><td class="c">7.30</td></tr>
+        <tr><td>亚甲基</td><td class="c">222/60=3.70</td><td class="c">373/100=3.70</td></tr>
+        <tr><td>甲基</td><td class="c">126/60=2.10</td><td class="c">210/100=2.10</td></tr>
+      </table>
+
+      <h3>⑧ 基准物质</h3>
+      <table>
+        <tr><th class="c">缩写</th><th>全名/结构</th><th class="c">δ</th><th>适用</th></tr>
+        <tr><td class="c"><b>TMS</b></td><td>四甲基硅烷 (CH<sub>3</sub>)<sub>4</sub>Si</td><td class="c hl"><b>0.00</b></td><td>通用（有机溶剂）</td></tr>
+        <tr><td class="c"><b>DSS</b></td><td>(CH<sub>3</sub>)<sub>3</sub>Si(CH<sub>2</sub>)<sub>3</sub>SO<sub>3</sub>Na</td><td class="c">0.00–2.90</td><td class="hl"><b>水溶性</b>（D<sub>2</sub>O）</td></tr>
+        <tr><td class="c"><b>HMDS</b></td><td>(CH<sub>3</sub>)<sub>3</sub>SiOSi(CH<sub>3</sub>)<sub>3</sub></td><td class="c">0.04</td><td>通用</td></tr>
+      </table>
+      <div class="note"><b>TMS 三条优点（必答）</b><br>
+      ① 分子中 <b>12 个 H 化学环境完全相同</b> → 一个单峰，不干扰<br>
+      ② <b>屏蔽效应很强</b>（Si 电负性低于 C）→ 位于高磁场，δ=0<br>
+      ③ <b>化学惰性、易溶于有机溶剂、易挥发</b>（bp 26.5 ℃，便于回收样品）</div>
+    </div>
+
+  </div>
+  <div class="flip">◄ P8 红外官能团表　　D · 氢谱 ①　► P10 化学位移 δ</div>
+</section>
+
+<!-- ==================== 第 10 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">D</span><span class="ttl">氢核磁共振 ②　影响化学位移的五大因素 · δ 速查分区 · 活泼氢 · 烯氢计算</span><span class="pn">第 10 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 影响 δ 的五大因素</h3>
+      <div class="seq">电负性 · 磁各向异性 · 共轭效应 · 氢核交换 · 氢键缔合</div>
+
+      <h3 class="s">（1）电负性（诱导效应）</h3>
+      <p>电负性强的基团通过诱导使氢核周围电子云密度降低 → <b>屏蔽减弱 → δ 增大（低场）</b>。</p>
+      <table>
+        <tr><th>化合物</th><th class="c">CH<sub>3</sub>F</th><th class="c">CH<sub>3</sub>OH</th><th class="c">CH<sub>3</sub>Cl</th><th class="c">CH<sub>3</sub>Br</th><th class="c">CH<sub>3</sub>I</th><th class="c">CH<sub>4</sub></th></tr>
+        <tr><td class="c">δ</td><td class="c hl"><b>4.26</b></td><td class="c">3.34</td><td class="c">3.05</td><td class="c">2.68</td><td class="c">2.16</td><td class="c">0.23</td></tr>
+        <tr><td class="c">电负性</td><td class="c">4.0</td><td class="c">3.5</td><td class="c">3.0</td><td class="c">2.8</td><td class="c">2.5</td><td class="c">2.1</td></tr>
+      </table>
+      <div class="note"><b>规律：电负性越强 → 去屏蔽越显著 → δ 越大。</b>这是判断"哪个氢 δ 大"的第一把尺子。</div>
+
+      <h3 class="s">（2）磁的各向异性效应（最易考）</h3>
+      <p>π 键电子流动产生小诱导磁场，通过空间影响邻近氢核：</p>
+      <ul>
+        <li>与外场<b>方向相反</b> → 削弱外场 → <b>正屏蔽</b>，<b>δ 减小</b>（高场）</li>
+        <li>与外场<b>方向相同</b> → 增强外场 → <b>负屏蔽（去屏蔽）</b>，<b>δ 增大</b>（低场）</li>
+      </ul>
+      <table>
+        <tr><th>体系</th><th>位置</th><th class="c">δ</th></tr>
+        <tr><td class="c"><b>苯环</b></td><td>环平面上下<b>负屏蔽区</b></td><td class="c hl"><b>6.0–9.0</b></td></tr>
+        <tr><td class="c"><b>双键 C=C</b></td><td>烯氢在<b>负屏蔽区</b></td><td class="c hl"><b>4.5–5.7</b></td></tr>
+        <tr><td class="c"><b>三键 C≡C</b></td><td>炔氢在<b>正屏蔽区</b>（沿键轴）</td><td class="c hl"><b>1.8–3.0</b></td></tr>
+        <tr><td class="c">单键</td><td>各向异性弱</td><td class="c">0.9–1.65</td></tr>
+      </table>
+      <div class="note r"><b>经典判断题</b>：CH<sub>3</sub>–CH<sub>3</sub>、CH<sub>2</sub>=CH<sub>2</sub>、CH≡CH 的实际顺序是<br>
+      <b>δ(CH<sub>2</sub>=CH<sub>2</sub>) &gt; δ(CH≡CH) &gt; δ(CH<sub>3</sub>–CH<sub>3</sub>)</b><br>
+      若只按电负性/sp 杂化推，会得到 sp &gt; sp² &gt; sp³ 的<b>错误</b>顺序 —— <b>必须用磁各向异性解释炔氢的反常高场位移</b>。</div>
+
+      <h3 class="s">（3）共轭效应</h3>
+      <p>π 电子转移改变某基团电子云密度与磁屏蔽。主要有 <b>p-π 共轭</b>（-NH<sub>2</sub>、-OH 与芳环）与 <b>π-π 共轭</b>。给电子共轭使邻/对位氢 δ 减小；吸电子共轭则相反。</p>
+    </div>
+
+    <div class="col">
+      <h3 class="s">（4）氢核交换</h3>
+      <div class="seq">ROH + D<sub>2</sub>O → ROD + HOD</div>
+      <table>
+        <tr><td class="c">交换速率</td><td class="hl"><b>−OH &gt; −NH<sub>2</sub> &gt; −SH</b></td></tr>
+        <tr><td class="c">用途</td><td>加 D<sub>2</sub>O 后某峰<b>消失</b> → 该氢为<b>活泼氢</b></td></tr>
+      </table>
+
+      <h3 class="s">（5）氢键缔合</h3>
+      <div class="note r">氢键把氢核拉向给予体 → 氢被<b>去屏蔽 → δ 增大</b>（<b>注意与 IR 中"氢键使频率降低"方向相反</b>）</div>
+      <table>
+        <tr><th>因素</th><th>影响</th></tr>
+        <tr><td class="c"><b>试样浓度</b></td><td>浓度越高 → 分子间氢键缔合越大 → <b>δ 越大</b></td></tr>
+        <tr><td class="c"><b>溶剂性能</b></td><td>惰性溶剂稀释 → 缔合降低 → 峰向<b>高场</b>位移，<b>δ 减小</b></td></tr>
+        <tr><td class="c"><b>温度</b></td><td>高温加剧热运动 → <b>不利氢键</b> → δ 减小</td></tr>
+      </table>
+      <table>
+        <tr><th>苯酚在 CCl<sub>4</sub> 中浓度</th><td class="c">100%</td><td class="c">20%</td><td class="c">10%</td><td class="c">5%</td><td class="c">2%</td><td class="c">1%</td></tr>
+        <tr><th>δ<sub>OH</sub></th><td class="c hl"><b>7.45</b></td><td class="c">6.75</td><td class="c">6.45</td><td class="c">5.96</td><td class="c">4.89</td><td class="c hl"><b>4.35</b></td></tr>
+      </table>
+      <ul>
+        <li><b>分子内氢键</b>：浓度变化对氢键强度影响<b>甚微</b>（不改变两基团碰撞概率）→ 据此与分子间氢键区分</li>
+        <li>温度升高 → 基团振动加剧 → 分子内氢键减弱 → 活泼氢 δ <b>向高场移动</b></li>
+        <li>低温下活泼氢与邻近质子偶合会裂分；<b>常温下不考虑</b>活泼氢与其他质子的偶合</li>
+      </ul>
+
+      <h3>② 常见活泼氢 δ</h3>
+      <table>
+        <tr><th>基团</th><th class="c">δ</th><th>特征</th></tr>
+        <tr><td>ROH</td><td class="c">0.5–5.0</td><td>烯醇可达 11–16，<b>易成宽峰</b></td></tr>
+        <tr><td>ArOH</td><td class="c">4.0–10.0</td><td>分子内氢键可至 ~12</td></tr>
+        <tr><td class="hl"><b>RCOOH、ArCOOH</b></td><td class="c hl"><b>10.0–13.0</b></td><td>—</td></tr>
+        <tr><td>RNH<sub>2</sub>、RNHR′</td><td class="c">0.4–3.5</td><td>矮宽</td></tr>
+        <tr><td>ArNH<sub>2</sub>、ArNHR′</td><td class="c">3.5–6.0</td><td>矮宽、位移大</td></tr>
+        <tr><td>RCONH<sub>2</sub>、RCONHR′</td><td class="c">5.0–8.5</td><td>矮宽，常无法观测</td></tr>
+        <tr><td>RCONHCOR′</td><td class="c">9.0–12.0</td><td>矮宽</td></tr>
+        <tr><td>RSH / ArSH</td><td class="c">1.0–2.0 / 3.0–4.0</td><td>—</td></tr>
+        <tr><td>=NOH</td><td class="c">10.0–12.0</td><td>矮宽</td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>③ δ 速查分区表（查氢类型）</h3>
+      <table>
+        <tr><th>氢的类型</th><th class="c">δ (ppm)</th></tr>
+        <tr><td>烷基 -CH<sub>3</sub></td><td class="c">0.85–0.95</td></tr>
+        <tr><td>烷基 -CH<sub>2</sub>-</td><td class="c">1.2–1.4</td></tr>
+        <tr><td>烷基 -CH-</td><td class="c">1.4–1.65</td></tr>
+        <tr><td class="hl"><b>炔氢 ≡C-H</b></td><td class="c hl"><b>1.8–3.0</b></td></tr>
+        <tr><td class="hl"><b>-OCH<sub>3</sub>、-CH<sub>2</sub>-O-</b></td><td class="c hl"><b>3.3–4.0</b></td></tr>
+        <tr><td class="hl"><b>烯氢 =C-H</b></td><td class="c hl"><b>4.5–5.7</b></td></tr>
+        <tr><td class="hl"><b>芳氢 Ar-H</b></td><td class="c hl"><b>6.0–9.0</b></td></tr>
+        <tr><td class="hl"><b>醛氢 -CHO</b></td><td class="c hl"><b>9.0–10.0</b></td></tr>
+        <tr><td>ArOH</td><td class="c">4.0–10.0</td></tr>
+        <tr><td class="hl"><b>羧酸 -COOH</b></td><td class="c hl"><b>10.0–13.0</b></td></tr>
+      </table>
+      <div class="note">两个"高 δ 锚点"：<b>醛 9–10</b>、<b>羧酸 10–13</b>；两个"低 δ 锚点"：<b>炔 1.8–3.0</b>、<b>烷基 &lt;2</b>。</div>
+
+      <h3>④ 烯氢经验公式（Z 值法）</h3>
+      <div class="seq">δ<sub>H</sub> = 5.28 + Z<sub>gem</sub> + Z<sub>cis</sub> + Z<sub>trans</sub></div>
+      <table>
+        <tr><th>取代基 R</th><th class="c">Z<sub>gem</sub></th><th class="c">Z<sub>cis</sub></th><th class="c">Z<sub>trans</sub></th></tr>
+        <tr><td>-H</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+        <tr><td class="hl"><b>-Alkyl 烷基</b></td><td class="c hl"><b>+0.44</b></td><td class="c hl"><b>−0.26</b></td><td class="c hl"><b>−0.29</b></td></tr>
+        <tr><td>-Alkyl-Ring（双键在环内）</td><td class="c">+0.71</td><td class="c">−0.33</td><td class="c">−0.30</td></tr>
+        <tr><td>-CH<sub>2</sub>Cl、-CH<sub>2</sub>Br</td><td class="c">+0.72</td><td class="c">+0.12</td><td class="c">+0.07</td></tr>
+        <tr><td>-C≡C</td><td class="c">+0.50</td><td class="c">+0.35</td><td class="c">+0.10</td></tr>
+        <tr><td>-C≡N</td><td class="c">+0.23</td><td class="c">+0.78</td><td class="c">+0.58</td></tr>
+        <tr><td>=C=O</td><td class="c">+1.10</td><td class="c">+1.13</td><td class="c">+0.81</td></tr>
+        <tr><td>-COOH</td><td class="c">+1.00</td><td class="c">+1.35</td><td class="c">+0.74</td></tr>
+        <tr><td>-COOR</td><td class="c">+0.84</td><td class="c">+1.15</td><td class="c">+0.58</td></tr>
+        <tr><td class="hl"><b>-Cl</b></td><td class="c hl"><b>+1.00</b></td><td class="c hl"><b>+0.19</b></td><td class="c hl"><b>+0.03</b></td></tr>
+        <tr><td><b>-Br</b></td><td class="c"><b>+1.04</b></td><td class="c"><b>+0.40</b></td><td class="c"><b>+0.55</b></td></tr>
+        <tr><td>-OR（R 脂肪族）</td><td class="c">+1.18</td><td class="c">−1.06</td><td class="c">−1.28</td></tr>
+        <tr><td>-OCOR</td><td class="c">+2.09</td><td class="c">−0.40</td><td class="c">−0.67</td></tr>
+        <tr><td>-Aromatic</td><td class="c">+1.35</td><td class="c">+0.37</td><td class="c">−0.10</td></tr>
+      </table>
+      <div class="note g"><b>教材例</b>：某烯烃连 -H、两个 -CH<sub>3</sub>、-Cl，实测 δ=5.78。<br>
+      设结构 (CH<sub>3</sub>)<sub>2</sub>C=CHCl，该烯氢：偕位 Cl、顺式 CH<sub>3</sub>、反式 CH<sub>3</sub><br>
+      δ = 5.28 + <b>1.00</b>(Cl,gem) <b>−0.26</b>(CH<sub>3</sub>,cis) <b>−0.29</b>(CH<sub>3</sub>,trans) = <b>5.73</b> ≈ 5.78 ✔</div>
+      <div class="note">解法要点：把候选结构的<b>偕/顺/反</b>关系摆对，逐一计算，取与实测最接近者（另一式算得 5.49，偏离更大）。</div>
+    </div>
+
+  </div>
+  <div class="flip">◄ P9 氢谱基础　　D · 氢谱 ②　► P11 裂分与偶合常数</div>
+</section>
+
+<!-- ==================== 第 11 页 ==================== -->
+<section class="pg">
+  <div class="bar"><span class="tag">D</span><span class="ttl">氢核磁共振 ③　自旋偶合与裂分 · n+1 规律 · 偶合常数 J · 低级/高级偶合 · 测定技术</span><span class="pn">第 11 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 自旋偶合与裂分</h3>
+      <ul>
+        <li><b>自旋-自旋偶合</b>：相邻核自旋产生磁场，通过<b>成键电子</b>传递而相互干扰</li>
+        <li><b>自旋-自旋裂分</b>：由偶合引起共振峰分裂成多个峰</li>
+        <li><b>偶合常数 J</b>：裂分后<b>两个小峰间的距离</b>，单位 <b>Hz</b></li>
+        <li class="hl"><b>J 与外加磁场强度无关</b>（δ 也是相对值；真正随场强变的是 <b>Δν/J</b>）</li>
+      </ul>
+
+      <h3>② 哪些核对相邻氢有偶合干扰</h3>
+      <table>
+        <tr><th class="c">情况</th><th>实例</th><th class="c">有偶合？</th></tr>
+        <tr><td class="c"><b>I = 0</b></td><td><sup>12</sup>C、<sup>16</sup>O</td><td class="c hl"><b>完全没有</b></td></tr>
+        <tr><td class="c"><b>I≠0 但四极矩大</b></td><td><sup>35</sup>Cl、<sup>79</sup>Br、<sup>127</sup>I</td><td class="c hl"><b>看不到</b>（去偶）</td></tr>
+        <tr><td class="c"><b>I=1/2 但丰度小</b></td><td><sup>13</sup>C <b>1.1%</b>、<sup>17</sup>O 0.04%</td><td class="c">影响甚微（卫星峰）</td></tr>
+        <tr><td class="c"><b>同种核</b></td><td><sup>1</sup>H–<sup>1</sup>H</td><td class="c hl"><b>同核偶合，影响最大</b></td></tr>
+      </table>
+
+      <h3>③ n + 1 规律</h3>
+      <div class="seq">N = 2nI + 1　　（对 I=1/2 的 ¹H）N = n + 1</div>
+      <table>
+        <tr><th class="c">n（邻接 H 数）</th><th class="c">峰数</th><th class="c">强度比</th></tr>
+        <tr><td class="c">0</td><td class="c">1 s</td><td class="c">1</td></tr>
+        <tr><td class="c">1</td><td class="c">2 d</td><td class="c hl"><b>1:1</b></td></tr>
+        <tr><td class="c">2</td><td class="c">3 t</td><td class="c hl"><b>1:2:1</b></td></tr>
+        <tr><td class="c">3</td><td class="c">4 q</td><td class="c hl"><b>1:3:3:1</b></td></tr>
+        <tr><td class="c">4</td><td class="c">5</td><td class="c">1:4:6:4:1</td></tr>
+        <tr><td class="c">5</td><td class="c">6</td><td class="c">1:5:10:10:5:1</td></tr>
+        <tr><td class="c">6</td><td class="c">7</td><td class="c">1:6:15:20:15:6:1</td></tr>
+      </table>
+      <div class="note r">裂分峰数<b>与本基团自身氢数无关</b>，只与<b>邻接基团</b>的氢数有关！<br>
+      相互偶合的两组峰 <b>J 相等</b>；两小峰面积相等。</div>
+      <table>
+        <tr><td class="c">CH<sub>3</sub>CH<sub>2</sub>Br</td><td>CH<sub>3</sub> 邻 2H → <b>三重 1:2:1</b>；CH<sub>2</sub> 邻 3H → <b>四重 1:3:3:1</b></td></tr>
+        <tr><td class="c">CHCl<sub>2</sub>CH<sub>2</sub>Cl</td><td>环境不同、间隔 3 个单键以内 → 彼此干扰 → <b>三重 + 二重</b></td></tr>
+      </table>
+
+      <h3>④ J 的计算</h3>
+      <div class="seq">J = (δ<sub>α</sub> − δ<sub>β</sub>) × 仪器兆数(MHz)</div>
+      <div class="note g">400 MHz 上 dd 峰：δ 7.153 / 7.133 → J = 0.020×400 = <b>8.0 Hz</b>；δ 7.153 / 7.149 → 0.004×400 = <b>1.6 Hz</b>（另算 2.0，取均值 1.8）</div>
+
+      <h3>⑤ 峰面积</h3>
+      <p class="hl">¹H-NMR 中各吸收峰覆盖的<b>面积与引起该吸收的氢核数目成正比</b> → 积分高度比 = 氢核数最简整数比。</p>
+    </div>
+
+    <div class="col">
+      <h3>⑥ 三类偶合与典型 J 值</h3>
+      <table>
+        <tr><th class="c">类型</th><th>说明</th></tr>
+        <tr><td class="c"><b>偕偶 ²J</b></td><td><b>同一碳</b>上两氢核；一般<b>为负值</b>；<b>双键上的偕偶可为正值</b></td></tr>
+        <tr><td class="c"><b>邻偶 ³J</b></td><td><b>相邻两碳</b>上的氢；一般<b>为正值</b>；氢谱中<b>地位最突出</b>，为结构/构型提供关键信息</td></tr>
+        <tr><td class="c"><b>远程 ⁴J⁺</b></td><td>间隔 <b>3 根以上</b>键；J 一般 <b>1–3 Hz</b>；饱和物中 ³J 以上 ≈ 0 可忽略</td></tr>
+      </table>
+      <table>
+        <tr><th>体系</th><th class="c">J (Hz)</th></tr>
+        <tr><td>CH<sub>a</sub>–CH<sub>b</sub>（自由旋转）</td><td class="c">6.0–8.0</td></tr>
+        <tr><td class="hl"><b>环己烷 ax–ax（直立-直立）</b></td><td class="c hl"><b>6.0–14.0</b></td></tr>
+        <tr><td class="hl"><b>ax–eq</b></td><td class="c hl"><b>0–5</b></td></tr>
+        <tr><td class="hl"><b>eq–eq</b></td><td class="c hl"><b>0–5</b></td></tr>
+        <tr><td class="hl"><b>反式烯氢（trans）</b></td><td class="c hl"><b>12.0–18.0</b></td></tr>
+        <tr><td class="hl"><b>顺式烯氢（cis）</b></td><td class="c hl"><b>6.0–12.0</b></td></tr>
+        <tr><td>芳环 J<sub>邻</sub> / J<sub>间</sub> / J<sub>对</sub></td><td class="c">6–10 / 1–3 / 0–1</td></tr>
+        <tr><td>远程（π 体系）</td><td class="c">~0.3–3</td></tr>
+      </table>
+      <h3 class="s">环大小与 J（环越小 J 越小）</h3>
+      <table>
+        <tr><td class="c">三元</td><td class="c">四元</td><td class="c">五元</td><td class="c">六元</td><td class="c">七元</td><td class="c">八元</td></tr>
+        <tr><td class="c">0.5–2.0</td><td class="c">2.5–4.0</td><td class="c">5.1–7.0</td><td class="c hl">8.8–11.0</td><td class="c">9–13</td><td class="c">10–13</td></tr>
+      </table>
+      <h3 class="s">Karplus（两面角）</h3>
+      <div class="seq">J = 4.2 − 0.5cosφ + 4.5cos2φ</div>
+      <div class="note">φ≈0° 或 180° 时 J 最大；φ≈90° 时 J 最小。糖端基：2 位 H 为<b>直立键</b>时可用 <b>J<sub>H1,H2</sub></b> 判 α/β。</div>
+      <h3 class="s">远程偶合的特殊情况</h3>
+      <ul>
+        <li>两氢正好位于 <b>"W" 型</b>两端（<b>W 型偶合</b>）</li>
+        <li><b>π 体系</b>电子流动性大，隔 4–5 根键仍可偶合（很弱）</li>
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>⑦ 化学等同 / 磁等同</h3>
+      <table>
+        <tr><td class="c"><b>化学等同</b></td><td>相同种类、<b>相同化学环境</b>、δ 相同（丙酮 6 个 H）</td></tr>
+        <tr><td class="c"><b>磁等同</b></td><td>化学环境相同，且<b>对组外氢核表现出相同偶合强度</b>；相互之间<b>虽偶合但不裂分</b></td></tr>
+      </table>
+      <h3 class="s">六种磁不等同（必背 6 条）</h3>
+      <table>
+        <tr><td class="c">1</td><td>化学环境不同的氢核</td></tr>
+        <tr><td class="c">2</td><td><b>末端双键</b>上的两个氢（双键不能自由旋转）</td></tr>
+        <tr><td class="c">3</td><td>单键<b>带双键性质</b>时</td></tr>
+        <tr><td class="c">4</td><td>与<b>手性碳 C\*</b> 相连的 CH<sub>2</sub> 上两个氢</td></tr>
+        <tr><td class="c">5</td><td>CH<sub>2</sub> 两氢在<b>刚性环</b>或不能自由旋转的单键上</td></tr>
+        <tr><td class="c">6</td><td><b>芳环取代基的邻位质子</b>也可能磁不等同</td></tr>
+      </table>
+
+      <h3>⑧ 低级偶合 vs 高级偶合</h3>
+      <table>
+        <tr><th></th><th>低级（一级）</th><th>高级</th></tr>
+        <tr><td class="c">判据</td><td class="hl"><b>Δν/J &gt; 6</b></td><td class="hl"><b>Δν ≈ J 或 &lt; J</b></td></tr>
+        <tr><td class="c">裂分</td><td><b>符合 n+1</b></td><td class="hl"><b>不符合 n+1</b>，峰强不规则、裂距不等</td></tr>
+        <tr><td class="c">字母</td><td><b>A、M、X</b></td><td class="hl"><b>A、B、C</b></td></tr>
+      </table>
+      <table>
+        <tr><th>系统</th><th class="c">裂分</th></tr>
+        <tr><td>A / A<sub>2</sub></td><td class="c">s</td></tr>
+        <tr><td><b>AX</b></td><td class="c"><b>dd</b></td></tr>
+        <tr><td><b>AX<sub>2</sub></b></td><td class="c"><b>td</b></td></tr>
+        <tr><td>AMX</td><td class="c">dbddb（12 小峰）</td></tr>
+        <tr><td>AA′XX′ / AA′BB′</td><td class="c">化学等同但磁不等同</td></tr>
+      </table>
+      <div class="note">两个（组）相互偶合的信号：<b>内侧峰高、外侧峰低</b>。</div>
+
+      <h3 class="s">AB 系统四峰公式</h3>
+      <div class="seq">J<sub>AB</sub> = v<sub>1</sub>−v<sub>2</sub> = v<sub>3</sub>−v<sub>4</sub>　　Δδ<sub>AB</sub> = √[(v<sub>1</sub>−v<sub>4</sub>)(v<sub>2</sub>−v<sub>3</sub>)]</div>
+      <div class="seq">I<sub>2</sub>/I<sub>1</sub> = I<sub>3</sub>/I<sub>4</sub> = (v<sub>1</sub>−v<sub>4</sub>)/(v<sub>2</sub>−v<sub>3</sub>)</div>
+
+      <h3>⑨ 测定技术</h3>
+      <table>
+        <tr><td class="c">溶剂</td><td><b>氘代溶剂</b>（氘代度 <b>99%</b>），避免溶剂自身 ¹H 干扰</td></tr>
+        <tr><td class="c">浓度</td><td class="hl"><b>¹H 谱 10–50 mmol/L</b></td></tr>
+        <tr><td class="c">观察活泼氢</td><td>选<b>氘代二甲亚砜、氘代丙酮</b></td></tr>
+        <tr><td class="c">高分辨</td><td><b>PFT-NMR</b>：射频脉冲 → 样品 → <b>FID</b> → 傅里叶变换 → 谱图</td></tr>
+        <tr><td class="c">CW 缺点</td><td>扫描时间长、灵敏度低、用量大、易漂移、分辨率低</td></tr>
+        <tr><td class="c"><b>双共振</b></td><td>照射并<b>饱和</b>某组质子 → 其偶合影响消除 → 裂分峰变<b>单峰</b>（同核去偶）</td></tr>
+        <tr><td class="c"><b>NOE</b></td><td>无偶合但<b>空间接近</b>时，照射一组使另一组信号<b>增强</b>；<b>∝ 1/r⁶</b> → 测空间距离/构型</td></tr>
+        <tr><td class="c"><b>位移试剂</b></td><td><b>镧系金属化合物</b>；<b>Eu(dpm)<sub>3</sub> → 低磁场</b>，<b>Pr(dpm)<sub>3</sub> → 高磁场</b></td></tr>
+      </table>
+      <h3 class="s">氘代溶剂残余 ¹H 峰</h3>
+      <table>
+        <tr><td class="c"><b>CDCl<sub>3</sub></b></td><td class="c hl"><b>7.3</b></td><td class="c"><b>D<sub>2</sub>O</b></td><td class="c hl"><b>4.7</b></td><td class="c">CD<sub>3</sub>OD</td><td class="c"><b>3.3；4.8</b></td></tr>
+        <tr><td class="c">(CD<sub>3</sub>)<sub>2</sub>SO</td><td class="c hl"><b>2.5</b></td><td class="c">(CD<sub>3</sub>)<sub>2</sub>CO</td><td class="c"><b>2.1</b></td><td class="c">C<sub>6</sub>D<sub>6</sub></td><td class="c">7.2；7.0</td></tr>
+        <tr><td class="c">C<sub>4</sub>D<sub>8</sub>O<sub>2</sub></td><td class="c">3.5</td><td class="c">C<sub>6</sub>D<sub>12</sub></td><td class="c">1.4</td><td class="c">C<sub>5</sub>D<sub>6</sub>N</td><td class="c">7.3；8.5</td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P10 化学位移　　D · 氢谱 ③　► P12 陷阱 · 公式 · 流程</div>
+</section>
+
+<!-- ==================== 第 12 页 ==================== -->
+<section class="pg last">
+  <div class="bar"><span class="tag">E</span><span class="ttl">易混辨析 26 组 · 公式卡 · 解析流程 · 时间分配（考前最后一页）</span><span class="pn">第 12 页</span></div>
+  <div class="cols">
+
+    <div class="col">
+      <h3>① 易混辨析（1–13）</h3>
+      <table>
+        <tr><th class="c" style="width:5%">#</th><th style="width:34%">易混点</th><th>正确区分</th></tr>
+        <tr><td class="c">1</td><td>能量最大 vs 波长最长</td><td>σ→σ* <b>能量最大</b>；n→π* <b>波长最长</b>（能量最小）</td></tr>
+        <tr><td class="c">2</td><td>π→π* vs n→π* 强度</td><td>π→π* <b>允许，ε&gt;10⁴</b>；n→π* <b>禁阻，ε 10–100</b></td></tr>
+        <tr><td class="c">3</td><td>发色团 vs 助色团</td><td><b>-NO₂ 是发色团</b>；-OH/-NH₂/-OR/-X 是<b>助色团</b></td></tr>
+        <tr><td class="c">4</td><td>R 带 vs K 带</td><td>R = n→π*，<b>弱长</b> 250–500；K = 共轭 π→π*，<b>强中</b> 210–250</td></tr>
+        <tr><td class="c">5</td><td>B 带 vs E 带</td><td>都是苯环；B 中心 <b>256</b>（弱）；E₁ <b>184</b>、E₂ <b>204</b>（强）</td></tr>
+        <tr><td class="c">6</td><td>极性溶剂方向</td><td>n→π* <b>蓝移</b>；π→π* <b>红移</b>（<b>反向</b>）</td></tr>
+        <tr><td class="c">7</td><td>苯胺酸性 vs 苯酚碱性</td><td>苯胺在酸中 <b>蓝移</b>；苯酚在碱中 <b>红移</b></td></tr>
+        <tr><td class="c">8</td><td>顺式 vs 反式</td><td>一般<b>反式</b> λ、ε 更大；但<b>环状二烯 / 环状 α,β-不饱和酮</b>是<b>顺式波长更长、强度更弱</b></td></tr>
+        <tr><td class="c">9</td><td>同环二烯 +36 vs +39</td><td>二烯规则 <b>+36</b>；共轭羰基规则 <b>+39</b></td></tr>
+        <tr><td class="c">10</td><td>环外双键</td><td>二烯规则 +5；羰基规则 +5 但 <b>环上羰基不算</b></td></tr>
+        <tr><td class="c">11</td><td>IR 诱导 vs 共轭</td><td>诱导使 C=O <b>频率↑</b>（酰氯 1800）；共轭使其 <b>↓</b>（酰胺 1690）</td></tr>
+        <tr><td class="c">12</td><td>IR 氢键 vs NMR 氢键</td><td>IR：频率 <b>↓</b>、强度↑、变宽；NMR：δ <b>↑</b>（去屏蔽）</td></tr>
+        <tr><td class="c">13</td><td>振动偶合 vs 费米共振</td><td>振动偶合：<b>两个相同基团</b>靠近（1390/1365）；费米共振：<b>倍频/泛频与基频</b>（醛 2820/2720）</td></tr>
+      </table>
+
+      <h3>② 其他高频陷阱（21–26）</h3>
+      <table>
+        <tr><td class="c">21</td><td>CO₂ 对称伸缩<b>没有</b>红外吸收（Δμ=0）</td></tr>
+        <tr><td class="c">22</td><td><b>线性 3N−5</b>、<b>非线性 3N−6</b>（别反）</td></tr>
+        <tr><td class="c">23</td><td>I=0 的核是 <b>¹²C、¹⁶O、³²S</b>（不是 ¹³C）</td></tr>
+        <tr><td class="c">24</td><td>取向数 = <b>2I+1</b>，不是 2I</td></tr>
+        <tr><td class="c">25</td><td>n+1 里的 n 是<b>邻接</b>基团的氢数，不是自身</td></tr>
+        <tr><td class="c">26</td><td>γ(¹H)≈4γ(¹³C) → ¹H 所需<b>射频约 4 倍</b></td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>③ 易混辨析（14–20）</h3>
+      <table>
+        <tr><th class="c" style="width:5%">#</th><th style="width:34%">易混点</th><th>正确区分</th></tr>
+        <tr><td class="c">14</td><td>特征区 vs 指纹区</td><td><b>4000–1300</b> vs <b>1300–400</b></td></tr>
+        <tr><td class="c">15</td><td>IR 峰数少的原因</td><td>非活性、简并、被覆盖、太弱、超出中红外（<b>5 条</b>）</td></tr>
+        <tr><td class="c">16</td><td>T₁ vs T₂</td><td>T₁ 自旋-晶格（与<b>环境</b>，能量<b>下降</b>）；T₂ 自旋-自旋（<b>同类核</b>，能量<b>不变</b>）</td></tr>
+        <tr><td class="c">17</td><td>饱和 vs 弛豫</td><td>饱和 = 两能级<b>核数相等</b>、不再吸收；弛豫 = 恢复 Boltzmann 分布</td></tr>
+        <tr><td class="c">18</td><td>δ 大 vs 高场</td><td><b>δ 大 = 低场 = 去屏蔽强</b>（"δ 越大越在高磁场"是错的）</td></tr>
+        <tr><td class="c">19</td><td>炔氢异常</td><td>炔氢 1.8–3.0 因<b>磁各向异性（正屏蔽区）</b>，不是电负性</td></tr>
+        <tr><td class="c">20</td><td>J vs δ 与场强</td><td><b>J 与场强无关</b>；δ 与场强无关；但 <b>Δν/J 随场强增大而增大</b> → 高场可把高级偶合变低级</td></tr>
+      </table>
+
+      <h3>④ 公式卡</h3>
+      <table>
+        <tr><td class="c">光子能量</td><td>ΔE = hν = hc/λ；ṽ = 1/λ = ν/c</td></tr>
+        <tr><td class="c">Beer</td><td>A = εCL = KLC；I<sub>t</sub> = I₀·10<sup>−KLC</sup>；<b>A = −lgT = 2 − lg(T%)</b>；A = A₁+A₂</td></tr>
+        <tr><td class="c">UV 强度</td><td>ε<sub>max</sub> = 0.87×10<sup>20</sup>·P·a</td></tr>
+        <tr><td class="c">Woodward-<br>Fieser</td><td>217 + Σ（同环二烯 36、烷基 5、环外双键 5、共轭双键 30、助色团）</td></tr>
+        <tr><td class="c">Fieser-<br>Kuhn</td><td>λ = 114 + 5M + n(48−1.7n) − 16.5R<sub>endo</sub> + 10R<sub>exo</sub>；ε = 1.74×10⁴n</td></tr>
+        <tr><td class="c">IR 波数</td><td>ṽ = 1307√(k/μ′)；μ′ = m<sub>A</sub>m<sub>B</sub>/(m<sub>A</sub>+m<sub>B</sub>)；ṽ = 10⁴/λ(μm)</td></tr>
+        <tr><td class="c">IR 振动能</td><td>E<sub>v</sub> = (v+½)hν</td></tr>
+        <tr><td class="c">IR 自由度</td><td>线性 <b>3N−5</b>；非线性 <b>3N−6</b></td></tr>
+        <tr><td class="c">不饱和度</td><td><b>Ω = 1 + n<sub>4</sub> + (n<sub>3</sub>−n<sub>1</sub>)/2</b></td></tr>
+        <tr><td class="c">NMR</td><td>P = √(I(I+1))·h/2π；<b>μ = γP</b>；取向数 2I+1；<b>ΔE = 2μH₀(1−σ)</b></td></tr>
+        <tr><td class="c">共振条件</td><td>2μH₀(1−σ) = hν；ω = γH₀/2π</td></tr>
+        <tr><td class="c">化学位移</td><td><b>δ = (ν<sub>样</sub>−ν<sub>TMS</sub>)/ν<sub>仪器</sub> ×10⁶</b></td></tr>
+        <tr><td class="c">烯氢</td><td>δ = 5.28 + Z<sub>gem</sub> + Z<sub>cis</sub> + Z<sub>trans</sub></td></tr>
+        <tr><td class="c">裂分</td><td>N = 2nI+1 →（¹H）<b>N = n+1</b></td></tr>
+        <tr><td class="c">偶合常数</td><td><b>J = (δ<sub>α</sub>−δ<sub>β</sub>) × 兆数(MHz)</b></td></tr>
+        <tr><td class="c">Karplus</td><td>J = 4.2 − 0.5cosφ + 4.5cos2φ</td></tr>
+        <tr><td class="c">AB 系统</td><td>J = v₁−v₂ = v₃−v₄；Δδ = √[(v₁−v₄)(v₂−v₃)]</td></tr>
+        <tr><td class="c">NOE</td><td>∝ <b>1/r⁶</b></td></tr>
+      </table>
+    </div>
+
+    <div class="col">
+      <h3>⑤ 综合解析流程</h3>
+      <table>
+        <tr><td class="c">1</td><td><b>算 Ω</b>（由分子式）→ 判环/双键/苯环（Ω≥4 怀疑苯环）</td></tr>
+        <tr><td class="c">2</td><td><b>IR 抓官能团</b>：先 4000–1300，再 1300–400</td></tr>
+        <tr><td class="c">3</td><td><b>¹H-NMR 分氢</b>：积分→个数；δ→类型；n+1/J→相邻与立体</td></tr>
+        <tr><td class="c">4</td><td><b>UV 校验共轭</b>：计算 λ<sub>max</sub> 与实测比对</td></tr>
+        <tr><td class="c">5</td><td><b>MS 定分子量/分子式</b>（本课程只作了解）</td></tr>
+        <tr><td class="c">6</td><td>拼结构 → 用相关峰/相关氢<b>逐条自检</b></td></tr>
+      </table>
+
+      <h3>⑥ 四谱对同一结构的呼应</h3>
+      <table>
+        <tr><th>结构</th><th>UV</th><th>IR</th><th>¹H-NMR</th></tr>
+        <tr><td class="c">苯环</td><td>B 256<br>E₂ 204</td><td>3030 弱<br>1600/1500 四重<br>900–690 强</td><td>6.0–9.0<br>多重</td></tr>
+        <tr><td class="c">C=O</td><td>R 带弱<br>共轭时 K 强</td><td>1900–1650<br>强峰</td><td>醛氢 9–10</td></tr>
+        <tr><td class="c">O-H</td><td>助色团<br>红移</td><td>3640 尖／<br>3300 宽</td><td>0.5–5（酚 4–10）<br>D₂O 消失</td></tr>
+        <tr><td class="c">COOH</td><td>共轭红移</td><td>2500–3000 宽<br>+1710+ν<sub>C-O</sub></td><td><b>10–13</b></td></tr>
+        <tr><td class="c">共轭多烯</td><td>λ 长、ε 大</td><td>1600 附近<br>ν<sub>C=C</sub> 增强</td><td>烯氢 4.5–5.7</td></tr>
+        <tr><td class="c">酯</td><td>K 带</td><td>1735 +<br>1300–1050</td><td>-OCH₃ 3.3–4.0</td></tr>
+        <tr><td class="c">胺</td><td>pH 敏感</td><td>3490/3400<br>双峰（伯胺）</td><td>0.4–3.5<br>（脂肪）</td></tr>
+      </table>
+
+      <h3>⑦ 时间分配（90 分钟）</h3>
+      <table>
+        <tr><td class="c"><b>45–55 min</b></td><td>第一遍：只做会做的，标记不确定的</td></tr>
+        <tr><td class="c"><b>20–25 min</b></td><td>第二遍：攻标记题，需查表的才翻</td></tr>
+        <tr><td class="c"><b>10–15 min</b></td><td>涂卡与复查：查漏答、查方向性错误</td></tr>
+      </table>
+
+      <div class="note r"><b>最后 30 秒自检</b>：本题问的是"最大/最小"还是"最长/最短"？"高场"还是"低场"？"升高"还是"降低"？—— 本课程选择题失分最多的是<b>方向</b>，不是"没背到"。</div>
+
+      <div class="note g"><b>祝考试顺利！</b><br>本页为全册最后一页。若时间不够，考前只看：<b>P2 四带表 + P8 官能团表 + P10 δ 分区表 + 本页辨析卡</b>。</div>
+
+      <h3>⑧ 常考"为什么"速答</h3>
+      <table>
+        <tr><td class="c">1</td><td>π→π* 的 ε 为何远大于 n→π*？<b>允许跃迁、靶面积大</b> vs <b>禁阻跃迁</b></td></tr>
+        <tr><td class="c">2</td><td>苯 B 带精细结构为何在极性溶剂中消失？<b>溶剂化/缔合把能级抹平</b></td></tr>
+        <tr><td class="c">3</td><td>共轭多烯双键越多 λ 越长？<b>HOMO–LUMO 能差减小</b></td></tr>
+        <tr><td class="c">4</td><td>CO₂ 4 个振动却 2 个峰？<b>对称伸缩 Δμ=0 + 弯曲简并</b></td></tr>
+        <tr><td class="c">5</td><td>羧酸 ν<sub>C=O</sub> 比酮低？<b>+C 共轭 &gt; 诱导</b></td></tr>
+        <tr><td class="c">6</td><td>醛的 2820/2720 从哪来？<b>费米共振</b>（1390 倍频 2780 与 2800 共振）</td></tr>
+        <tr><td class="c">7</td><td>炔氢 δ 为何小？<b>磁各向异性 → 正屏蔽区</b>（非电负性）</td></tr>
+        <tr><td class="c">8</td><td>NOE 为何能测距离？<b>∝1/r⁶</b>，与是否偶合无关</td></tr>
+        <tr><td class="c">9</td><td>高场仪器为何把高级偶合变一级？<b>J 不变，Δν 随场强增大</b> → Δν/J↑</td></tr>
+        <tr><td class="c">10</td><td>氢键对 IR 与 NMR 为何相反？IR <b>键强↓ → 频率↓</b>；NMR <b>去屏蔽 → δ↑</b></td></tr>
+      </table>
+    </div>
+
+  </div>
+  <div class="flip">◄ P11 裂分与偶合　　E · 收尾（共 12 页）</div>
+</section>
+
+</body>
+</html>
