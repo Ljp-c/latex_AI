@@ -1,0 +1,32 @@
+% ==================== 附录 ====================
+\section{附录：数据、脚本与操作记录}
+
+\subsection{数据目录与脚本}
+
+本次作业用到的文件都在 \texttt{X-Ray/作业二/} 下：
+
+\begin{itemize}[leftmargin=2.2em]
+  \item \texttt{资料/原数据/200.txt--900.txt}：仪器导出的原始 txt，GBK 编码，前 9 行为元数据；
+  \item \texttt{资料/原数据/ready/}：\texttt{make\_\allowbreak origin\_\allowbreak ready.py} 输出的原始强度，3 行表头 + Tab 分隔；
+  \item \texttt{资料/原数据/ready\_norm/}：同一脚本输出的归一化强度（每个样品除以自己的最强峰再乘 100）；
+  \item \texttt{资料/处理后数据/200.txt--900.txt}：整理后的成品数据，内容与 \texttt{ready\_norm/} 一致，方便直接取用；
+  \item \texttt{资料/图片/}：本次 Origin 和 Jade 操作的全部截图，正文图~\ref{fig:data}--\ref{fig:origin-step6}、图~\ref{fig:jade}--\ref{fig:pdf-step6} 都取自这里；
+  \item \texttt{脚本/make\_origin\_ready.py}：把原始 txt 转成 Origin 可导入的 3 行表头格式；
+  \item \texttt{脚本/plot\_xrd\_multi.py}：读取 \texttt{ready\_norm/}，绘制图~\ref{fig:xrd} 的多曲线 + PDF 卡片图。
+\end{itemize}
+
+两个脚本的运行方式如下（在作业二根目录下）：
+
+\begin{center}
+\texttt{python .\textbackslash 脚本\textbackslash make\_origin\_ready.py 资料\textbackslash 原数据 --norm}\\
+\vspace{2pt}
+\texttt{python .\textbackslash 脚本\textbackslash plot\_xrd\_multi.py}
+\end{center}
+
+\texttt{make\_\allowbreak origin\_\allowbreak ready.py} 只依赖 Python 标准库；\texttt{plot\_\allowbreak xrd\_\allowbreak multi.py} 需要 numpy 和 matplotlib。两个脚本都只读原始数据，输出写到 \texttt{ready/}、\texttt{ready\_norm/} 和 \texttt{课程论文/assets/xrd/}，不会改动 \texttt{资料/原数据/} 中的源文件。
+
+\subsection{操作记录的几点补充}
+
+PDF 卡片层的位置没有唯一标准，本次操作记录下来的起点是：主图左 15、上 10、宽 70、高 60，PDF 卡片层高 10 左右；双击图像本体打开 Size 选项卡调位置和大小，双击图像边框打开 Scale 和 Lines and Ticks 调范围和刻度，Layer 选项卡调颜色。这个比例在不同页面尺寸下要微调，关键是让卡片层的 X 轴和主图一样是 20--80$^\circ$，并且卡片不要盖住实验曲线。
+
+原始 txt 的转换也不要手工删行：\texttt{make\_\allowbreak origin\_\allowbreak ready.py} 会把 9 行元数据里的波长、步宽、角度范围、日期、最强峰位置和样品编号写进 Comments 行，既保留信息，又让 Origin 的列识别稳定。如果换一批数据，只要文件格式相同，直接改目录参数即可。
