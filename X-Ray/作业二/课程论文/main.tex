@@ -38,6 +38,7 @@
 \usepackage{caption}
 \usepackage[labelfont=bf]{subcaption}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage{tikz}
 
 % ==================== 参考文献 ====================
@@ -45,6 +46,10 @@
 \addbibresource{ref.bib}
 
 \usepackage[hidelinks]{hyperref}
+
+% ==================== 正文中反复出现的脚本名 ====================
+\newcommand{\pyA}{\texttt{make\_\allowbreak origin\_\allowbreak ready.py}}
+\newcommand{\pyB}{\texttt{plot\_\allowbreak xrd\_\allowbreak multi.py}}
 
 % ==================== 编号（按章编号，如 图 2-5）====================
 \numberwithin{figure}{section}

@@ -1,0 +1,151 @@
+%!TeX encoding = UTF-8
+%!TEX program = xelatex
+% ============================================================
+% 《波谱分析》课程作业论文
+% 题目：红外光谱与拉曼光谱在纳米材料表征中的比较与联用决策
+% 版式沿用 X-Ray/作业二/课程论文/main.tex（色带题头 + 校徽、楷体、蓝色标题层级）
+% 编译：XeLaTeX + Biber，运行本目录 complie.bat main
+% ============================================================
+\documentclass[zihao=5,a4paper,twoside]{ctexart}
+
+% ==================== 页面 ====================
+\usepackage[top=2.4cm,bottom=2.5cm,left=1.5cm,right=1.4cm,footskip=0.55cm]{geometry}
+
+% ==================== 字体 ====================
+\setCJKmainfont{KaiTi}[AutoFakeBold=2.0]
+\setmainfont{Times New Roman}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ==================== 颜色 ====================
+\usepackage{xcolor}
+\definecolor{secblue}{HTML}{365F91}
+\definecolor{subblue}{HTML}{243F60}
+\definecolor{bandblue}{HTML}{9CB8C7}
+
+% ==================== 图表与数学 ====================
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage[labelfont=bf]{subcaption}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% ==================== 参考文献 ====================
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource{ref.bib}
+\setcounter{biburlnumpenalty}{10000}
+\setcounter{biburlucpenalty}{10000}
+\setcounter{biburllcpenalty}{10000}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={红外光谱与拉曼光谱在纳米材料表征中的比较与联用决策},
+  pdfauthor={刘佳鹏},
+  pdfsubject={《波谱分析》课程论文},
+  pdfkeywords={红外光谱, 拉曼光谱, TiO2, 羧酸根配位, 选择定则}
+}
+
+% ==================== 编号（按章编号，如 图 2-1）====================
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\numberwithin{equation}{section}
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
+\renewcommand{\theequation}{\thesection-\arabic{equation}}
+
+\captionsetup{font=small,labelfont=bf,labelsep=quad}
+
+% ==================== 标题样式 ====================
+\ctexset{
+  section = {
+    format     = {\color{secblue}\bfseries\fontsize{13pt}{16pt}\selectfont},
+    number     = {\thesection.},
+    aftername  = {\hspace{0.4em}},
+    beforeskip = 15pt plus 3pt minus 2pt,
+    afterskip  = 7pt plus 2pt,
+  },
+  subsection = {
+    format     = {\color{secblue}\bfseries\fontsize{12pt}{15pt}\selectfont},
+    aftername  = {\hspace{0.4em}},
+    beforeskip = 12pt plus 2pt,
+    afterskip  = 5pt plus 1pt,
+  },
+  subsubsection = {
+    format     = {\color{subblue}\bfseries\fontsize{11pt}{14pt}\selectfont},
+    aftername  = {\hspace{0.4em}},
+    beforeskip = 10pt plus 2pt,
+    afterskip  = 4pt plus 1pt,
+  },
+  paragraph = {
+    format     = {\color{subblue}\bfseries\fontsize{11pt}{14pt}\selectfont},
+    runin      = false,
+    beforeskip = 10pt plus 2pt,
+    afterskip  = 4pt plus 1pt,
+  },
+}
+
+% ==================== 页脚 ====================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[RO]{\fontsize{8pt}{10pt}\selectfont |\enspace\thepage}
+\fancyfoot[LE]{\fontsize{8pt}{10pt}\selectfont \thepage\enspace|}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[RO]{\fontsize{8pt}{10pt}\selectfont |\enspace\thepage}%
+}
+
+\begin{document}
+\linespread{1.2}\selectfont
+
+% ==================== 首页题头 ====================
+\hspace*{0.25cm}%
+\begin{minipage}[c]{15.75cm}
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{bandblue}{%
+    \parbox[c][0.73cm][c]{15.75cm}{%
+      \hspace{0.06cm}\textcolor{white}{\fontsize{16pt}{16pt}\selectfont\songti 《波谱分析》课程论文}}}
+\end{minipage}\hfill
+\begin{minipage}[c]{1.4cm}
+  \centering\includegraphics[height=1.27cm]{assets/MUC.jpg}
+\end{minipage}
+
+\vspace{0.75cm}
+
+% ==================== 论文题目 ====================
+{\centering\bfseries\fontsize{14pt}{20pt}\selectfont 红外光谱与拉曼光谱在纳米材料表征中的比较与联用决策\par}
+\vspace{0.25cm}
+{\centering\songti\fontsize{11pt}{15pt}\selectfont ——以油酸包覆 TiO$_2$ 纳米颗粒的表面配位与晶相分析为例\par}
+
+\vspace{0.55cm}
+
+\hspace*{3.3cm}{\songti\fontsize{12pt}{16pt}\selectfont 刘佳鹏，24012639，纳米二班}
+
+\vspace{0.45cm}
+
+% ==================== 摘要 ====================
+\input{content/abstract.tex}
+
+% ==================== 正文 ====================
+\input{content/ch1-intro.tex}
+\input{content/ch2-mechanism.tex}
+\input{content/ch3-choice.tex}
+\input{content/ch4-single-vs-combined.tex}
+\input{content/ch5-limits.tex}
+\input{content/ch6-conclusion.tex}
+
+% ==================== 参考文献 ====================
+\printbibliography[title=参考文献]
+
+\end{document}

@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "wavelength_A": 1.54056,
+    "scherrer_K": 0.9,
+    "spurr_myers_constant": 1.26,
+    "pdf_cards": {
+      "anatase": "PDF 21-1272",
+      "rutile": "PDF 21-1276"
+    },
+    "notes": [
+      "Scherrer 尺寸未扣除仪器展宽，为表观值。",
+      "200 °C 样品仅呈宽包，未纳入定量趋势。",
+      "金红石含量为 Spurr–Myers 半定量结果，误差约 ±5–10%。"
+    ]
+  },
+  "samples": [
+    {
+      "sample": "200",
+      "temperature_C": 200,
+      "phase": "低结晶度锐钛矿（宽包）",
+      "main_peak": null,
+      "main_two_theta_deg": null,
+      "main_fwhm_deg": null,
+      "scherrer_D_nm": null,
+      "rutile_pct": 0.0,
+      "rutile_note": "峰形为宽包，未做定量"
+    },
+    {
+      "sample": "300",
+      "temperature_C": 300,
+      "phase": "锐钛矿",
+      "main_peak": "A(101)",
+      "main_two_theta_deg": 25.45456401796289,
+      "main_fwhm_deg": 0.875522299322699,
+      "scherrer_D_nm": 9.302090268061175,
+      "rutile_pct": 0.0,
+      "rutile_note": "未检出金红石（<2%）"
+    },
+    {
+      "sample": "400",
+      "temperature_C": 400,
+      "phase": "锐钛矿",
+      "main_peak": "A(101)",
+      "main_two_theta_deg": 25.432328451327844,
+      "main_fwhm_deg": 0.6544742002475045,
+      "scherrer_D_nm": 12.443318156762194,
+      "rutile_pct": 0.0,
+      "rutile_note": "未检出金红石（<2%）"
+    },
+    {
+      "sample": "500",
+      "temperature_C": 500,
+      "phase": "锐钛矿",
+      "main_peak": "A(101)",
+      "main_two_theta_deg": 25.45757385295895,
+      "main_fwhm_deg": 0.45896567191788795,
+      "scherrer_D_nm": 17.744760176841243,
+      "rutile_pct": 0.0,
+      "rutile_note": "未检出金红石（<2%）"
+    },
+    {
+      "sample": "600",
+      "temperature_C": 600,
+      "phase": "锐钛矿",
+      "main_peak": "A(101)",
+      "main_two_theta_deg": 25.429545404587284,
+      "main_fwhm_deg": 0.27875696326821636,
+      "scherrer_D_nm": 29.214646244143143,
+      "rutile_pct": 0.0,
+      "rutile_note": "未检出金红石（<2%）"
+    },
+    {
+      "sample": "700",
+      "temperature_C": 700,
+      "phase": "锐钛矿+少量金红石",
+      "main_peak": "A(101)",
+      "main_two_theta_deg": 25.462399967000472,
+      "main_fwhm_deg": 0.23777410689414052,
+      "scherrer_D_nm": 34.25231355773328,
+      "rutile_pct": 25.711758702414944,
+      "rutile_note": "Spurr–Myers 半定量"
+    },
+    {
+      "sample": "800",
+      "temperature_C": 800,
+      "phase": "锐钛矿+金红石",
+      "main_peak": "R(110)",
+      "main_two_theta_deg": 27.649645750451032,
+      "main_fwhm_deg": 0.18745234585853127,
+      "scherrer_D_nm": 43.643528306675826,
+      "rutile_pct": 90.75434974443455,
+      "rutile_note": "Spurr–Myers 半定量"
+    },
+    {
+      "sample": "900",
+      "temperature_C": 900,
+      "phase": "金红石",
+      "main_peak": "R(110)",
+      "main_two_theta_deg": 27.583861661238313,
+      "main_fwhm_deg": 0.17345186702966453,
+      "scherrer_D_nm": 47.15963957391407,
+      "rutile_pct": 100.0,
+      "rutile_note": "仅检出金红石"
+    }
+  ],
+  "lattice": [
+    {
+      "a": 3.780104344127937,
+      "c": 9.491428175575955,
+      "c_over_a": 2.5108905235169137,
+      "volume": 135.62480968069593,
+      "zero_offset": 0.08256140909232111,
+      "rms": 0.0191795301001708,
+      "n_peaks": 6,
+      "peaks": [
+        "101",
+        "004",
+        "200",
+        "204",
+        "220",
+        "215"
+      ],
+      "sample": "400",
+      "temperature_C": 400,
+      "phase": "anatase"
+    },
+    {
+      "a": 3.7826315853652432,
+      "c": 9.501296168175918,
+      "c_over_a": 2.5118217182280764,
+      "volume": 135.94741221605506,
+      "zero_offset": 0.1366369257111813,
+      "rms": 0.022302162878900314,
+      "n_peaks": 7,
+      "peaks": [
+        "101",
+        "004",
+        "200",
+        "204",
+        "116",
+        "220",
+        "215"
+      ],
+      "sample": "500",
+      "temperature_C": 500,
+      "phase": "anatase"
+    },
+    {
+      "a": 3.7825155370811276,
+      "c": 9.511870456178395,
+      "c_over_a": 2.5146943516637785,
+      "volume": 136.0903616355755,
+      "zero_offset": 0.11154029894554227,
+      "rms": 0.007787552639069783,
+      "n_peaks": 7,
+      "peaks": [
+        "101",
+        "004",
+        "200",
+        "204",
+        "116",
+        "220",
+        "215"
+      ],
+      "sample": "600",
+      "temperature_C": 600,
+      "phase": "anatase"
+    },
+    {
+      "a": 3.783926573994097,
+      "c": 9.504679235657552,
+      "c_over_a": 2.5118561499001166,
+      "volume": 136.08895078065115,
+      "zero_offset": 0.14935544665099904,
+      "rms": 0.01950179213876618,
+      "n_peaks": 7,
+      "peaks": [
+        "101",
+        "004",
+        "200",
+        "204",
+        "116",
+        "220",
+        "215"
+      ],
+      "sample": "700",
+      "temperature_C": 700,
+      "phase": "anatase"
+    },
+    {
+      "a": 4.592188676025387,
+      "c": 2.9592437313276414,
+      "c_over_a": 0.6444081330492968,
+      "volume": 62.405114292575,
+      "zero_offset": 0.20795155004581356,
+      "rms": 0.012910412163157116,
+      "n_peaks": 9,
+      "peaks": [
+        "110",
+        "101",
+        "200",
+        "111",
+        "210",
+        "220",
+        "002",
+        "310",
+        "301"
+      ],
+      "sample": "800",
+      "temperature_C": 800,
+      "phase": "rutile"
+    },
+    {
+      "a": 4.591130635455179,
+      "c": 2.9584685793437275,
+      "c_over_a": 0.6443878021019143,
+      "volume": 62.36002229451398,
+      "zero_offset": 0.13238409867410114,
+      "rms": 0.005093515254635835,
+      "n_peaks": 9,
+      "peaks": [
+        "110",
+        "101",
+        "200",
+        "111",
+        "210",
+        "220",
+        "002",
+        "310",
+        "301"
+      ],
+      "sample": "900",
+      "temperature_C": 900,
+      "phase": "rutile"
+    }
+  ]
+}
