@@ -1,0 +1,47 @@
+\newcommand{\fontstxs}{\fontsize{15pt}{17pt} \selectfont \songti{}}
+\newcommand{\fontstsh}{\fontsize{14pt}{16pt} \selectfont \songti{}}
+\newcommand{\fonthtxe}{\fontsize{18pt}{20pt} \selectfont \heiti{}}
+
+\newcommand{\makecover}{
+  \thispagestyle{empty}
+  \begin{center}
+    \vspace*{1cm}
+    \noindent
+
+    %% 这里两个minipage的作用是让Logo与标题对齐
+
+    \begin{minipage}[c]{2.17cm}
+      \includegraphics[width=\linewidth]{assets/MUC.jpg}
+    \end{minipage}
+    \hspace{0.5cm}
+    \begin{minipage}[c]{0.8\textwidth}
+      {\fontsize{18pt}{20pt}\selectfont \heiti{}
+      中央民族大学大学生创新训练计划结题论文\\[0.3cm]}
+      {\fontsize{12pt}{14pt}\fontfamily{phv} \selectfont \bfseries
+      URTP Final Thesis of Minzu University of China}
+
+      % 中文黑体小二，英文Arial小四加粗
+    \end{minipage}
+
+    %% 下方是正式的内容
+
+    \vspace{4cm}
+    \makedoctitle{}
+    \vspace{0.5cm}
+    \makedocsubtitle{}
+    \vspace{6cm}
+
+    \begin{tabular}{ll}
+      {\fontstxs{} 计划编号：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectid}}\\
+      {\fontstxs{} 项目类型：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojecttype}}\\
+      {\fontstxs{} 指导教师：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectteacher}}\\
+      {\fontstxs{} 项目成员：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectmembers}}\\
+      {\fontstxs{} 依托单位：} & \underline{\fontstxs{} \makebox[6cm][c]{\varmucprojectunit}}\\
+    \end{tabular}
+
+    \vspace{3cm}
+
+    {\fontstsh{} \varmucprojectdate{}}
+  \end{center}
+  \clearpage
+}

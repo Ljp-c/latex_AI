@@ -1,0 +1,35 @@
+\makeatletter
+\def\muckeywords{} % @符号变量需包裹
+\def\mucenglishkeywords{} % @符号变量需包裹
+\makeatother
+
+\newcommand{\keywords}[1]{%
+  \makeatletter
+  \def\muckeywords{#1}%
+  \makeatother
+}
+
+% 关键词生成
+\newcommand{\makekeywords}{%
+  \makeatletter
+  \par\noindent
+  {\songti\fontsize{10pt}{\baselineskip}\textbf{关键字：}}%
+  {\songti\fontsize{10pt}{\baselineskip}\space \muckeywords}
+  \makeatother
+}
+
+\newsavebox{\abstractbox}
+\newenvironment{MUCAbstract}{%
+  \begin{lrbox}{\abstractbox}
+    \minipage{\linewidth}  % 保证盒子宽度正常
+    \songti\fontsize{10pt}{12pt}\selectfont
+}{%
+    \endminipage
+  \end{lrbox}
+  \phantomsection
+  \addcontentsline{toc}{section}{摘要}%
+  \noindent
+  \songti\fontsize{10pt}{12pt}\selectfont
+  \textbf{摘要：}\usebox{\abstractbox}%
+  \par
+}

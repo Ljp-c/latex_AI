@@ -1,0 +1,20 @@
+.git
+.svn
+.hg
+.DS_Store
+Thumbs.db
+*.aux
+*.bcf
+*.log
+*.out
+*.blg
+*.bbl
+*.run.xml
+*.synctex.gz
+# main.pdf 为编译产物；figures/*.pdf 被 main.tex 直接引用，需入库
+main.pdf
+*.toc
+*.lof
+*.nav
+*.snm
+*.vrb
